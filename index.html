@@ -1,28 +1,119 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestAiPrompts</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BestAIPromptSite</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">BestAiPrompts</div>
-        <nav class="nav">
-            <a href="#" class="nav-link">Главная</a>
-            <a href="#" class="nav-link">Категории</a>
-            <a href="#" class="nav-link">Под модели</a>
-        </nav>
-    </header>
-    <main class="content">
-        <h1>Добро пожаловать на сайт!</h1>
-        <p>Пусто</p>
-        <div style="height: 2000px;"></div> 
-    </main>
 
+<header class="header">
+  <div class="header-inner">
+    <div class="nav-left">
+      <a href="#" class="logo-link">
+        <div class="logo-wrapper">
+          <img src="a_simple_ultra_minimal.jpeg" alt="Logo" class="logo-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTVlNWU1IiBzdHJva2Utd2lkdGg9IjIiPjxwb2x5Z29uIHBvaW50cz0iMTIgMiAyIDIyIDIyIDIyIDEyIDIiPjwvcG9seWdvbj48L3N2Zz4='">
+        </div>
+        <span class="logo-text">BestAIPromptSite</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#" class="active" data-i18n="nav_home">Главная</a>
+        <a href="#" data-i18n="nav_cat">По категориям</a>
+        <a href="#" data-i18n="nav_mod">По моделям</a>
+      </nav>
+    </div>
+    
+    <div class="nav-right">
+      <div class="claude-dropdown" id="langSelector">
+        <div class="dropdown-trigger">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
+          <span id="currentLang">Русский</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="dropdown-menu" id="langMenu">
+          <button class="dropdown-item active" data-lang="ru">Русский</button>
+          <button class="dropdown-item" data-lang="en">English</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main-container">
+  <div class="page-header slide-up">
+    <h1 data-i18n="title">Промпты</h1>
+    <span class="badge" id="promptCount">0</span>
+    <div class="loader" id="loader"></div>
+  </div>
+
+  <div class="content-layout">
+    <div class="grid-area">
+      <div class="card-grid" id="cardGrid"></div>
+    </div>
+
+    <aside class="sidebar-area slide-up-delay-1">
+      <div class="sidebar-block">
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="searchInput" placeholder="Поиск промптов..." autocomplete="off">
+          <button class="search-btn" id="searchBtn" data-i18n="search_btn">Поиск</button>
+        </div>
+        
+        <label class="ai-toggle" id="aiToggleWrapper">
+          <div class="ai-toggle-text">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"></path></svg>
+            <span data-i18n="ai_search">Интеллектуальный поиск</span>
+          </div>
+          <div class="switch">
+            <input type="checkbox" id="aiSearchToggle" checked>
+            <span class="slider"></span>
+          </div>
+        </label>
+      </div>
+
+      <div class="sidebar-block">
+        <label class="block-label" data-i18n="filter_sort">Сортировка</label>
+        <div class="claude-dropdown" id="sortDropdown" data-value="relevance">
+          <div class="dropdown-trigger border-trigger">
+            <span class="dropdown-val" data-i18n="sort_rel">По релевантности</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="dropdown-menu w-full">
+            <button class="dropdown-item active" data-val="relevance" data-i18n="sort_rel">По релевантности</button>
+            <button class="dropdown-item" data-val="az" data-i18n="sort_az">По алфавиту</button>
+            <button class="dropdown-item" data-val="lenDesc" data-i18n="sort_long">Сначала длинные</button>
+            <button class="dropdown-item" data-val="lenAsc" data-i18n="sort_short">Сначала короткие</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div class="modal-overlay" id="promptModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTitle">Title</h2>
+    </div>
+    <p class="modal-desc" id="modalDesc">Desc</p>
+    
+    <div class="modal-snippet-box">
+      <div class="modal-snippet-header">
+        <span class="modal-snippet-label">PROMPT</span>
+        <button class="modal-btn-copy" id="modalCopyBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span data-i18n="copy">Копировать</span>
+        </button>
+      </div>
+      <div class="modal-code" id="modalSnippet"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
