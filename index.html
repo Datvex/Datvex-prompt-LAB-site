@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datvex Prompt LAB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col font-sans selection:bg-blue-500/30 selection:text-white">
+
+    <header class="glass-header sticky top-0 z-50">
+        <div class="w-full px-6 md:px-12 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-white font-semibold text-lg tracking-tight">
+                    Datvex Prompt LAB
+                </a>
+                
+                <nav class="hidden md:flex items-center gap-6 text-sm text-vercel-gray font-medium">
+                    <a href="#" class="hover:text-white transition-colors duration-200">Главная</a>
+                    <a href="#" class="hover:text-white transition-colors duration-200">Категории</a>
+                    <a href="#" class="hover:text-white transition-colors duration-200">Модели</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center">
+                <button class="hidden md:flex items-center gap-2 text-sm text-white hover:bg-[#111] transition-all duration-200 px-4 py-2 rounded-md border border-transparent hover:border-vercel-border bg-black font-medium">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    Repository
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1400px] mx-auto px-6 pt-12 pb-24 w-full flex-1 flex flex-col md:flex-row gap-8">
+        
+        <!-- Sidebar -->
+        <aside class="w-full md:w-[280px] flex-shrink-0">
+            <div class="flex flex-col gap-5">
+                
+                <!-- Поиск и AI -->
+                <div class="space-y-4">
+                    <div class="space-y-2">
+                        <label class="text-[11px] font-semibold text-vercel-gray uppercase tracking-widest">Поиск</label>
+                        <div class="relative group">
+                            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-vercel-gray group-hover:text-white transition-colors duration-300"></i>
+                            <input type="text" placeholder="Поиск промптов..." 
+                                class="w-full bg-black border border-vercel-border rounded-lg py-2 pl-9 pr-3 text-sm text-white placeholder-vercel-gray hover:border-gray-500 focus:outline-none focus:border-gray-400 transition-all duration-300">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-1">
+                        <div class="flex items-center gap-2 text-sm font-medium text-blue-500">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>AI Поиск</span>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="w-9 h-5 bg-[#333] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all duration-300 peer-checked:bg-white peer-checked:after:bg-black"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Фильтры (Кастомные Dropdowns) -->
+                <div class="space-y-4">
+                    <!-- Тип -->
+                    <div class="space-y-2 relative custom-dropdown" id="dropdown-type">
+                        <label class="text-[11px] font-semibold text-vercel-gray uppercase tracking-widest">Тип</label>
+                        <button class="dropdown-trigger w-full flex justify-between items-center bg-black border border-vercel-border rounded-lg py-2.5 px-3 text-sm text-white hover:border-gray-500 focus:outline-none focus:border-gray-400 transition-all duration-300">
+                            <span class="dropdown-selected">Все</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-vercel-gray transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-[calc(100%+4px)] left-0 w-full bg-black border border-vercel-border rounded-lg shadow-2xl z-50 overflow-hidden opacity-0 invisible scale-95 origin-top transition-all duration-200">
+                            <ul class="py-1 text-sm text-[#EDEDED]">
+                                <li class="dropdown-item active px-3 py-2 cursor-pointer transition-colors duration-150" data-value="all">Все</li>
+                                <li class="dropdown-item px-3 py-2 hover:bg-[#111] cursor-pointer transition-colors duration-150" data-value="text">Текст</li>
+                                <li class="dropdown-item px-3 py-2 hover:bg-[#111] cursor-pointer transition-colors duration-150" data-value="image">Изображение</li>
+                                <li class="dropdown-item px-3 py-2 hover:bg-[#111] cursor-pointer transition-colors duration-150" data-value="video">Видео</li>
+                                <li class="dropdown-item px-3 py-2 hover:bg-[#111] cursor-pointer transition-colors duration-150" data-value="audio">Аудио</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Категория -->
+                    <div class="space-y-2 relative custom-dropdown" id="dropdown-category">
+                        <label class="text-[11px] font-semibold text-vercel-gray uppercase tracking-widest">Категория</label>
+                        <button class="dropdown-trigger w-full flex justify-between items-center bg-black border border-vercel-border rounded-lg py-2.5 px-3 text-sm text-white hover:border-gray-500 focus:outline-none focus:border-gray-400 transition-all duration-300">
+                            <span class="dropdown-selected truncate pr-2">Все</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-vercel-gray transition-transform duration-300 flex-shrink-0"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-[calc(100%+4px)] left-0 w-full bg-black border border-vercel-border rounded-lg shadow-2xl z-50 overflow-hidden opacity-0 invisible scale-95 origin-top transition-all duration-200">
+                            <ul class="py-1 text-sm text-[#EDEDED] max-h-[300px] overflow-y-auto custom-scrollbar" id="category-list">
+                                <li class="dropdown-item active px-3 py-2 cursor-pointer transition-colors duration-150" data-value="all">Все</li>
+                                <!-- Загрузится через JS -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Сортировка -->
+                    <div class="space-y-2 relative custom-dropdown" id="dropdown-sort">
+                        <label class="text-[11px] font-semibold text-vercel-gray uppercase tracking-widest">Сортировать по</label>
+                        <button class="dropdown-trigger w-full flex justify-between items-center bg-black border border-vercel-border rounded-lg py-2.5 px-3 text-sm text-white hover:border-gray-500 focus:outline-none focus:border-gray-400 transition-all duration-300">
+                            <span class="dropdown-selected">Новые</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-vercel-gray transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-[calc(100%+4px)] left-0 w-full bg-black border border-vercel-border rounded-lg shadow-2xl z-50 overflow-hidden opacity-0 invisible scale-95 origin-top transition-all duration-200">
+                            <ul class="py-1 text-sm text-[#EDEDED]">
+                                <li class="dropdown-item active px-3 py-2 cursor-pointer transition-colors duration-150" data-value="newest">Новые</li>
+                                <li class="dropdown-item px-3 py-2 hover:bg-[#111] cursor-pointer transition-colors duration-150" data-value="popular">Популярные</li>
+                                <li class="dropdown-item px-3 py-2 hover:bg-[#111] cursor-pointer transition-colors duration-150" data-value="oldest">Старые</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Теги -->
+                <div class="space-y-3">
+                    <label class="text-[11px] font-semibold text-vercel-gray uppercase tracking-widest">Теги</label>
+                    <div class="relative mb-3 group">
+                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-vercel-gray group-hover:text-white transition-colors duration-300"></i>
+                        <input type="text" placeholder="Поиск тегов..." 
+                            class="w-full bg-black border border-vercel-border rounded-lg py-1.5 pl-8 pr-3 text-xs text-white placeholder-vercel-gray hover:border-gray-500 focus:outline-none focus:border-gray-400 transition-all duration-300">
+                    </div>
+                    
+                    <div class="custom-scrollbar overflow-y-auto max-h-[250px] pr-2 -mr-2">
+                        <div class="flex flex-wrap gap-2" id="tags-container">
+                            <!-- Теги стилизуются через CSS класс .tag-btn -->
+                            <button class="tag-btn text-blue-400 hover:border-blue-500/50">Coding</button>
+                            <button class="tag-btn text-purple-400 hover:border-purple-500/50">Marketing</button>
+                            <button class="tag-btn text-green-400 hover:border-green-500/50">API</button>
+                            <button class="tag-btn text-yellow-400 hover:border-yellow-500/50">Agent</button>
+                            <button class="tag-btn text-pink-400 hover:border-pink-500/50">Design</button>
+                            <button class="tag-btn text-red-400 hover:border-red-500/50">Automation</button>
+                            <button class="tag-btn text-orange-400 hover:border-orange-500/50">SEO</button>
+                            <button class="tag-btn text-teal-400 hover:border-teal-500/50">Writing</button>
+                            <button class="tag-btn text-indigo-400 hover:border-indigo-500/50">Business</button>
+                            <button class="tag-btn text-cyan-400 hover:border-cyan-500/50">Data Science</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Правая часть -->
+        <div class="flex-1 flex flex-col gap-8 min-w-0">
+            
+            <section class="border-b border-vercel-border pb-8">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 transition-all">
+                    Welcome to the Datvex prompt LAB.
+                </h1>
+                <p class="text-vercel-gray text-lg md:text-xl max-w-3xl leading-relaxed">
+                    This is a professional, structured repository containing high-quality English-language prompts designed for specialized tasks across multiple AI systems.
+                </p>
+            </section>
+
+            <!-- Горизонтальный скролл с умными градиентами -->
+            <div class="relative w-full overflow-hidden group/scroll">
+                <!-- Левый градиент (изначально скрыт) -->
+                <div id="grad-left" class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black via-black/80 to-transparent pointer-events-none z-10 opacity-0 transition-opacity duration-300"></div>
+                
+                <div id="category-scroll" class="flex gap-2 overflow-x-auto pb-4 scrollbar-hide px-1 items-center cursor-grab active:cursor-grabbing">
+                    <button class="whitespace-nowrap px-4 py-1.5 bg-[#0070F3] text-white rounded-full text-sm font-medium transition-colors duration-200">Все категории</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 border border-vercel-border hover:border-gray-500 text-vercel-gray hover:text-white bg-black rounded-full text-sm transition-all duration-200">Vibe Coding</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 border border-vercel-border hover:border-gray-500 text-vercel-gray hover:text-white bg-black rounded-full text-sm transition-all duration-200">Video Generation</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 border border-vercel-border hover:border-gray-500 text-vercel-gray hover:text-white bg-black rounded-full text-sm transition-all duration-200">Business Planning</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 border border-vercel-border hover:border-gray-500 text-vercel-gray hover:text-white bg-black rounded-full text-sm transition-all duration-200">Image Generation</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 border border-vercel-border hover:border-gray-500 text-vercel-gray hover:text-white bg-black rounded-full text-sm transition-all duration-200">Marketing</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 border border-vercel-border hover:border-gray-500 text-vercel-gray hover:text-white bg-black rounded-full text-sm transition-all duration-200">Web Development</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 border border-vercel-border hover:border-gray-500 text-vercel-gray hover:text-white bg-black rounded-full text-sm transition-all duration-200">Data Science</button>
+                </div>
+
+                <!-- Правый градиент -->
+                <div id="grad-right" class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-black via-black/80 to-transparent pointer-events-none z-10 opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            <!-- Сетка -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start" id="prompts-grid">
+                <div class="group bg-black border border-vercel-border rounded-xl p-5 hover:border-gray-500 transition-all duration-300 flex flex-col gap-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold text-lg leading-tight text-[#EDEDED] group-hover:text-white transition-colors">Template Prompt</h3>
+                        <span class="text-[10px] uppercase tracking-wider border border-vercel-border px-2 py-0.5 rounded text-vercel-gray bg-[#111]">Type</span>
+                    </div>
+                    <p class="text-sm text-vercel-gray line-clamp-2">Description will appear here...</p>
+                    <div class="relative mt-2">
+                        <div class="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <button class="p-1.5 bg-[#222] border border-[#333] rounded hover:bg-[#333] hover:text-white transition-colors text-vercel-gray">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                        <pre class="bg-[#0A0A0A] border border-[#222] group-hover:border-[#333] rounded-lg p-4 text-xs font-mono text-gray-400 overflow-x-auto h-32 whitespace-pre-wrap transition-colors duration-300">Content will appear here...</pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
