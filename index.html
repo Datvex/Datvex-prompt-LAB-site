@@ -132,6 +132,56 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Теги (Mega Menu) -->
+                    <div class="relative group">
+                        <button data-i18n="nav_tags" class="flex items-center gap-1 px-3 py-1.5 hover:text-white transition-colors duration-200 rounded-full group-hover:bg-[#1A1A1A] group-hover:text-white">
+                            Теги
+                            <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
+                            <div class="w-[300px] bg-black border border-[#222] rounded-xl shadow-[0_16px_40px_rgba(0,0,0,0.8)] p-6 pt-7">
+                                <h4 class="text-[12px] font-medium text-[#888] mb-5">Популярные теги</h4>
+                                <div class="flex flex-col gap-6">
+                                    <a href="#" class="flex items-start gap-3.5 group/item">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-md border border-[#222] bg-[#0A0A0A] group-hover/item:bg-white group-hover/item:border-white transition-all duration-200 shrink-0">
+                                            <i data-lucide="hash" class="w-4 h-4 text-[#888] group-hover/item:text-black transition-colors duration-200"></i>
+                                        </div>
+                                        <div class="flex flex-col pt-0.5">
+                                            <span class="text-[14px] font-medium text-[#EDEDED] group-hover/item:text-white transition-colors duration-200 mb-1 leading-none">Development</span>
+                                            <span class="text-[13px] text-[#888] group-hover/item:text-[#A0A0A0] transition-colors duration-200 leading-snug">Промпты для написания кода.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ролевые промпты (Mega Menu) -->
+                    <div class="relative group">
+                        <button data-i18n="nav_roles" class="flex items-center gap-1 px-3 py-1.5 hover:text-white transition-colors duration-200 rounded-full group-hover:bg-[#1A1A1A] group-hover:text-white">
+                            Ролевые промпты
+                            <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
+                            <div class="w-[300px] bg-black border border-[#222] rounded-xl shadow-[0_16px_40px_rgba(0,0,0,0.8)] p-6 pt-7">
+                                <h4 class="text-[12px] font-medium text-[#888] mb-5">Роли ИИ</h4>
+                                <div class="flex flex-col gap-6">
+                                    <a href="#" class="flex items-start gap-3.5 group/item">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-md border border-[#222] bg-[#0A0A0A] group-hover/item:bg-white group-hover/item:border-white transition-all duration-200 shrink-0">
+                                            <i data-lucide="users" class="w-4 h-4 text-[#888] group-hover/item:text-black transition-colors duration-200"></i>
+                                        </div>
+                                        <div class="flex flex-col pt-0.5">
+                                            <span class="text-[14px] font-medium text-[#EDEDED] group-hover/item:text-white transition-colors duration-200 mb-1 leading-none">Маркетолог</span>
+                                            <span class="text-[13px] text-[#888] group-hover/item:text-[#A0A0A0] transition-colors duration-200 leading-snug">Промпты от лица эксперта по рекламе.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </div>
 
