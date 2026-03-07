@@ -407,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
     setupHorizontalScroll();
     initTags();
+    initRadixNav(); 
     // При первой загрузке меняем язык без анимации (false)
     setLanguage(currentLang, false);
     
@@ -493,6 +494,91 @@ async function loadCategories() {
     } catch (error) {
         console.error('Failed to load categories:', error);
     }
+}
+
+function initRadixNav() {
+    const root = document.getElementById('radix-nav-root');
+    if (!root) return;
+    
+    const triggers = Array.from(root.querySelectorAll('.nav-trigger'));
+    const viewport = document.getElementById('radix-viewport');
+    const contents = Array.from(viewport.querySelectorAll('.radix-content'));
+    
+    let activeIndex = -1;
+    let timeoutId;
+    let isMenuOpen = false;
+
+    function openMenu(index) {
+        const trigger = triggers[index];
+        const menuId = trigger.getAttribute('data-menu');
+        const targetContent = document.getElementById(`content-${menuId}`);
+        if (!targetContent) return;
+
+        triggers.forEach(t => t.classList.remove('active'));
+        trigger.classList.add('active');
+
+        if (!isMenuOpen) {
+            viewport.style.display = 'block';
+            
+            requestAnimationFrame(() => {
+                viewport.setAttribute('data-state', 'open');
+                contents.forEach(c => {
+                    c.removeAttribute('data-active');
+                    c.removeAttribute('data-motion');
+                });
+                targetContent.setAttribute('data-active', 'true');
+                
+                isMenuOpen = true;
+                activeIndex = index;
+            });
+        } else if (activeIndex !== index) {
+            const isMovingRight = index > activeIndex;
+            const oldContent = contents[activeIndex];
+            
+            if (oldContent) {
+                oldContent.removeAttribute('data-active');
+                oldContent.setAttribute('data-motion', isMovingRight ? 'to-start' : 'to-end');
+            }
+
+            targetContent.setAttribute('data-active', 'true');
+            targetContent.setAttribute('data-motion', isMovingRight ? 'from-end' : 'from-start');
+            
+            activeIndex = index;
+        }
+    }
+
+    function closeMenu() {
+        if (!isMenuOpen) return;
+        viewport.setAttribute('data-state', 'closed');
+        triggers.forEach(t => t.classList.remove('active'));
+        
+        setTimeout(() => {
+            if (viewport.getAttribute('data-state') === 'closed') {
+                viewport.style.display = 'none';
+                isMenuOpen = false;
+                activeIndex = -1;
+                contents.forEach(c => {
+                    c.removeAttribute('data-active');
+                    c.removeAttribute('data-motion');
+                });
+            }
+        }, 150);
+    }
+
+    root.addEventListener('mouseleave', () => {
+        timeoutId = setTimeout(closeMenu, 150);
+    });
+
+    root.addEventListener('mouseenter', () => {
+        clearTimeout(timeoutId);
+    });
+
+    triggers.forEach((trigger, index) => {
+        trigger.addEventListener('mouseenter', () => {
+            clearTimeout(timeoutId);
+            openMenu(index);
+        });
+    });
 }
 
 function setupHorizontalScroll() {

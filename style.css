@@ -23,6 +23,92 @@ body {
     border-bottom: 1px solid #222;
 }
 
+/* Radix Navigation Styles */
+@keyframes scaleIn { 
+  0% { opacity: 0; transform: rotateX(-30deg) scale(0.9); }
+  100% { opacity: 1; transform: rotateX(0deg) scale(1); }
+}
+
+@keyframes scaleOut { 
+  0% { opacity: 1; transform: rotateX(0deg) scale(1); }
+  100% { opacity: 0; transform: rotateX(-10deg) scale(0.95); }
+}
+
+@keyframes enterFromRight { 
+  0% { opacity: 0; transform: translateX(200px); }
+  100% { opacity: 1; transform: translateX(0px); }
+}
+
+@keyframes enterFromLeft { 
+  0% { opacity: 0; transform: translateX(-200px); }
+  100% { opacity: 1; transform: translateX(0px); }
+}
+
+@keyframes exitToRight { 
+  0% { opacity: 1; transform: translateX(0px); }
+  100% { opacity: 0; transform: translateX(200px); }
+}
+
+@keyframes exitToLeft { 
+  0% { opacity: 1; transform: translateX(0px); }
+  100% { opacity: 0; transform: translateX(-200px); }
+}
+
+#radix-positioner {
+  will-change: transform;
+}
+
+.radix-viewport {
+  transform-origin: top left;
+}
+
+.radix-viewport[data-state="open"] {
+  animation: scaleIn 0.15s ease forwards;
+}
+
+.radix-viewport[data-state="closed"] {
+  animation: scaleOut 0.15s ease forwards;
+}
+
+.radix-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radix-content[data-active="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.radix-content[data-motion="from-start"] {
+  animation: enterFromLeft 0.25s ease forwards;
+}
+
+.radix-content[data-motion="from-end"] {
+  animation: enterFromRight 0.25s ease forwards;
+}
+
+.radix-content[data-motion="to-start"] {
+  animation: exitToLeft 0.25s ease forwards;
+}
+
+.radix-content[data-motion="to-end"] {
+  animation: exitToRight 0.25s ease forwards;
+}
+
+.nav-trigger.active {
+  background-color: #1A1A1A;
+  color: white;
+}
+
+.nav-trigger.active i {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Styles */
 .dropdown-menu {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8), 0 0 0 1px #333;
 }
@@ -45,6 +131,7 @@ body {
     background-color: #0060df;
 }
 
+/* Tag Styles */
 .tag-btn {
     border: 1px solid #222;
     background-color: #0A0A0A;
