@@ -6,8 +6,10 @@ const translations = {
         nav_categories: "Categories",
         nav_models: "Models",
         nav_tags: "Tags",
-        nav_roles: "Role Prompts",
         nav_repo: "Repository",
+        sidebar_title: "Prompts",
+        counter_total: "Total: ",
+        counter_found: "Total: ",
         search_label: "Search",
         search_placeholder: "Search prompts...",
         ai_search: "AI Search",
@@ -31,12 +33,22 @@ const translations = {
         dropdown_cat_desc: "Go to the category list",
         dropdown_tags_title: "Tags List",
         dropdown_tags_desc: "Go to the tags list",
-        dropdown_roles_title: "Role Prompts List",
-        dropdown_roles_desc: "Go to the role prompts list",
         categories_page_title: "Categories",
         categories_page_desc: "Category list",
-        roles_page_title: "Role Prompts",
-        roles_page_desc: "Role prompts list"
+        themes_count: "themes",
+        model_text_title: "Text",
+        model_text_desc: "Prompts for text generation",
+        model_image_title: "Image",
+        model_image_desc: "Prompts for image generation",
+        model_video_title: "Video",
+        model_video_desc: "Prompts for video generation",
+        model_music_title: "Music",
+        model_music_desc: "Prompts for music generation",
+        model_voice_title: "Voice",
+        model_voice_desc: "Prompts for voice generation",
+        sidebar_title: "Prompts",
+        counter_total: "Total: ",
+        counter_found: "Found: "
     },
     ru: {
         lang_menu: "Язык интерфейса",
@@ -45,8 +57,10 @@ const translations = {
         nav_categories: "Категории",
         nav_models: "Модели",
         nav_tags: "Теги",
-        nav_roles: "Ролевые промпты",
         nav_repo: "Репозиторий",
+        sidebar_title: "Промпты",
+        counter_total: "Всего: ",
+        counter_found: "Найдено: ",
         search_label: "Поиск",
         search_placeholder: "Поиск промптов...",
         ai_search: "AI Поиск",
@@ -70,12 +84,19 @@ const translations = {
         dropdown_cat_desc: "Перейти к списку категорий",
         dropdown_tags_title: "Список тегов",
         dropdown_tags_desc: "Перейти в список тегов",
-        dropdown_roles_title: "Список ролевых промптов",
-        dropdown_roles_desc: "Перейти в список ролевых промптов",
         categories_page_title: "Категории",
         categories_page_desc: "Список категорий",
-        roles_page_title: "Ролевые промпты",
-        roles_page_desc: "Список ролевых промптов"
+        themes_count: "тем",
+        model_text_title: "Текст",
+        model_text_desc: "Промпты для генерации текста",
+        model_image_title: "Изображение",
+        model_image_desc: "Промпты для генерации изображений",
+        model_video_title: "Видео",
+        model_video_desc: "Промпты для генерации видео",
+        model_music_title: "Музыка",
+        model_music_desc: "Промпты для генерации музыки",
+        model_voice_title: "Голос",
+        model_voice_desc: "Промпты для генерации голоса"
     },
     zh: {
         lang_menu: "界面语言",
@@ -84,8 +105,10 @@ const translations = {
         nav_categories: "类别",
         nav_models: "模型",
         nav_tags: "标签",
-        nav_roles: "角色提示词",
         nav_repo: "代码库",
+        sidebar_title: "提示词",
+        counter_total: "总计: ",
+        counter_found: "找到: ",
         search_label: "搜索",
         search_placeholder: "搜索提示词...",
         ai_search: "AI 搜索",
@@ -109,12 +132,19 @@ const translations = {
         dropdown_cat_desc: "前往类别列表",
         dropdown_tags_title: "标签列表",
         dropdown_tags_desc: "前往标签列表",
-        dropdown_roles_title: "角色提示词列表",
-        dropdown_roles_desc: "前往角色提示词列表",
         categories_page_title: "类别",
         categories_page_desc: "类别列表",
-        roles_page_title: "角色提示词",
-        roles_page_desc: "角色提示词列表"
+        themes_count: "个主题",
+        model_text_title: "文本",
+        model_text_desc: "用于文本生成的提示词",
+        model_image_title: "图像",
+        model_image_desc: "用于图像生成的提示词",
+        model_video_title: "视频",
+        model_video_desc: "用于视频生成的提示词",
+        model_music_title: "音乐",
+        model_music_desc: "用于音乐生成的提示词",
+        model_voice_title: "语音",
+        model_voice_desc: "用于语音生成的提示词"
     },
     es: {
         lang_menu: "Idioma de la interfaz",
@@ -123,8 +153,10 @@ const translations = {
         nav_categories: "Categorías",
         nav_models: "Modelos",
         nav_tags: "Etiquetas",
-        nav_roles: "Prompts de Rol",
         nav_repo: "Repositorio",
+        sidebar_title: "Prompts",
+        counter_total: "Total: ",
+        counter_found: "Encontrados: ",
         search_label: "Buscar",
         search_placeholder: "Buscar prompts...",
         ai_search: "Búsqueda AI",
@@ -148,12 +180,19 @@ const translations = {
         dropdown_cat_desc: "Ir a la lista de categorías",
         dropdown_tags_title: "Lista de etiquetas",
         dropdown_tags_desc: "Ir a la lista de etiquetas",
-        dropdown_roles_title: "Lista de prompts de rol",
-        dropdown_roles_desc: "Ir a la lista de prompts de rol",
         categories_page_title: "Categorías",
         categories_page_desc: "Lista de categorías",
-        roles_page_title: "Prompts de Rol",
-        roles_page_desc: "Lista de prompts de rol"
+        themes_count: "temas",
+        model_text_title: "Texto",
+        model_text_desc: "Prompts para generación de texto",
+        model_image_title: "Imagen",
+        model_image_desc: "Prompts para generación de imágenes",
+        model_video_title: "Video",
+        model_video_desc: "Prompts para generación de video",
+        model_music_title: "Música",
+        model_music_desc: "Prompts para generación de música",
+        model_voice_title: "Voz",
+        model_voice_desc: "Prompts para generación de voz"
     },
     de: {
         lang_menu: "Oberflächensprache",
@@ -162,8 +201,10 @@ const translations = {
         nav_categories: "Kategorien",
         nav_models: "Modelle",
         nav_tags: "Tags",
-        nav_roles: "Rollen-Prompts",
         nav_repo: "Repository",
+        sidebar_title: "Prompts",
+        counter_total: "Gesamt: ",
+        counter_found: "Gefunden: ",
         search_label: "Suche",
         search_placeholder: "Prompts suchen...",
         ai_search: "KI-Suche",
@@ -187,12 +228,19 @@ const translations = {
         dropdown_cat_desc: "Zur Kategorienliste",
         dropdown_tags_title: "Tag-Liste",
         dropdown_tags_desc: "Zur Tag-Liste",
-        dropdown_roles_title: "Rollen-Prompts-Liste",
-        dropdown_roles_desc: "Zur Rollen-Prompts-Liste",
         categories_page_title: "Kategorien",
         categories_page_desc: "Kategorienliste",
-        roles_page_title: "Rollen-Prompts",
-        roles_page_desc: "Rollen-Prompts-Liste"
+        themes_count: "Themen",
+        model_text_title: "Text",
+        model_text_desc: "Prompts für die Texterstellung",
+        model_image_title: "Bild",
+        model_image_desc: "Prompts für die Bilderstellung",
+        model_video_title: "Video",
+        model_video_desc: "Prompts für die Videoerstellung",
+        model_music_title: "Musik",
+        model_music_desc: "Prompts für die Musikerstellung",
+        model_voice_title: "Stimme",
+        model_voice_desc: "Prompts für die Spracherstellung"
     },
     hi: {
         lang_menu: "इंटरफ़ेस भाषा",
@@ -201,8 +249,10 @@ const translations = {
         nav_categories: "श्रेणियाँ",
         nav_models: "मॉडल",
         nav_tags: "टैग",
-        nav_roles: "रोल प्रॉम्ट्स",
         nav_repo: "रिपॉजिटरी",
+        sidebar_title: "प्रॉम्प्ट्स",
+        counter_total: "कुल: ",
+        counter_found: "मिला: ",
         search_label: "खोजें",
         search_placeholder: "प्रॉम्ट्स खोजें...",
         ai_search: "AI खोज",
@@ -226,12 +276,19 @@ const translations = {
         dropdown_cat_desc: "श्रेणी सूची पर जाएं",
         dropdown_tags_title: "टैग सूची",
         dropdown_tags_desc: "टैग सूची पर जाएं",
-        dropdown_roles_title: "रोल प्रॉम्ट्स सूची",
-        dropdown_roles_desc: "रोल प्रॉम्ट्स सूची पर जाएं",
         categories_page_title: "श्रेणियाँ",
         categories_page_desc: "श्रेणी सूची",
-        roles_page_title: "रोल प्रॉम्ट्स",
-        roles_page_desc: "रोल प्रॉम्ट्स सूची"
+        themes_count: "विषय",
+        model_text_title: "टेक्स्ट",
+        model_text_desc: "टेक्स्ट जनरेशन के लिए प्रॉम्ट्स",
+        model_image_title: "छवि",
+        model_image_desc: "छवि जनरेशन के लिए प्रॉम्ट्स",
+        model_video_title: "वीडियो",
+        model_video_desc: "वीडियो जनरेशन के लिए प्रॉम्ट्स",
+        model_music_title: "संगीत",
+        model_music_desc: "संगीत जनरेशन के लिए प्रॉम्ट्स",
+        model_voice_title: "आवाज़",
+        model_voice_desc: "आवाज़ जनरेशन के लिए प्रॉम्ट्स"
     },
     fr: {
         lang_menu: "Langue de l'interface",
@@ -240,8 +297,10 @@ const translations = {
         nav_categories: "Catégories",
         nav_models: "Modèles",
         nav_tags: "Balises",
-        nav_roles: "Prompts de Rôle",
         nav_repo: "Dépôt",
+        sidebar_title: "Prompts",
+        counter_total: "Total: ",
+        counter_found: "Trouvés: ",
         search_label: "Recherche",
         search_placeholder: "Rechercher des prompts...",
         ai_search: "Recherche IA",
@@ -265,12 +324,19 @@ const translations = {
         dropdown_cat_desc: "Aller à la liste des catégories",
         dropdown_tags_title: "Liste des balises",
         dropdown_tags_desc: "Aller à la liste des balises",
-        dropdown_roles_title: "Liste des prompts de rôle",
-        dropdown_roles_desc: "Aller à la liste des prompts de rôle",
         categories_page_title: "Catégories",
         categories_page_desc: "Liste des catégories",
-        roles_page_title: "Prompts de Rôle",
-        roles_page_desc: "Liste des prompts de rôle"
+        themes_count: "thèmes",
+        model_text_title: "Texte",
+        model_text_desc: "Prompts pour la génération de texte",
+        model_image_title: "Image",
+        model_image_desc: "Prompts pour la génération d'images",
+        model_video_title: "Vidéo",
+        model_video_desc: "Prompts pour la génération de vidéo",
+        model_music_title: "Musique",
+        model_music_desc: "Prompts pour la génération de musique",
+        model_voice_title: "Voix",
+        model_voice_desc: "Prompts pour la génération de voix"
     },
     it: {
         lang_menu: "Lingua dell'interfaccia",
@@ -279,8 +345,10 @@ const translations = {
         nav_categories: "Categorie",
         nav_models: "Modelli",
         nav_tags: "Tag",
-        nav_roles: "Prompt di Ruolo",
         nav_repo: "Repository",
+        sidebar_title: "Prompt",
+        counter_total: "Totale: ",
+        counter_found: "Trovati: ",
         search_label: "Cerca",
         search_placeholder: "Cerca prompt...",
         ai_search: "Ricerca IA",
@@ -304,12 +372,19 @@ const translations = {
         dropdown_cat_desc: "Vai all'elenco delle categorie",
         dropdown_tags_title: "Elenco tag",
         dropdown_tags_desc: "Vai all'elenco dei tag",
-        dropdown_roles_title: "Elenco prompt di ruolo",
-        dropdown_roles_desc: "Vai all'elenco dei prompt di ruolo",
         categories_page_title: "Categorie",
         categories_page_desc: "Elenco categorie",
-        roles_page_title: "Prompt di Ruolo",
-        roles_page_desc: "Elenco prompt di ruolo"
+        themes_count: "temi",
+        model_text_title: "Testo",
+        model_text_desc: "Prompt per la generazione di testo",
+        model_image_title: "Immagine",
+        model_image_desc: "Prompt per la generazione di immagini",
+        model_video_title: "Video",
+        model_video_desc: "Prompt per la generazione di video",
+        model_music_title: "Musica",
+        model_music_desc: "Prompt per la generazione di musica",
+        model_voice_title: "Voce",
+        model_voice_desc: "Prompt per la generazione di voce"
     },
     pt: {
         lang_menu: "Idioma da interface",
@@ -318,8 +393,10 @@ const translations = {
         nav_categories: "Categorias",
         nav_models: "Modelos",
         nav_tags: "Tags",
-        nav_roles: "Prompts de Função",
         nav_repo: "Repositório",
+        sidebar_title: "Prompts",
+        counter_total: "Total: ",
+        counter_found: "Encontrados: ",
         search_label: "Buscar",
         search_placeholder: "Buscar prompts...",
         ai_search: "Busca com IA",
@@ -343,12 +420,19 @@ const translations = {
         dropdown_cat_desc: "Ir para a lista de categorias",
         dropdown_tags_title: "Lista de tags",
         dropdown_tags_desc: "Ir para a lista de tags",
-        dropdown_roles_title: "Lista de prompts de função",
-        dropdown_roles_desc: "Ir para a lista de prompts de função",
         categories_page_title: "Categorias",
         categories_page_desc: "Lista de categorias",
-        roles_page_title: "Prompts de Função",
-        roles_page_desc: "Lista de prompts de função"
+        themes_count: "temas",
+        model_text_title: "Texto",
+        model_text_desc: "Prompts para geração de texto",
+        model_image_title: "Imagem",
+        model_image_desc: "Prompts para geração de imagens",
+        model_video_title: "Vídeo",
+        model_video_desc: "Prompts para geração de vídeo",
+        model_music_title: "Música",
+        model_music_desc: "Prompts para geração de música",
+        model_voice_title: "Voz",
+        model_voice_desc: "Prompts para geração de voz"
     },
     ja: {
         lang_menu: "インターフェース言語",
@@ -357,8 +441,10 @@ const translations = {
         nav_categories: "カテゴリー",
         nav_models: "モデル",
         nav_tags: "タグ",
-        nav_roles: "ロールプロンプト",
         nav_repo: "リポジトリ",
+        sidebar_title: "プロンプト",
+        counter_total: "合計: ",
+        counter_found: "見つかりました: ",
         search_label: "検索",
         search_placeholder: "プロンプトを検索...",
         ai_search: "AI検索",
@@ -382,12 +468,19 @@ const translations = {
         dropdown_cat_desc: "カテゴリ一覧へ移動",
         dropdown_tags_title: "タグ一覧",
         dropdown_tags_desc: "タグ一覧へ移動",
-        dropdown_roles_title: "ロールプロンプト一覧",
-        dropdown_roles_desc: "ロールプロンプト一覧へ移動",
         categories_page_title: "カテゴリー",
         categories_page_desc: "カテゴリ一覧",
-        roles_page_title: "ロールプロンプト",
-        roles_page_desc: "ロールプロンプト一覧"
+        themes_count: "テーマ",
+        model_text_title: "テキスト",
+        model_text_desc: "テキスト生成用のプロンプト",
+        model_image_title: "画像",
+        model_image_desc: "画像生成用のプロンプト",
+        model_video_title: "動画",
+        model_video_desc: "動画生成用のプロンプト",
+        model_music_title: "音楽",
+        model_music_desc: "音楽生成用のプロンプト",
+        model_voice_title: "音声",
+        model_voice_desc: "音声生成用のプロンプト"
     },
     ko: {
         lang_menu: "인터페이스 언어",
@@ -396,8 +489,10 @@ const translations = {
         nav_categories: "카테고리",
         nav_models: "모델",
         nav_tags: "태그",
-        nav_roles: "역할 프롬프트",
         nav_repo: "저장소",
+        sidebar_title: "프롬프트",
+        counter_total: "전체: ",
+        counter_found: "발견: ",
         search_label: "검색",
         search_placeholder: "프롬프트 검색...",
         ai_search: "AI 검색",
@@ -421,12 +516,19 @@ const translations = {
         dropdown_cat_desc: "카테고리 목록으로 이동",
         dropdown_tags_title: "태그 목록",
         dropdown_tags_desc: "태그 목록으로 이동",
-        dropdown_roles_title: "역할 프롬프트 목록",
-        dropdown_roles_desc: "역할 프롬프트 목록으로 이동",
         categories_page_title: "카테고리",
         categories_page_desc: "카테고리 목록",
-        roles_page_title: "역할 프롬프트",
-        roles_page_desc: "역할 프롬프트 목록"
+        themes_count: "개 주제",
+        model_text_title: "텍스트",
+        model_text_desc: "텍스트 생성을 위한 프롬프트",
+        model_image_title: "이미지",
+        model_image_desc: "이미지 생성을 위한 프롬프트",
+        model_video_title: "비디오",
+        model_video_desc: "비디오 생성을 위한 프롬프트",
+        model_music_title: "음악",
+        model_music_desc: "음악 생성을 위한 프롬프트",
+        model_voice_title: "음성",
+        model_voice_desc: "음성 생성을 위한 프롬프트"
     }
 };
 
@@ -513,7 +615,7 @@ function setLanguage(lang, animate) {
 }
 
 function switchView(viewId) {
-    const views = ['main-view', 'tags-view', 'categories-view', 'roles-view'];
+    const views = ['main-view', 'tags-view', 'categories-view'];
     for (let i = 0; i < views.length; i++) {
         const el = document.getElementById(views[i]);
         if (!el) continue;
@@ -535,6 +637,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSidebarTags();
     initRadixNav();
     generateTagsPage();
+    generateCategoriesPage(); // <--- Добавляем эту строку
     initViewSwitcher();
     setLanguage(currentLang, false);
 
@@ -630,9 +733,8 @@ function initRadixNav() {
 
     const panelSizes = {
         categories: [480, 150],
-        models: [480, 220],
-        tags: [480, 150],
-        roles: [480, 150]
+        models: [480, 360],
+        tags: [480, 150]
     };
 
     function open(index) {
@@ -764,6 +866,7 @@ function generateTagsPage() {
 
     const frag = document.createDocumentFragment();
 
+    // Возвращаем ваши 250 тегов
     for (let i = 1; i <= 250; i++) {
         const c = colors[(Math.random() * colors.length) | 0];
         const a = document.createElement('a');
@@ -776,10 +879,12 @@ function generateTagsPage() {
 
         const label = document.createElement('span');
         label.className = 'tag-label';
+        // Возвращаем оригинальный текст
         label.textContent = 'text' + i;
 
         const count = document.createElement('span');
         count.className = 'tag-count';
+        // Возвращаем оригинальный счетчик
         count.textContent = '0';
 
         a.appendChild(dot);
@@ -788,7 +893,110 @@ function generateTagsPage() {
         frag.appendChild(a);
     }
 
+    container.innerHTML = '';
     container.appendChild(frag);
+}
+
+function generateCategoriesPage() {
+    const container = $('#categories-container');
+    if (!container) return;
+
+    const categoriesData = [
+        {
+            "group": "Text / LLM (Language Models)",
+            "icon": "📝",
+            "items": [
+                { "id": "programming", "name": "Programming & Tech" },
+                { "id": "writing", "name": "Writing & Content" },
+                { "id": "marketing", "name": "Marketing, SEO & Growth" },
+                { "id": "business", "name": "Business & Strategy" },
+                { "id": "productivity", "name": "Productivity & Workflow" },
+                { "id": "education", "name": "Education & Learning" },
+                { "id": "career", "name": "Career & Hiring" },
+                { "id": "customer_support", "name": "Customer Support & Success" }
+            ]
+        },
+        {
+            "group": "Image Generation",
+            "icon": "🎨",
+            "items": [
+                { "id": "image_general", "name": "Image Prompts (General)" },
+                { "id": "image_product", "name": "Product & E-commerce" },
+                { "id": "image_branding", "name": "Logos & Branding" },
+                { "id": "image_concept_art", "name": "Illustration & Concept Art" },
+                { "id": "image_photography", "name": "Photography Styles & Lighting" }
+            ]
+        },
+        {
+            "group": "Video Generation",
+            "icon": "🎬",
+            "items": [
+                { "id": "video_general", "name": "Video Prompts (General)" },
+                { "id": "video_storyboard", "name": "Storyboards & Shot Lists" },
+                { "id": "video_ads", "name": "Ads & Social Clips" },
+                { "id": "video_cinematic", "name": "Cinematic Styles & Camera Moves" }
+            ]
+        },
+        {
+            "group": "Audio / Music Generation",
+            "icon": "🎵",
+            "items": [
+                { "id": "music_general", "name": "Music Prompts (General)" },
+                { "id": "music_genres", "name": "Genres, Mood & Structure" },
+                { "id": "music_lyrics", "name": "Lyrics & Songwriting" },
+                { "id": "audio_sfx", "name": "Sound Effects (SFX)" }
+            ]
+        },
+        {
+            "group": "Voice Generation",
+            "icon": "🎙️",
+            "items": [
+                { "id": "voice_general", "name": "Voice Prompts (General)" },
+                { "id": "voiceover", "name": "Voiceovers & Narration" },
+                { "id": "voice_characters", "name": "Characters & Acting" },
+                { "id": "voice_dubbing", "name": "Dubbing & Localization" }
+            ]
+        }
+    ];
+
+    let html = '';
+
+    categoriesData.forEach(cat => {
+        let itemsHtml = '';
+        
+        cat.items.forEach(item => {
+            // Генерируем элементы (темы)
+            itemsHtml += `
+                <a href="#" data-id="${item.id}" class="group py-3 px-4 -mx-4 hover:bg-[#111] rounded-lg transition-colors flex items-center justify-between">
+                    <div>
+                        <h3 class="text-[15px] text-[#EDEDED] font-medium group-hover:text-white transition-colors">${item.name}</h3>
+                    </div>
+                </a>
+            `;
+        });
+
+        // Генерируем саму группу (заголовок + список тем)
+        html += `
+            <div class="flex flex-col border-b border-[#222] pb-6 last:border-0">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-xl">${cat.icon}</span>
+                    <h2 class="text-lg font-semibold text-white tracking-tight">${cat.group}</h2>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-[#666]"></i>
+                    <span class="text-[13px] text-[#888]">${cat.items.length} <span data-i18n="themes_count">тем</span></span>
+                </div>
+                <div class="flex flex-col">
+                    ${itemsHtml}
+                </div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+    
+    // Инициализируем новые иконки chevron-right, которые мы только что вставили
+    if (window.lucide) {
+        lucide.createIcons();
+    }
 }
 
 function initViewSwitcher() {
@@ -817,13 +1025,25 @@ function initViewSwitcher() {
             switchView('tags-view');
         });
     }
+}
 
-    const linkRoles = $('#nav-link-roles');
-    if (linkRoles) {
-        linkRoles.addEventListener('click', e => {
-            e.preventDefault();
-            if (closeRadixMenu) closeRadixMenu();
-            switchView('roles-view');
-        });
+// Функция для обновления счетчика промптов
+function updatePromptCounter(count, isFiltered = false) {
+    const counterEl = document.getElementById('prompt-counter');
+    if (!counterEl) return;
+    
+    const t = translations[currentLang];
+    // Берем перевод из словаря или используем дефолтные значения
+    const prefix = isFiltered ? (t.counter_found || "Found: ") : (t.counter_total || "Total: ");
+    
+    counterEl.textContent = prefix + count;
+    
+    // Меняем цвет при активном поиске/фильтре для привлечения внимания
+    if (isFiltered) {
+        counterEl.classList.remove('text-[#888]');
+        counterEl.classList.add('text-blue-400');
+    } else {
+        counterEl.classList.add('text-[#888]');
+        counterEl.classList.remove('text-blue-400');
     }
 }
