@@ -149,6 +149,50 @@ body {
   font-weight: 500;
 }
 
+/* Стили для AI-меню и модального окна */
+#ai-selector-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+#ai-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#ai-modal.active #ai-modal-content {
+  transform: scale(1);
+}
+
+/* Стили для AI-табов с плавной анимацией */
+#ai-tabs-viewport {
+  position: relative;
+  overflow: hidden;
+  transition: height 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#ai-tabs-track {
+  display: flex;
+  width: 200%;
+  align-items: flex-start;
+  will-change: transform;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#ai-tabs-track > .ai-tab-content {
+  width: 50%;
+  flex: 0 0 50%;
+}
+
+#ai-selector-menu[data-tab="chat"] #ai-tabs-track {
+  transform: translateX(0);
+}
+
+#ai-selector-menu[data-tab="code"] #ai-tabs-track {
+  transform: translateX(-50%);
+}
+
 .tag-btn.tag-active:hover {
   opacity: 0.9;
 }

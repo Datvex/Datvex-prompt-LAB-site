@@ -48,7 +48,10 @@ const translations = {
         model_voice_desc: "Prompts for voice generation",
         sidebar_title: "Prompts",
         counter_total: "Total: ",
-        counter_found: "Found: "
+        counter_found: "Found: ",
+        modal_copy_title: "Prompt copied",
+        modal_cancel: "Cancel",
+        modal_open: "Open "
     },
     ru: {
         lang_menu: "Язык интерфейса",
@@ -96,7 +99,10 @@ const translations = {
         model_music_title: "Музыка",
         model_music_desc: "Промпты для генерации музыки",
         model_voice_title: "Голос",
-        model_voice_desc: "Промпты для генерации голоса"
+        model_voice_desc: "Промпты для генерации голоса",
+        modal_copy_title: "Промпт скопирован",
+        modal_cancel: "Отмена",
+        modal_open: "Открыть "
     },
     zh: {
         lang_menu: "界面语言",
@@ -144,7 +150,10 @@ const translations = {
         model_music_title: "音乐",
         model_music_desc: "用于音乐生成的提示词",
         model_voice_title: "语音",
-        model_voice_desc: "用于语音生成的提示词"
+        model_voice_desc: "用于语音生成的提示词",
+        modal_copy_title: "提示词已复制",
+        modal_cancel: "取消",
+        modal_open: "打开 "
     },
     es: {
         lang_menu: "Idioma de la interfaz",
@@ -192,7 +201,10 @@ const translations = {
         model_music_title: "Música",
         model_music_desc: "Prompts para generación de música",
         model_voice_title: "Voz",
-        model_voice_desc: "Prompts para generación de voz"
+        model_voice_desc: "Prompts para generación de voz",
+        modal_copy_title: "Prompt copiado",
+        modal_cancel: "Cancelar",
+        modal_open: "Abrir "
     },
     de: {
         lang_menu: "Oberflächensprache",
@@ -240,7 +252,10 @@ const translations = {
         model_music_title: "Musik",
         model_music_desc: "Prompts für die Musikerstellung",
         model_voice_title: "Stimme",
-        model_voice_desc: "Prompts für die Spracherstellung"
+        model_voice_desc: "Prompts für die Spracherstellung",
+        modal_copy_title: "Prompt kopiert",
+        modal_cancel: "Abbrechen",
+        modal_open: "Öffnen "
     },
     hi: {
         lang_menu: "इंटरफ़ेस भाषा",
@@ -288,7 +303,10 @@ const translations = {
         model_music_title: "संगीत",
         model_music_desc: "संगीत जनरेशन के लिए प्रॉम्ट्स",
         model_voice_title: "आवाज़",
-        model_voice_desc: "आवाज़ जनरेशन के लिए प्रॉम्ट्स"
+        model_voice_desc: "आवाज़ जनरेशन के लिए प्रॉम्ट्स",
+        modal_copy_title: "प्रॉम्ट कॉपी किया गया",
+        modal_cancel: "रद्द करें",
+        modal_open: "खोलें "
     },
     fr: {
         lang_menu: "Langue de l'interface",
@@ -336,7 +354,10 @@ const translations = {
         model_music_title: "Musique",
         model_music_desc: "Prompts pour la génération de musique",
         model_voice_title: "Voix",
-        model_voice_desc: "Prompts pour la génération de voix"
+        model_voice_desc: "Prompts pour la génération de voix",
+        modal_copy_title: "Prompt copié",
+        modal_cancel: "Annuler",
+        modal_open: "Ouvrir "
     },
     it: {
         lang_menu: "Lingua dell'interfaccia",
@@ -384,7 +405,10 @@ const translations = {
         model_music_title: "Musica",
         model_music_desc: "Prompt per la generazione di musica",
         model_voice_title: "Voce",
-        model_voice_desc: "Prompt per la generazione di voce"
+        model_voice_desc: "Prompt per la generazione di voce",
+        modal_copy_title: "Prompt copiato",
+        modal_cancel: "Annulla",
+        modal_open: "Apri "
     },
     pt: {
         lang_menu: "Idioma da interface",
@@ -432,7 +456,10 @@ const translations = {
         model_music_title: "Música",
         model_music_desc: "Prompts para geração de música",
         model_voice_title: "Voz",
-        model_voice_desc: "Prompts para geração de voz"
+        model_voice_desc: "Prompts para geração de voz",
+        modal_copy_title: "Prompt copiado",
+        modal_cancel: "Cancelar",
+        modal_open: "Abrir "
     },
     ja: {
         lang_menu: "インターフェース言語",
@@ -480,7 +507,10 @@ const translations = {
         model_music_title: "音楽",
         model_music_desc: "音楽生成用のプロンプト",
         model_voice_title: "音声",
-        model_voice_desc: "音声生成用のプロンプト"
+        model_voice_desc: "音声生成用のプロンプト",
+        modal_copy_title: "プロンプトをコピーしました",
+        modal_cancel: "キャンセル",
+        modal_open: "開く "
     },
     ko: {
         lang_menu: "인터페이스 언어",
@@ -528,7 +558,10 @@ const translations = {
         model_music_title: "음악",
         model_music_desc: "음악 생성을 위한 프롬프트",
         model_voice_title: "음성",
-        model_voice_desc: "음성 생성을 위한 프롬프트"
+        model_voice_desc: "음성 생성을 위한 프롬프트",
+        modal_copy_title: "프롬프트가 복사되었습니다",
+        modal_cancel: "취소",
+        modal_open: "열기 "
     }
 };
 
@@ -639,6 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
     generateTagsPage();
     generateCategoriesPage(); // <--- Добавляем эту строку
     initViewSwitcher();
+    initAISelector(); // <--- Добавляем инициализацию логики ИИ меню
     setLanguage(currentLang, false);
 
     $('#lang-buttons').addEventListener('click', e => {
@@ -1046,4 +1080,178 @@ function updatePromptCounter(count, isFiltered = false) {
         counterEl.classList.add('text-[#888]');
         counterEl.classList.remove('text-blue-400');
     }
+}
+
+// --- ЛОГИКА МЕНЮ ВЫБОРА ИИ И ЗАПУСКА ПРОМПТОВ ---
+function initAISelector() {
+    const menu = $('#ai-selector-menu');
+    const modal = $('#ai-modal');
+    if (!menu || !modal) return;
+
+    const chatTabBtn = $('#ai-tab-btn-chat');
+    const codeTabBtn = $('#ai-tab-btn-code');
+    const chatTabContent = $('#ai-tab-chat');
+    const codeTabContent = $('#ai-tab-code');
+    const tabsViewport = $('#ai-tabs-viewport');
+
+    if (!chatTabBtn || !codeTabBtn || !chatTabContent || !codeTabContent || !tabsViewport) return;
+
+    function getTabHeight(el) {
+        const maxHeight = parseFloat(getComputedStyle(el).maxHeight);
+        if (Number.isFinite(maxHeight)) {
+            return Math.min(el.scrollHeight, maxHeight);
+        }
+        return el.scrollHeight;
+    }
+
+    function setActiveTab(tab, immediate = false) {
+        const isChat = tab === 'chat';
+        const activeContent = isChat ? chatTabContent : codeTabContent;
+        const nextHeight = getTabHeight(activeContent);
+
+        chatTabBtn.className = isChat
+            ? 'ai-tab-btn flex-1 py-1.5 text-sm font-medium rounded-md bg-[#2A2A2A] text-white transition-colors cursor-pointer'
+            : 'ai-tab-btn flex-1 py-1.5 text-sm font-medium rounded-md text-[#888] hover:text-white transition-colors cursor-pointer';
+
+        codeTabBtn.className = isChat
+            ? 'ai-tab-btn flex-1 py-1.5 text-sm font-medium rounded-md text-[#888] hover:text-white transition-colors cursor-pointer'
+            : 'ai-tab-btn flex-1 py-1.5 text-sm font-medium rounded-md bg-[#2A2A2A] text-white transition-colors cursor-pointer';
+
+        if (immediate) {
+            menu.dataset.tab = tab;
+            tabsViewport.style.height = nextHeight + 'px';
+            return;
+        }
+
+        const currentHeight = tabsViewport.getBoundingClientRect().height || nextHeight;
+        tabsViewport.style.height = currentHeight + 'px';
+        menu.dataset.tab = tab;
+
+        requestAnimationFrame(() => {
+            tabsViewport.style.height = nextHeight + 'px';
+        });
+    }
+
+    chatTabBtn.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        setActiveTab('chat');
+    });
+
+    codeTabBtn.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        setActiveTab('code');
+    });
+
+    let currentPromptText = '';
+
+    const webLinks = {
+        chatgpt: text => `https://chatgpt.com/?prompt=${encodeURIComponent(text)}`,
+        claude: text => `https://claude.ai/new?q=${encodeURIComponent(text)}`,
+        grok: text => `https://grok.com/chat?reasoningMode=none&q=${encodeURIComponent(text)}`,
+        manus: text => `https://manus.im/app?q=${encodeURIComponent(text)}`,
+        perplexity: text => `https://www.perplexity.ai/search/new?q=${encodeURIComponent(text)}`,
+        bolt: text => `https://bolt.new/?prompt=${encodeURIComponent(text)}`,
+        v0: text => `https://v0.app/chat?q=${encodeURIComponent(text)}`
+    };
+
+    function closeMenu() {
+        menu.classList.remove('active');
+        setTimeout(() => {
+            if (!menu.classList.contains('active')) {
+                menu.style.display = 'none';
+            }
+        }, 200);
+    }
+
+    function openMenu(triggerBtn) {
+        const card = triggerBtn.closest('.group');
+        if (!card) return;
+
+        const promptContent = card.querySelector('.prompt-content');
+        currentPromptText = promptContent ? promptContent.textContent : '';
+
+        const rect = triggerBtn.getBoundingClientRect();
+        menu.style.display = 'block';
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        if (spaceBelow < 350) {
+            menu.style.top = `${rect.top + window.scrollY - 320}px`;
+            menu.style.transformOrigin = 'bottom right';
+        } else {
+            menu.style.top = `${rect.bottom + window.scrollY + 8}px`;
+            menu.style.transformOrigin = 'top right';
+        }
+
+        menu.style.left = `${rect.right + window.scrollX - 240}px`;
+        setActiveTab('chat', true);
+        requestAnimationFrame(() => menu.classList.add('active'));
+    }
+
+    document.addEventListener('click', e => {
+        const triggerBtn = e.target.closest('.ai-trigger-btn');
+        if (triggerBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+            openMenu(triggerBtn);
+            return;
+        }
+
+        const modelBtn = e.target.closest('.ai-model-btn');
+        if (modelBtn && menu.contains(modelBtn)) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const modelId = modelBtn.dataset.model;
+            const type = modelBtn.dataset.type;
+
+            closeMenu();
+
+            if (type === 'web') {
+                const linkBuilder = webLinks[modelId];
+                if (linkBuilder) {
+                    window.open(linkBuilder(currentPromptText), '_blank');
+                }
+            } else if (type === 'modal') {
+                navigator.clipboard.writeText(currentPromptText).then(() => {
+                    const aiName = modelBtn.dataset.name;
+                    const aiUrl = modelBtn.dataset.url;
+                    const t = translations[currentLang] || translations.ru;
+
+                    $('#ai-modal-name').textContent = aiName;
+                    $('#ai-modal-btn-text').textContent = (t.modal_open || 'Открыть ') + aiName;
+                    $('#ai-modal-open').href = aiUrl;
+                    modal.classList.add('active');
+                });
+            } else if (type === 'app') {
+                navigator.clipboard.writeText(currentPromptText).then(() => {
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = modelBtn.dataset.protocol;
+                    document.body.appendChild(iframe);
+                    setTimeout(() => {
+                        if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+                    }, 1000);
+                });
+            }
+            return;
+        }
+
+        if (!menu.contains(e.target) && menu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    const closeModal = () => modal.classList.remove('active');
+    $('#ai-modal-close-x').addEventListener('click', closeModal);
+    $('#ai-modal-cancel').addEventListener('click', closeModal);
+    $('#ai-modal-open').addEventListener('click', closeModal);
+    $('#ai-modal-backdrop').addEventListener('click', closeModal);
+
+    window.addEventListener('resize', () => {
+        if (!menu.classList.contains('active')) return;
+        const activeContent = menu.dataset.tab === 'code' ? codeTabContent : chatTabContent;
+        tabsViewport.style.height = getTabHeight(activeContent) + 'px';
+    });
 }
