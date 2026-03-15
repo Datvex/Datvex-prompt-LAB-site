@@ -715,7 +715,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     loadCategories();
     initSidebarTags();
     initRadixNav();
-    await generateTagsPage();
     generateCategoriesPage();
     initViewSwitcher();
     initAISelector();
@@ -907,22 +906,63 @@ function initRadixNav() {
     }
 }
 
-function initSidebarTags() {
+async function initSidebarTags() {
     var container = $('#tags-container');
     if (!container) return;
 
-    var tags = container.querySelectorAll('.tag-btn');
-    var colors = new Array(tags.length);
-    for (var i = 0; i < tags.length; i++) {
-        colors[i] = getComputedStyle(tags[i]).color;
+    let data = [];
+    try {
+        const cacheKey = 'datvex_tags';
+        const cached = sessionStorage.getItem(cacheKey);
+        
+        if (cached) {
+            data = JSON.parse(cached);
+        } else {
+            const r = await fetch('https://raw.githubusercontent.com/Datvex/Datvex-prompt-LAB/main/data/tags.json');
+            if (r.ok) {
+                data = await r.json();
+                try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch(e) {}
+            }
+        }
+    } catch (e) {
+        return;
     }
-    for (var i = 0; i < tags.length; i++) {
-        tags[i].style.setProperty('--base-color', colors[i]);
+
+    const colors = [
+        '#3b82f6', '#ef4444', '#f59e0b', '#22c55e', '#a855f7',
+        '#ec4899', '#14b8a6', '#f97316', '#6366f1', '#06b6d4'
+    ];
+
+    const frag = document.createDocumentFragment();
+
+    for (let i = 0; i < data.length; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'tag-btn';
+        const color = colors[i % colors.length];
+        btn.style.color = color;
+        btn.style.setProperty('--base-color', color);
+        btn.textContent = data[i].name;
+        frag.appendChild(btn);
     }
+
+    container.innerHTML = '';
+    container.appendChild(frag);
 
     container.addEventListener('click', function(e) {
         var tag = e.target.closest('.tag-btn');
-        if (tag) tag.classList.toggle('tag-active');
+        if (tag) {
+            e.preventDefault();
+            if (tag.classList.contains('tag-active')) {
+                applyFilter(null, null, null);
+            } else {
+                var allTags = container.querySelectorAll('.tag-btn');
+                for (var j = 0; j < allTags.length; j++) {
+                    allTags[j].classList.remove('tag-active');
+                }
+                tag.classList.add('tag-active');
+                applyFilter('sidebar-tag', tag.textContent, tag.textContent);
+            }
+        }
     });
 
     var searchInput = $('#sidebar-tag-search');
@@ -956,8 +996,19 @@ async function generateTagsPage() {
             }
         }
     } catch (e) {
-        console.error('Failed to load tags:', e);
         return;
+    }
+
+    const tagCounts = {};
+    if (typeof allPrompts !== 'undefined') {
+        allPrompts.forEach(p => {
+            if (p.tags) {
+                p.tags.forEach(t => {
+                    const tl = t.toLowerCase();
+                    tagCounts[tl] = (tagCounts[tl] || 0) + 1;
+                });
+            }
+        });
     }
 
     const colors = [
@@ -984,11 +1035,17 @@ async function generateTagsPage() {
 
         const count = document.createElement('span');
         count.className = 'tag-count';
-        count.textContent = '0';
+        count.textContent = tagCounts[item.name.toLowerCase()] || 0;
 
         a.appendChild(dot);
         a.appendChild(label);
         a.appendChild(count);
+        
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            applyFilter('tag', item.name, item.name);
+        });
+        
         frag.appendChild(a);
     }
 
@@ -1091,6 +1148,16 @@ function generateCategoriesPage() {
     });
 
     container.innerHTML = html;
+
+    container.addEventListener('click', function(e) {
+        const link = e.target.closest('a[data-id]');
+        if (link) {
+            e.preventDefault();
+            const id = link.getAttribute('data-id');
+            const name = link.querySelector('h3').textContent;
+            applyFilter('category', id, name);
+        }
+    });
 }
 
 function setTypeFilter(value) {
@@ -1170,10 +1237,8 @@ function initAISelector() {
         return el.scrollHeight;
     }
 
-    function setActiveTab(tab, immediate = false) {
+    function setActiveTab(tab) {
         const isChat = tab === 'chat';
-        const activeContent = isChat ? chatTabContent : codeTabContent;
-        const nextHeight = getTabHeight(activeContent);
 
         chatTabBtn.className = isChat
             ? 'ai-tab-btn flex-1 py-1.5 text-sm font-medium rounded-md bg-[#2A2A2A] text-white transition-colors cursor-pointer'
@@ -1183,19 +1248,7 @@ function initAISelector() {
             ? 'ai-tab-btn flex-1 py-1.5 text-sm font-medium rounded-md text-[#888] hover:text-white transition-colors cursor-pointer'
             : 'ai-tab-btn flex-1 py-1.5 text-sm font-medium rounded-md bg-[#2A2A2A] text-white transition-colors cursor-pointer';
 
-        if (immediate) {
-            menu.dataset.tab = tab;
-            tabsViewport.style.height = nextHeight + 'px';
-            return;
-        }
-
-        const currentHeight = tabsViewport.getBoundingClientRect().height || nextHeight;
-        tabsViewport.style.height = currentHeight + 'px';
         menu.dataset.tab = tab;
-
-        requestAnimationFrame(() => {
-            tabsViewport.style.height = nextHeight + 'px';
-        });
     }
 
     chatTabBtn.addEventListener('click', e => {
@@ -1227,6 +1280,7 @@ function initAISelector() {
         setTimeout(() => {
             if (!menu.classList.contains('active')) {
                 menu.style.display = 'none';
+                menu.activeTriggerBtn = null;
             }
         }, 200);
     }
@@ -1238,12 +1292,17 @@ function initAISelector() {
         const promptContent = card.querySelector('.prompt-content');
         currentPromptText = promptContent ? promptContent.textContent : '';
 
-        const rect = triggerBtn.getBoundingClientRect();
         menu.style.display = 'block';
+        
+        tabsViewport.style.height = getTabHeight(chatTabContent) + 'px';
+        setActiveTab('chat');
 
+        const rect = triggerBtn.getBoundingClientRect();
+        const menuHeight = menu.offsetHeight;
         const spaceBelow = window.innerHeight - rect.bottom;
-        if (spaceBelow < 350) {
-            menu.style.top = `${rect.top + window.scrollY - 320}px`;
+
+        if (spaceBelow < menuHeight + 20) {
+            menu.style.top = `${rect.top + window.scrollY - menuHeight - 8}px`;
             menu.style.transformOrigin = 'bottom right';
         } else {
             menu.style.top = `${rect.bottom + window.scrollY + 8}px`;
@@ -1251,7 +1310,8 @@ function initAISelector() {
         }
 
         menu.style.left = `${rect.right + window.scrollX - 240}px`;
-        setActiveTab('chat', true);
+        menu.activeTriggerBtn = triggerBtn;
+        
         requestAnimationFrame(() => menu.classList.add('active'));
     }
 
@@ -1290,7 +1350,12 @@ function initAISelector() {
         if (triggerBtn) {
             e.preventDefault();
             e.stopPropagation();
-            openMenu(triggerBtn);
+            
+            if (menu.classList.contains('active') && menu.activeTriggerBtn === triggerBtn) {
+                closeMenu();
+            } else {
+                openMenu(triggerBtn);
+            }
             return;
         }
 
@@ -1367,8 +1432,295 @@ function initAISelector() {
     });
 
     window.addEventListener('resize', function() {
-        if (!menu.classList.contains('active')) return;
-        const activeContent = menu.dataset.tab === 'code' ? codeTabContent : chatTabContent;
-        tabsViewport.style.height = getTabHeight(activeContent) + 'px';
+        if (!menu.classList.contains('active') || !menu.activeTriggerBtn) return;
+        
+        const rect = menu.activeTriggerBtn.getBoundingClientRect();
+        const menuHeight = menu.offsetHeight;
+        
+        if (window.innerHeight - rect.bottom < menuHeight + 20) {
+            menu.style.top = `${rect.top + window.scrollY - menuHeight - 8}px`;
+            menu.style.transformOrigin = 'bottom right';
+        } else {
+            menu.style.top = `${rect.bottom + window.scrollY + 8}px`;
+            menu.style.transformOrigin = 'top right';
+        }
+        menu.style.left = `${rect.right + window.scrollX - 240}px`;
     });
 }
+
+// Prompts loading with infinite scroll
+let allPrompts = [];
+let filteredPrompts = [];
+let currentFilter = { type: null, id: null, displayName: null };
+let currentPromptIndex = 0;
+const PROMPTS_PER_PAGE = 15;
+let isLoadingPrompts = false;
+
+function applyFilter(type, id, displayName) {
+    currentFilter = { type, id, displayName };
+    
+    const aside = document.querySelector('aside');
+    const filterHeader = document.getElementById('filter-header');
+    const typeLabel = document.getElementById('filter-type-label');
+    const valueLabel = document.getElementById('filter-value-label');
+    
+    if (type !== 'sidebar-tag') {
+        const sidebarTags = document.querySelectorAll('#tags-container .tag-btn');
+        for (let i = 0; i < sidebarTags.length; i++) {
+            sidebarTags[i].classList.remove('tag-active');
+        }
+    }
+    
+    if (type) {
+        if (type === 'sidebar-tag') {
+            aside.style.display = '';
+            typeLabel.textContent = translations[currentLang]?.tags_label || 'Тег';
+        } else {
+            aside.style.display = 'none';
+            typeLabel.textContent = type === 'category' ? (translations[currentLang]?.category_label || 'Категория') : (translations[currentLang]?.tags_label || 'Тег');
+        }
+        
+        filterHeader.classList.remove('hidden');
+        valueLabel.textContent = displayName || id;
+        
+        if (type === 'category') {
+            filteredPrompts = allPrompts.filter(p => p.category_id === id || p.category === id || p.category === displayName);
+        } else if (type === 'tag' || type === 'sidebar-tag') {
+            filteredPrompts = allPrompts.filter(p => p.tags && p.tags.some(t => t.toLowerCase() === id.toLowerCase()));
+        }
+    } else {
+        aside.style.display = '';
+        filterHeader.classList.add('hidden');
+        filteredPrompts = allPrompts;
+    }
+    
+    switchView('main-view');
+    
+    currentPromptIndex = 0;
+    const grid = document.getElementById('prompts-grid');
+    if (grid) grid.innerHTML = '';
+    
+    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    
+    loadMorePrompts();
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>'"]/g, function(tag) {
+        const charsToReplace = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+        };
+        return charsToReplace[tag] || tag;
+    });
+}
+
+function shuffleArray(array) {
+    let curId = array.length;
+    while (0 !== curId) {
+        let randId = Math.floor(Math.random() * curId);
+        curId -= 1;
+        let tmp = array[curId];
+        array[curId] = array[randId];
+        array[randId] = tmp;
+    }
+    return array;
+}
+
+async function loadPrompts() {
+    const grid = document.querySelector('#prompts-grid');
+    if (!grid) return;
+
+    try {
+        const cacheKey = 'datvex_prompts';
+        const cached = sessionStorage.getItem(cacheKey);
+        
+        if (cached) {
+            allPrompts = JSON.parse(cached);
+        } else {
+            const r = await fetch('https://raw.githubusercontent.com/Datvex/Datvex-prompt-LAB/main/data/prompts.json');
+            if (r.ok) {
+                allPrompts = await r.json();
+                try { sessionStorage.setItem(cacheKey, JSON.stringify(allPrompts)); } catch(e) {}
+            }
+        }
+    } catch (e) {}
+
+    allPrompts = shuffleArray(allPrompts);
+    filteredPrompts = allPrompts;
+    currentPromptIndex = 0;
+    grid.innerHTML = '';
+    
+    await generateTagsPage();
+    setupInfiniteScroll();
+    loadMorePrompts();
+}
+
+function loadMorePrompts() {
+    const sourceArray = currentFilter.type ? filteredPrompts : allPrompts;
+
+    if (isLoadingPrompts || currentPromptIndex >= sourceArray.length) return;
+    isLoadingPrompts = true;
+
+    const grid = document.querySelector('#prompts-grid');
+    const spinner = document.querySelector('#loading-spinner');
+    if (!grid) return;
+
+    if (spinner) spinner.classList.remove('hidden');
+
+    setTimeout(() => {
+        const nextPrompts = sourceArray.slice(currentPromptIndex, currentPromptIndex + PROMPTS_PER_PAGE);
+        let html = '';
+        
+        for (let i = 0; i < nextPrompts.length; i++) {
+            const p = nextPrompts[i];
+            const title = escapeHTML(p.title);
+            const desc = escapeHTML(p.description);
+            const promptText = escapeHTML(p.prompt);
+            const type = escapeHTML(p.category || 'Text');
+
+            html += `
+            <div data-index="${currentFilter.type ? allPrompts.indexOf(p) : (currentPromptIndex + i)}" class="prompt-card group bg-[#1A1A1A] border border-[#333] rounded-2xl p-5 hover:border-[#555] hover:bg-[#222] transition-all duration-300 flex flex-col gap-3 cursor-pointer">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-semibold text-lg leading-tight text-[#EDEDED] group-hover:text-white transition-colors">${title}</h3>
+                    <span class="text-[10px] uppercase tracking-wider border border-[#333] px-2 py-0.5 rounded-md text-[#888] bg-[#111] max-w-[120px] truncate text-right" title="${type}">${type}</span>
+                </div>
+                <p class="text-sm text-[#A0A0A0] line-clamp-2" title="${desc}">${desc}</p>
+                
+                <div class="mt-2 flex flex-col gap-2">
+                    <div class="relative">
+                        <div class="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+                            <button data-action="copy" class="p-1.5 bg-[#1A1A1A] border border-[#333] rounded-lg hover:bg-[#2A2A2A] hover:text-white transition-colors text-[#888]">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                        <pre class="prompt-content bg-[#0A0A0A] border border-[#222] group-hover:border-[#333] rounded-xl p-4 text-xs font-mono text-[#A0A0A0] overflow-x-auto h-32 whitespace-pre-wrap transition-colors duration-300">${promptText}</pre>
+                    </div>
+                    <div class="flex justify-end">
+                        <button class="ai-trigger-btn flex items-center justify-center w-9 h-9 bg-[#1A1A1A] border border-[#333] rounded-xl hover:bg-[#2A2A2A] hover:border-[#555] hover:text-white transition-all duration-200 text-[#888] cursor-pointer shadow-sm">
+                            <i data-lucide="play" class="w-4 h-4 ml-0.5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        grid.insertAdjacentHTML('beforeend', html);
+        currentPromptIndex += PROMPTS_PER_PAGE;
+
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+            lucide.createIcons();
+        }
+
+        if (spinner) {
+            spinner.classList.add('hidden');
+        }
+
+        isLoadingPrompts = false;
+
+        const sentinel = document.querySelector('#scroll-sentinel');
+        if (sentinel && currentPromptIndex < sourceArray.length) {
+            const rect = sentinel.getBoundingClientRect();
+            if (rect.top <= window.innerHeight + 200) {
+                loadMorePrompts();
+            }
+        }
+    }, 400);
+}
+
+function setupInfiniteScroll() {
+    const sentinel = document.querySelector('#scroll-sentinel');
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        const sourceArray = currentFilter.type ? filteredPrompts : allPrompts;
+        if (entries[0].isIntersecting && !isLoadingPrompts && currentPromptIndex < sourceArray.length) {
+            loadMorePrompts();
+        }
+    }, { rootMargin: '200px' });
+
+    observer.observe(sentinel);
+}
+
+function openPromptModal(index) {
+    const prompt = allPrompts[index];
+    if (!prompt) return;
+
+    const modal = document.getElementById('prompt-modal');
+    const titleEl = document.getElementById('prompt-modal-title');
+    const descEl = document.getElementById('prompt-modal-desc');
+    const textEl = document.getElementById('prompt-modal-text');
+    const tagsEl = document.getElementById('prompt-modal-tags');
+    
+    titleEl.textContent = prompt.title;
+    descEl.textContent = prompt.description;
+    textEl.textContent = prompt.prompt;
+
+    let tagsHtml = `<span class="text-[10px] uppercase tracking-wider border border-[#333] px-2 py-0.5 rounded-md text-[#888] bg-[#111] font-medium">${escapeHTML(prompt.category || 'Text')}</span>`;
+    
+    if (prompt.tags && prompt.tags.length > 0) {
+        const tagColors = ['#60A5FA', '#F87171', '#FBBF24', '#4ADE80', '#C084FC', '#F472B6', '#2DD4BF', '#FB923C', '#818CF8', '#22D3EE'];
+        prompt.tags.forEach(tag => {
+            const color = tagColors[tag.length % tagColors.length];
+            tagsHtml += `<span class="text-[11px] bg-[#1A1A1A] px-2 py-0.5 rounded-md border border-[#222]" style="color: ${color}">#${escapeHTML(tag)}</span>`;
+        });
+    }
+    tagsEl.innerHTML = tagsHtml;
+
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+    }
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePromptModal() {
+    const modal = document.getElementById('prompt-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+document.addEventListener('click', function(e) {
+    if (e.target.closest('#clear-filter-btn')) {
+        e.preventDefault();
+        applyFilter(null, null, null);
+        return;
+    }
+
+    if (e.target.closest('[data-action="copy"]') || e.target.closest('.ai-trigger-btn')) {
+        return;
+    }
+
+    const card = e.target.closest('.prompt-card');
+    if (card) {
+        e.preventDefault();
+        const index = card.getAttribute('data-index');
+        openPromptModal(index);
+    }
+});
+
+// Initialize prompts loading when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    loadPrompts();
+    
+    const modalCloseBtn = document.getElementById('prompt-modal-close');
+    const modalBackdrop = document.getElementById('prompt-modal-backdrop');
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closePromptModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closePromptModal);
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const promptModal = document.getElementById('prompt-modal');
+        if (promptModal && promptModal.classList.contains('active')) {
+            closePromptModal();
+        }
+    }
+});

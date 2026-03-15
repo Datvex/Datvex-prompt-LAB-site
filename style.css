@@ -2,6 +2,12 @@ body {
   background-color: #000;
   color: #fff;
   overflow-y: scroll;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -109,7 +115,7 @@ body {
 }
 
 .custom-dropdown.open .dropdown-trigger {
-  border-color: #666;
+  border-color: #444;
 }
 
 .custom-dropdown.open .dropdown-trigger i {
@@ -159,6 +165,14 @@ body {
 #ai-selector-menu.active {
   opacity: 1;
   visibility: visible;
+  transform: scale(1);
+}
+
+#ai-selector-menu.menu-up {
+  transform: scale(0.95);
+}
+
+#ai-selector-menu.menu-up.active {
   transform: scale(1);
 }
 
@@ -248,4 +262,14 @@ body {
 
 #prompts-grid > div {
   contain: layout style;
+}
+
+/* Prompt modal styles */
+#prompt-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#prompt-modal.active #prompt-modal-content {
+  transform: scale(1);
 }
