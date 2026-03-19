@@ -204,7 +204,32 @@
 
     <main class="max-w-[1800px] mx-auto px-6 md:px-12 pt-6 pb-24 w-full flex-1">
         
-        <div id="main-view" class="flex flex-col md:flex-row gap-8 w-full">
+        <div id="home-view" class="flex flex-col w-full relative items-center justify-center min-h-[75vh] text-center z-10">
+            <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30"></div>
+            
+            <h1 data-i18n="hero_title" class="text-5xl md:text-[5.5rem] leading-[1.05] font-bold tracking-tighter text-white mb-6 max-w-5xl">
+                Discover and deploy <br class="hidden md:block" /> perfect AI Prompts.
+            </h1>
+            
+            <p data-i18n="hero_desc" class="text-lg md:text-xl text-[#888] max-w-2xl mb-10 leading-relaxed">
+                Datvex provides the professional structured repository of high-quality prompts to build, scale, and secure a faster AI experience.
+            </p>
+            
+            <div class="flex items-center gap-4">
+                <button id="btn-explore" data-i18n="hero_btn_explore" class="bg-white text-black font-semibold text-[15px] px-8 py-3.5 rounded-full hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    Start Exploring
+                </button>
+                <a href="https://github.com/Datvex/Datvex-prompt-LAB" data-i18n="hero_btn_repo" target="_blank" rel="noopener" class="bg-black text-white border border-[#333] hover:border-[#555] hover:bg-[#111] font-semibold text-[15px] px-8 py-3.5 rounded-full transition-colors">
+                    View Repository
+                </a>
+            </div>
+            
+            <div class="mt-20 w-full relative flex justify-center pb-10">
+                <div class="w-[250px] h-[220px] bg-gradient-to-br from-white via-[#888] to-[#111] opacity-20" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+            </div>
+        </div>
+
+        <div id="main-view" class="hidden flex-col md:flex-row gap-8 w-full">
             <aside class="w-full md:w-[280px] flex-shrink-0 md:sticky md:top-[88px] md:self-start relative z-10">
                 <div class="flex flex-col gap-5">
 

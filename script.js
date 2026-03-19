@@ -55,7 +55,11 @@ const translations = {
         modal_copy_title: "Prompt copied",
         modal_cancel: "Cancel",
         modal_open: "Open ",
-        modal_desc: "Prompt copied to clipboard. Paste it into {name} after opening."
+        modal_desc: "Prompt copied to clipboard. Paste it into {name} after opening.",
+        hero_title: "Discover and deploy <br class=\"hidden md:block\" /> perfect AI Prompts.",
+        hero_desc: "Datvex provides the professional structured repository of high-quality prompts to build, scale, and secure a faster AI experience.",
+        hero_btn_explore: "Start Exploring",
+        hero_btn_repo: "View Repository"
     },
     ru: {
         lang_menu: "Язык интерфейса",
@@ -110,7 +114,11 @@ const translations = {
         modal_copy_title: "Промпт скопирован",
         modal_cancel: "Отмена",
         modal_open: "Открыть ",
-        modal_desc: "Промпт скопирован в буфер обмена. Вставьте его в {name} после открытия."
+        modal_desc: "Промпт скопирован в буфер обмена. Вставьте его в {name} после открытия.",
+        hero_title: "Находите и используйте <br class=\"hidden md:block\" /> идеальные AI Промпты.",
+        hero_desc: "Datvex — это профессиональный структурированный репозиторий высококачественных промптов для создания, масштабирования и ускорения работы с ИИ.",
+        hero_btn_explore: "Начать работу",
+        hero_btn_repo: "Репозиторий"
     },
     zh: {
         lang_menu: "界面语言",
@@ -165,7 +173,11 @@ const translations = {
         modal_copy_title: "提示词已复制",
         modal_cancel: "取消",
         modal_open: "打开 ",
-        modal_desc: "提示词已复制到剪贴板。打开 {name} 后粘贴。"
+        modal_desc: "提示词已复制到剪贴板。打开 {name} 后粘贴。",
+        hero_title: "发现并部署 <br class=\"hidden md:block\" /> 完美的 AI 提示词。",
+        hero_desc: "Datvex 提供专业、结构化的高质量提示词库，帮助构建、扩展和保障更快速的 AI 体验。",
+        hero_btn_explore: "开始探索",
+        hero_btn_repo: "查看代码库"
     },
     es: {
         lang_menu: "Idioma de la interfaz",
@@ -220,7 +232,11 @@ const translations = {
         modal_copy_title: "Prompt copiado",
         modal_cancel: "Cancelar",
         modal_open: "Abrir ",
-        modal_desc: "Prompt copiado al portapapeles. Pégalo en {name} después de abrirlo."
+        modal_desc: "Prompt copiado al portapapeles. Pégalo en {name} después de abrirlo.",
+        hero_title: "Descubre y despliega <br class=\"hidden md:block\" /> prompts de IA perfectos.",
+        hero_desc: "Datvex proporciona un repositorio estructurado y profesional de prompts de alta calidad para construir, escalar y asegurar una experiencia de IA más rápida.",
+        hero_btn_explore: "Comenzar a explorar",
+        hero_btn_repo: "Ver repositorio"
     },
     de: {
         lang_menu: "Oberflächensprache",
@@ -275,7 +291,11 @@ const translations = {
         modal_copy_title: "Prompt kopiert",
         modal_cancel: "Abbrechen",
         modal_open: "Öffnen ",
-        modal_desc: "Prompt in die Zwischenablage kopiert. Fügen Sie ihn nach dem Öffnen in {name} ein."
+        modal_desc: "Prompt in die Zwischenablage kopiert. Fügen Sie ihn nach dem Öffnen in {name} ein.",
+        hero_title: "Entdecken und nutzen Sie <br class=\"hidden md:block\" /> perfekte KI-Prompts.",
+        hero_desc: "Datvex bietet ein professionelles, strukturiertes Repository mit hochwertigen Prompts, um eine schnellere KI-Erfahrung aufzubauen, zu skalieren und zu sichern.",
+        hero_btn_explore: "Jetzt entdecken",
+        hero_btn_repo: "Repository ansehen"
     },
     hi: {
         lang_menu: "इंटरफ़ेस भाषा",
@@ -330,7 +350,11 @@ const translations = {
         modal_copy_title: "प्रॉम्ट कॉपी किया गया",
         modal_cancel: "रद्द करें",
         modal_open: "खोलें ",
-        modal_desc: "प्रॉम्ट क्लिपबोर्ड पर कॉपी किया गया। {name} खोलने के बाद पेस्ट करें।"
+        modal_desc: "प्रॉम्ट क्लिपबोर्ड पर कॉपी किया गया। {name} खोलने के बाद पेस्ट करें।",
+        hero_title: "खोजें और डिप्लॉय करें <br class=\"hidden md:block\" /> बेहतरीन AI प्रॉम्ट्स।",
+        hero_desc: "Datvex उच्च-गुणवत्ता वाले प्रॉम्ट्स का एक पेशेवर संरचित रिपॉजिटरी प्रदान करता है ताकि तेज़ AI अनुभव का निर्माण, स्केल और सुरक्षा की जा सके।",
+        hero_btn_explore: "खोजना शुरू करें",
+        hero_btn_repo: "रिपॉजिटरी देखें"
     },
     fr: {
         lang_menu: "Langue de l'interface",
@@ -385,7 +409,11 @@ const translations = {
         modal_copy_title: "Prompt copié",
         modal_cancel: "Annuler",
         modal_open: "Ouvrir ",
-        modal_desc: "Prompt copié dans le presse-papiers. Collez-le dans {name} après ouverture."
+        modal_desc: "Prompt copié dans le presse-papiers. Collez-le dans {name} après ouverture.",
+        hero_title: "Découvrez et déployez <br class=\"hidden md:block\" /> des prompts IA parfaits.",
+        hero_desc: "Datvex fournit un référentiel structuré et professionnel de prompts de haute qualité pour créer, faire évoluer et sécuriser une expérience IA plus rapide.",
+        hero_btn_explore: "Commencer à explorer",
+        hero_btn_repo: "Voir le dépôt"
     },
     it: {
         lang_menu: "Lingua dell'interfaccia",
@@ -440,7 +468,11 @@ const translations = {
         modal_copy_title: "Prompt copiato",
         modal_cancel: "Annulla",
         modal_open: "Apri ",
-        modal_desc: "Prompt copiato negli appunti. Incollalo in {name} dopo l'apertura."
+        modal_desc: "Prompt copiato negli appunti. Incollalo in {name} dopo l'apertura.",
+        hero_title: "Scopri e distribuisci <br class=\"hidden md:block\" /> prompt IA perfetti.",
+        hero_desc: "Datvex fornisce un repository strutturato professionale di prompt di alta qualità per creare, scalare e proteggere un'esperienza IA più rapida.",
+        hero_btn_explore: "Inizia a esplorare",
+        hero_btn_repo: "Vedi repository"
     },
     pt: {
         lang_menu: "Idioma da interface",
@@ -495,7 +527,11 @@ const translations = {
         modal_copy_title: "Prompt copiado",
         modal_cancel: "Cancelar",
         modal_open: "Abrir ",
-        modal_desc: "Prompt copiado para a área de transferência. Cole no {name} após abrir."
+        modal_desc: "Prompt copiado para a área de transferência. Cole no {name} após abrir.",
+        hero_title: "Descubra e implemente <br class=\"hidden md:block\" /> prompts de IA perfeitos.",
+        hero_desc: "O Datvex fornece um repositório estruturado e profissional de prompts de alta qualidade para construir, escalar e proteger uma experiência de IA mais rápida.",
+        hero_btn_explore: "Começar a explorar",
+        hero_btn_repo: "Ver repositório"
     },
     ja: {
         lang_menu: "インターフェース言語",
@@ -550,7 +586,11 @@ const translations = {
         modal_copy_title: "プロンプトをコピーしました",
         modal_cancel: "キャンセル",
         modal_open: "開く ",
-        modal_desc: "プロンプトがクリップボードにコピーされました。{name} を開いた後に貼り付けてください。"
+        modal_desc: "プロンプトがクリップボードにコピーされました。{name} を開いた後に貼り付けてください。",
+        hero_title: "完璧な AI プロンプトを <br class=\"hidden md:block\" /> 発見し、デプロイする。",
+        hero_desc: "Datvex は、より高速な AI エクスペリエンスを構築、スケーリング、保護するための、高品質なプロンプトの専門的かつ構造化されたリポジトリを提供します。",
+        hero_btn_explore: "探索を始める",
+        hero_btn_repo: "リポジトリを見る"
     },
     ko: {
         lang_menu: "인터페이스 언어",
@@ -605,12 +645,25 @@ const translations = {
         modal_copy_title: "프롬프트가 복사되었습니다",
         modal_cancel: "취소",
         modal_open: "열기 ",
-        modal_desc: "프롬프트가 클립보드에 복사되었습니다. {name}을 연 후 붙여넣으세요."
+        modal_desc: "프롬프트가 클립보드에 복사되었습니다. {name}을 연 후 붙여넣으세요.",
+        hero_title: "완벽한 AI 프롬프트를 <br class=\"hidden md:block\" /> 발견하고 배포하세요.",
+        hero_desc: "Datvex는 더 빠르고 안전한 AI 경험을 구축, 확장 및 보호할 수 있도록 고품질 프롬프트의 전문적인 구조화된 저장소를 제공합니다.",
+        hero_btn_explore: "탐색 시작",
+        hero_btn_repo: "저장소 보기"
     }
 };
 
 let currentLang = localStorage.getItem('appLang') || 'ru';
 let closeRadixMenu = null;
+
+let allPrompts = [];
+let filteredPrompts = [];
+let currentFilter = { type: null, id: null, displayName: null };
+let currentPromptIndex = 0;
+const PROMPTS_PER_PAGE = 15;
+let isLoadingPrompts = false;
+let isAppReady = false;
+let pendingViewSwitch = null;
 
 const $ = (s, c) => (c || document).querySelector(s);
 const $$ = (s, c) => (c || document).querySelectorAll(s);
@@ -685,7 +738,11 @@ function setLanguage(lang, animate) {
                             el.appendChild(document.createTextNode(' ' + val));
                         }
                     } else {
-                        el.textContent = val;
+                        if (val.indexOf('<') !== -1) {
+                            el.innerHTML = val;
+                        } else {
+                            el.textContent = val;
+                        }
                     }
                 }
             } catch(e) {}
@@ -724,9 +781,15 @@ function setLanguage(lang, animate) {
     }
 }
 
-function switchView(viewId) {
-    var views = ['main-view', 'tags-view', 'categories-view', 'sources-view'];
+function switchView(viewId, pushHistory = true) {
+    if (pushHistory) {
+        const url = viewId === 'home-view' ? window.location.pathname : '#' + viewId;
+        history.pushState({ view: viewId }, '', url);
+    }
+    
+    var views = ['home-view', 'main-view', 'tags-view', 'categories-view', 'sources-view'];
     var header = document.getElementById('main-page-header');
+    
     for (var i = 0; i < views.length; i++) {
         var el = document.getElementById(views[i]);
         if (!el) continue;
@@ -738,12 +801,21 @@ function switchView(viewId) {
             el.classList.remove('flex');
         }
     }
+    
     if (header) {
         header.style.display = viewId === 'main-view' ? '' : 'none';
     }
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+window.addEventListener('popstate', function(e) {
+    const view = e.state && e.state.view ? e.state.view : (location.hash ? location.hash.substring(1) : 'home-view');
+    switchView(view, false);
+});
+
 document.addEventListener('DOMContentLoaded', async function() {
+    loadPrompts();
     initDropdowns();
     loadCategories();
     initSidebarTags();
@@ -761,6 +833,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         var lang = btn.getAttribute('data-lang');
         if (lang !== currentLang) setLanguage(lang, true);
     });
+
+    const initialView = location.hash ? location.hash.substring(1) : 'home-view';
+    switchView(initialView, false);
 });
 
 function initDropdowns() {
@@ -1213,7 +1288,28 @@ function initViewSwitcher() {
     if (home) {
         home.addEventListener('click', function(e) {
             e.preventDefault();
-            switchView('main-view');
+            switchView('home-view');
+        });
+    }
+
+    var btnExplore = $('#btn-explore');
+    if (btnExplore) {
+        btnExplore.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (isAppReady) {
+                switchView('main-view');
+            } else {
+                const btnText = translations[currentLang]?.hero_btn_explore || 'Start Exploring';
+                this.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i><span>${btnText}</span>`;
+                this.style.display = 'inline-flex';
+                this.style.alignItems = 'center';
+                this.style.justifyContent = 'center';
+                this.style.gap = '8px';
+                this.classList.add('opacity-80', 'cursor-not-allowed');
+                this.disabled = true;
+                if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+                pendingViewSwitch = 'main-view';
+            }
         });
     }
 
@@ -1490,14 +1586,6 @@ function initAISelector() {
     });
 }
 
-// Prompts loading with infinite scroll
-let allPrompts = [];
-let filteredPrompts = [];
-let currentFilter = { type: null, id: null, displayName: null };
-let currentPromptIndex = 0;
-const PROMPTS_PER_PAGE = 15;
-let isLoadingPrompts = false;
-
 function applyFilter(type, id, displayName) {
     currentFilter = { type, id, displayName };
     
@@ -1748,10 +1836,8 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Initialize prompts loading when DOM is ready
+// Initialize modal event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    loadPrompts();
-    
     const modalCloseBtn = document.getElementById('prompt-modal-close');
     const modalBackdrop = document.getElementById('prompt-modal-backdrop');
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closePromptModal);
