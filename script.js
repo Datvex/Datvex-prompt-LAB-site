@@ -45,10 +45,8 @@ const translations = {
         model_image_desc: "Prompts for image generation",
         model_video_title: "Video",
         model_video_desc: "Prompts for video generation",
-        model_music_title: "Music",
-        model_music_desc: "Prompts for music generation",
-        model_voice_title: "Voice",
-        model_voice_desc: "Prompts for voice generation",
+        model_audio_title: "Audio",
+        model_audio_desc: "Prompts for audio generation",
         sidebar_title: "Prompts",
         counter_total: "Total: ",
         counter_found: "Found: ",
@@ -113,10 +111,8 @@ const translations = {
         model_image_desc: "Промпты для генерации изображений",
         model_video_title: "Видео",
         model_video_desc: "Промпты для генерации видео",
-        model_music_title: "Музыка",
-        model_music_desc: "Промпты для генерации музыки",
-        model_voice_title: "Голос",
-        model_voice_desc: "Промпты для генерации голоса",
+        model_audio_title: "Аудио",
+        model_audio_desc: "Промпты для генерации аудио",
         modal_copy_title: "Промпт скопирован",
         modal_cancel: "Отмена",
         modal_open: "Открыть ",
@@ -178,10 +174,8 @@ const translations = {
         model_image_desc: "用于图像生成的提示词",
         model_video_title: "视频",
         model_video_desc: "用于视频生成的提示词",
-        model_music_title: "音乐",
-        model_music_desc: "用于音乐生成的提示词",
-        model_voice_title: "语音",
-        model_voice_desc: "用于语音生成的提示词",
+        model_audio_title: "音频",
+        model_audio_desc: "用于音频生成的提示词",
         modal_copy_title: "提示词已复制",
         modal_cancel: "取消",
         modal_open: "打开 ",
@@ -243,10 +237,8 @@ const translations = {
         model_image_desc: "Prompts para generación de imágenes",
         model_video_title: "Video",
         model_video_desc: "Prompts para generación de video",
-        model_music_title: "Música",
-        model_music_desc: "Prompts para generación de música",
-        model_voice_title: "Voz",
-        model_voice_desc: "Prompts para generación de voz",
+        model_audio_title: "Audio",
+        model_audio_desc: "Prompts para generación de audio",
         modal_copy_title: "Prompt copiado",
         modal_cancel: "Cancelar",
         modal_open: "Abrir ",
@@ -308,10 +300,8 @@ const translations = {
         model_image_desc: "Prompts für die Bilderstellung",
         model_video_title: "Video",
         model_video_desc: "Prompts für die Videoerstellung",
-        model_music_title: "Musik",
-        model_music_desc: "Prompts für die Musikerstellung",
-        model_voice_title: "Stimme",
-        model_voice_desc: "Prompts für die Spracherstellung",
+        model_audio_title: "Audio",
+        model_audio_desc: "Prompts für die Audioerstellung",
         modal_copy_title: "Prompt kopiert",
         modal_cancel: "Abbrechen",
         modal_open: "Öffnen ",
@@ -373,10 +363,8 @@ const translations = {
         model_image_desc: "छवि जनरेशन के लिए प्रॉम्ट्स",
         model_video_title: "वीडियो",
         model_video_desc: "वीडियो जनरेशन के लिए प्रॉम्ट्स",
-        model_music_title: "संगीत",
-        model_music_desc: "संगीत जनरेशन के लिए प्रॉम्ट्स",
-        model_voice_title: "आवाज़",
-        model_voice_desc: "आवाज़ जनरेशन के लिए प्रॉम्ट्स",
+        model_audio_title: "ऑडियो",
+        model_audio_desc: "ऑडियो जनरेशन के लिए प्रॉम्ट्स",
         modal_copy_title: "प्रॉम्ट कॉपी किया गया",
         modal_cancel: "रद्द करें",
         modal_open: "खोलें ",
@@ -438,10 +426,8 @@ const translations = {
         model_image_desc: "Prompts pour la génération d'images",
         model_video_title: "Vidéo",
         model_video_desc: "Prompts pour la génération de vidéo",
-        model_music_title: "Musique",
-        model_music_desc: "Prompts pour la génération de musique",
-        model_voice_title: "Voix",
-        model_voice_desc: "Prompts pour la génération de voix",
+        model_audio_title: "Audio",
+        model_audio_desc: "Prompts pour la génération audio",
         modal_copy_title: "Prompt copié",
         modal_cancel: "Annuler",
         modal_open: "Ouvrir ",
@@ -503,10 +489,8 @@ const translations = {
         model_image_desc: "Prompt per la generazione di immagini",
         model_video_title: "Video",
         model_video_desc: "Prompt per la generazione di video",
-        model_music_title: "Musica",
-        model_music_desc: "Prompt per la generazione di musica",
-        model_voice_title: "Voce",
-        model_voice_desc: "Prompt per la generazione di voce",
+        model_audio_title: "Audio",
+        model_audio_desc: "Prompt per la generazione di audio",
         modal_copy_title: "Prompt copiato",
         modal_cancel: "Annulla",
         modal_open: "Apri ",
@@ -568,10 +552,8 @@ const translations = {
         model_image_desc: "Prompts para geração de imagens",
         model_video_title: "Vídeo",
         model_video_desc: "Prompts para geração de vídeo",
-        model_music_title: "Música",
-        model_music_desc: "Prompts para geração de música",
-        model_voice_title: "Voz",
-        model_voice_desc: "Prompts para geração de voz",
+        model_audio_title: "Áudio",
+        model_audio_desc: "Prompts para geração de áudio",
         modal_copy_title: "Prompt copiado",
         modal_cancel: "Cancelar",
         modal_open: "Abrir ",
@@ -633,10 +615,8 @@ const translations = {
         model_image_desc: "画像生成用のプロンプト",
         model_video_title: "動画",
         model_video_desc: "動画生成用のプロンプト",
-        model_music_title: "音楽",
-        model_music_desc: "音楽生成用のプロンプト",
-        model_voice_title: "音声",
-        model_voice_desc: "音声生成用のプロンプト",
+        model_audio_title: "オーディオ",
+        model_audio_desc: "オーディオ生成用のプロンプト",
         modal_copy_title: "プロンプトをコピーしました",
         modal_cancel: "キャンセル",
         modal_open: "開く ",
@@ -698,10 +678,8 @@ const translations = {
         model_image_desc: "이미지 생성을 위한 프롬프트",
         model_video_title: "비디오",
         model_video_desc: "비디오 생성을 위한 프롬프트",
-        model_music_title: "음악",
-        model_music_desc: "음악 생성을 위한 프롬프트",
-        model_voice_title: "음성",
-        model_voice_desc: "음성 생성을 위한 프롬프트",
+        model_audio_title: "오디오",
+        model_audio_desc: "오디오 생성을 위한 프롬프트",
         modal_copy_title: "프롬프트가 복사되었습니다",
         modal_cancel: "취소",
         modal_open: "열기 ",
@@ -969,6 +947,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (lang !== currentLang) setLanguage(lang, true);
     });
 
+    const mainSearch = document.getElementById('main-search');
+    if (mainSearch) {
+        mainSearch.addEventListener('input', debounce(function() {
+            updateSidebarFilters();
+        }, 300));
+    }
+
     let initialView = location.hash ? location.hash.substring(1) : 'home-view';
     
     if (initialView.startsWith('doc-')) {
@@ -985,6 +970,58 @@ document.addEventListener('DOMContentLoaded', async function() {
         switchView(initialView, false);
     }
 });
+
+function getPromptType(p) {
+    const combined = ((p.category_id || '') + ' ' + (p.category || '')).toLowerCase();
+    if (combined.includes('image') || combined.includes('photo') || combined.includes('art') || combined.includes('изображ')) return 'image';
+    if (combined.includes('video') || combined.includes('film') || combined.includes('видео')) return 'video';
+    if (combined.includes('audio') || combined.includes('music') || combined.includes('voice') || combined.includes('sound') || combined.includes('аудио') || combined.includes('музык') || combined.includes('голос')) return 'audio';
+    return (p.type || 'text').toLowerCase();
+}
+
+function updateSidebarFilters() {
+    const typeItem = document.querySelector('#dropdown-type .dropdown-item.active');
+    const typeVal = typeItem ? typeItem.dataset.value : 'all';
+    
+    const catItem = document.querySelector('#dropdown-category .dropdown-item.active');
+    const catVal = catItem ? catItem.dataset.value : 'all';
+    const catName = catItem ? catItem.textContent : '';
+
+    const sortVal = document.querySelector('#dropdown-sort .dropdown-item.active')?.dataset.value || 'newest';
+    const searchInput = document.querySelector('#main-search');
+    const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const activeTag = document.querySelector('#tags-container .tag-active')?.textContent || null;
+
+    filteredPrompts = allPrompts.filter(p => {
+        if (typeVal !== 'all' && getPromptType(p) !== typeVal) return false;
+        if (catVal !== 'all' && p.category_id !== catVal && p.category !== catVal && p.category !== catName) return false;
+        if (activeTag && (!p.tags || !p.tags.some(t => t.toLowerCase() === activeTag.toLowerCase()))) return false;
+        
+        if (searchVal) {
+            const titleMatch = p.title && p.title.toLowerCase().includes(searchVal);
+            const descMatch = p.description && p.description.toLowerCase().includes(searchVal);
+            const promptMatch = p.prompt && p.prompt.toLowerCase().includes(searchVal);
+            if (!titleMatch && !descMatch && !promptMatch) return false;
+        }
+        return true;
+    });
+
+    if (sortVal === 'oldest') {
+        filteredPrompts.reverse();
+    } else if (sortVal === 'popular') {
+        filteredPrompts.sort((a, b) => (b.views || 0) - (a.views || 0));
+    }
+
+    currentFilter = { type: 'sidebar', id: 'mixed', displayName: 'Combined' };
+    
+    currentPromptIndex = 0;
+    const grid = document.getElementById('prompts-grid');
+    if (grid) grid.innerHTML = '';
+    
+    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+    
+    loadMorePrompts();
+}
 
 function initDropdowns() {
     document.addEventListener('click', e => {
@@ -1006,6 +1043,7 @@ function initDropdowns() {
             item.classList.add('active');
             if (sel) sel.textContent = item.textContent;
             dropdown.classList.remove('open');
+            updateSidebarFilters();
             return;
         }
 
@@ -1077,7 +1115,7 @@ function initRadixNav() {
 
     const panelSizes = {
         categories: [480, 150],
-        models: [480, 360],
+        models: [480, 300],
         tags: [480, 150]
     };
 
@@ -1160,6 +1198,43 @@ function initRadixNav() {
             open(i);
         });
     }
+
+    var modelLinks = $$('#content-models a[data-filter]');
+    for (var i = 0; i < modelLinks.length; i++) {
+        (function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (closeRadixMenu) closeRadixMenu();
+                
+                var catDropdown = document.querySelector('#dropdown-category');
+                if (catDropdown) {
+                    var catItems = catDropdown.querySelectorAll('.dropdown-item');
+                    catItems.forEach(item => item.classList.remove('active'));
+                    var allItem = catDropdown.querySelector('[data-value="all"]');
+                    if (allItem) {
+                        allItem.classList.add('active');
+                        var sel = catDropdown.querySelector('.dropdown-selected');
+                        if (sel) sel.textContent = allItem.textContent;
+                    }
+                }
+                
+                var searchInput = document.querySelector('#main-search');
+                if (searchInput) searchInput.value = '';
+                
+                var allTags = document.querySelectorAll('#tags-container .tag-btn');
+                allTags.forEach(t => t.classList.remove('tag-active'));
+                
+                var filterHeader = document.getElementById('filter-header');
+                if (filterHeader) filterHeader.classList.add('hidden');
+                
+                var aside = document.querySelector('aside');
+                if (aside) aside.style.display = '';
+
+                setTypeFilter(link.dataset.filter);
+                switchView('main-view');
+            });
+        })(modelLinks[i]);
+    }
 }
 
 async function initSidebarTags() {
@@ -1209,14 +1284,15 @@ async function initSidebarTags() {
         if (tag) {
             e.preventDefault();
             if (tag.classList.contains('tag-active')) {
-                applyFilter(null, null, null);
+                tag.classList.remove('tag-active');
+                updateSidebarFilters();
             } else {
                 var allTags = container.querySelectorAll('.tag-btn');
                 for (var j = 0; j < allTags.length; j++) {
                     allTags[j].classList.remove('tag-active');
                 }
                 tag.classList.add('tag-active');
-                applyFilter('sidebar-tag', tag.textContent, tag.textContent);
+                updateSidebarFilters();
             }
         }
     });
@@ -1419,7 +1495,7 @@ function generateCategoriesPage() {
 function setTypeFilter(value) {
     var dropdown = $('#dropdown-type');
     if (!dropdown) return;
-    var items = $('.dropdown-item', dropdown);
+    var items = $$('.dropdown-item', dropdown);
     var sel = $('.dropdown-selected', dropdown);
     for (var i = 0; i < items.length; i++) {
         if (items[i].dataset.value === value) {
@@ -1429,6 +1505,7 @@ function setTypeFilter(value) {
             items[i].classList.remove('active');
         }
     }
+    updateSidebarFilters();
 }
 
 function initViewSwitcher() {
@@ -1534,21 +1611,23 @@ function initViewSwitcher() {
         (function(link) {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                setTypeFilter(link.dataset.footerFilter);
-                switchView('main-view');
+                applyFilter('model', link.dataset.footerFilter, link.textContent.trim());
             });
         })(footerModelLinks[j]);
     }
     // --- КОНЕЦ ОБРАБОТЧИКОВ ФУТЕРА ---
 
-    var modelLinks = $('#content-models a[data-filter]');
+    var modelLinks = $$('#content-models a[data-filter]');
     for (var i = 0; i < modelLinks.length; i++) {
         (function(link) {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 if (closeRadixMenu) closeRadixMenu();
-                setTypeFilter(link.dataset.filter);
-                switchView('main-view');
+                
+                var titleSpan = link.querySelector('span[data-i18n^="model_"]');
+                var displayName = titleSpan ? titleSpan.textContent.trim() : link.dataset.filter;
+                
+                applyFilter('model', link.dataset.filter, displayName);
             });
         })(modelLinks[i]);
     }
@@ -1808,7 +1887,13 @@ function applyFilter(type, id, displayName) {
             typeLabel.textContent = translations[currentLang]?.tags_label || 'Тег';
         } else {
             aside.style.display = 'none';
-            typeLabel.textContent = type === 'category' ? (translations[currentLang]?.category_label || 'Категория') : (translations[currentLang]?.tags_label || 'Тег');
+            if (type === 'category') {
+                typeLabel.textContent = translations[currentLang]?.category_label || 'Категория';
+            } else if (type === 'model') {
+                typeLabel.textContent = translations[currentLang]?.nav_models || 'Модели';
+            } else {
+                typeLabel.textContent = translations[currentLang]?.tags_label || 'Тег';
+            }
         }
         
         filterHeader.classList.remove('hidden');
@@ -1818,22 +1903,50 @@ function applyFilter(type, id, displayName) {
             filteredPrompts = allPrompts.filter(p => p.category_id === id || p.category === id || p.category === displayName);
         } else if (type === 'tag' || type === 'sidebar-tag') {
             filteredPrompts = allPrompts.filter(p => p.tags && p.tags.some(t => t.toLowerCase() === id.toLowerCase()));
+        } else if (type === 'model') {
+            filteredPrompts = allPrompts.filter(p => getPromptType(p) === id);
         }
+        
+        switchView('main-view');
+        
+        currentPromptIndex = 0;
+        const grid = document.getElementById('prompts-grid');
+        if (grid) grid.innerHTML = '';
+        
+        if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+        
+        loadMorePrompts();
     } else {
         aside.style.display = '';
         filterHeader.classList.add('hidden');
-        filteredPrompts = allPrompts;
+
+        var catDropdown = document.querySelector('#dropdown-category');
+        if (catDropdown) {
+            var catItems = catDropdown.querySelectorAll('.dropdown-item');
+            catItems.forEach(item => item.classList.remove('active'));
+            var allItem = catDropdown.querySelector('[data-value="all"]');
+            if (allItem) {
+                allItem.classList.add('active');
+                var sel = catDropdown.querySelector('.dropdown-selected');
+                if (sel) sel.textContent = allItem.textContent;
+            }
+        }
+        var typeDropdown = document.querySelector('#dropdown-type');
+        if (typeDropdown) {
+            var tItems = typeDropdown.querySelectorAll('.dropdown-item');
+            tItems.forEach(item => item.classList.remove('active'));
+            var tAllItem = typeDropdown.querySelector('[data-value="all"]');
+            if (tAllItem) {
+                tAllItem.classList.add('active');
+                var tSel = typeDropdown.querySelector('.dropdown-selected');
+                if (tSel) tSel.textContent = tAllItem.textContent;
+            }
+        }
+        var searchInput = document.querySelector('#main-search');
+        if (searchInput) searchInput.value = '';
+
+        updateSidebarFilters();
     }
-    
-    switchView('main-view');
-    
-    currentPromptIndex = 0;
-    const grid = document.getElementById('prompts-grid');
-    if (grid) grid.innerHTML = '';
-    
-    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
-    
-    loadMorePrompts();
 }
 
 function escapeHTML(str) {
