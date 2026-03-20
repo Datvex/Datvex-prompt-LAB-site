@@ -43,8 +43,12 @@
         <div class="w-full px-6 md:px-12 h-16 flex items-center justify-between max-w-[1800px] mx-auto">
             <div class="flex items-center gap-8">
                 <a href="#" id="home-link" class="flex items-center text-white font-semibold text-lg tracking-tight">
-                    <img src="logo.png" alt="Datvex Logo" class="h-16 w-auto brightness-0 invert -ml-2 -mr-4" fetchpriority="high">
-                    Datvex Prompt LAB
+                    <img src="logo.png" alt="Datvex Logo" class="h-12 w-auto brightness-0 invert -ml-1 mr-1" fetchpriority="high">
+                    <span id="logo-text-main">Datvex Prompt LAB</span>
+                    <div id="logo-text-docs" class="hidden items-center">
+                        <span class="w-px h-5 bg-[#333] mx-2.5"></span>
+                        <span class="font-medium tracking-normal">Docs</span>
+                    </div>
                 </a>
 
                 <nav class="hidden md:flex items-center gap-1 text-[14px] text-vercel-gray font-medium relative z-50" id="radix-nav-root" style="perspective: 2000px;">
@@ -223,6 +227,32 @@
                     View Repository
                 </a>
             </div>
+
+            <div class="w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-16 px-4 md:px-0">
+                <div class="bg-[#111] border border-[#222] p-8 rounded-2xl flex flex-col gap-4 hover:border-[#333] transition-colors duration-300 group">
+                    <div class="w-12 h-12 bg-[#1A1A1A] border border-[#333] rounded-xl flex items-center justify-center group-hover:border-[#555] transition-colors duration-300">
+                        <i data-lucide="layers" class="w-6 h-6 text-[#EDEDED]"></i>
+                    </div>
+                    <h3 data-i18n="feature_1_title" class="text-[17px] font-semibold text-white tracking-tight mt-2">Structured Library</h3>
+                    <p data-i18n="feature_1_desc" class="text-[15px] text-[#888] leading-relaxed">Carefully categorized prompts for text, image, and video generation.</p>
+                </div>
+                
+                <div class="bg-[#111] border border-[#222] p-8 rounded-2xl flex flex-col gap-4 hover:border-[#333] transition-colors duration-300 group">
+                    <div class="w-12 h-12 bg-[#1A1A1A] border border-[#333] rounded-xl flex items-center justify-center group-hover:border-[#555] transition-colors duration-300">
+                        <i data-lucide="cpu" class="w-6 h-6 text-[#EDEDED]"></i>
+                    </div>
+                    <h3 data-i18n="feature_2_title" class="text-[17px] font-semibold text-white tracking-tight mt-2">Multi-Model Support</h3>
+                    <p data-i18n="feature_2_desc" class="text-[15px] text-[#888] leading-relaxed">Tested and optimized for ChatGPT, Claude, Midjourney, and more.</p>
+                </div>
+
+                <div class="bg-[#111] border border-[#222] p-8 rounded-2xl flex flex-col gap-4 hover:border-[#333] transition-colors duration-300 group">
+                    <div class="w-12 h-12 bg-[#1A1A1A] border border-[#333] rounded-xl flex items-center justify-center group-hover:border-[#555] transition-colors duration-300">
+                        <i data-lucide="github" class="w-6 h-6 text-[#EDEDED]"></i>
+                    </div>
+                    <h3 data-i18n="feature_3_title" class="text-[17px] font-semibold text-white tracking-tight mt-2">Open Source</h3>
+                    <p data-i18n="feature_3_desc" class="text-[15px] text-[#888] leading-relaxed">Contribute, fork, and use the repository freely for your own projects.</p>
+                </div>
+            </div>
             
             <div class="mt-20 w-full relative flex justify-center pb-10">
                 <div class="w-[250px] h-[220px] bg-gradient-to-br from-white via-[#888] to-[#111] opacity-20" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
@@ -387,6 +417,165 @@
             </div>
         </div>
 
+        <div id="docs-view" class="hidden w-full max-w-[1400px] mx-auto flex-col md:flex-row gap-8 lg:gap-16 pt-8 md:pt-12 px-4 md:px-8">
+            <aside class="w-full md:w-[220px] flex-shrink-0 hidden md:block">
+                <div class="sticky top-[100px] flex flex-col gap-5 text-[14px] max-h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar">
+                    <h4 class="font-semibold text-white tracking-tight px-3">On this page</h4>
+                    <nav class="flex flex-col border-l border-[#222] ml-3">
+                        <a href="#doc-overview" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Overview</a>
+                        <a href="#doc-features" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Features</a>
+                        <a href="#doc-structure" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Project Structure</a>
+                        <a href="#doc-getting-started" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Getting Started</a>
+                        <a href="#doc-architecture" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Architecture</a>
+                        <a href="#doc-schemas" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Data Schemas</a>
+                        <a href="#doc-models" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Supported AI Models</a>
+                        <a href="#doc-css" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">CSS Architecture</a>
+                        <a href="#doc-performance" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Performance</a>
+                        <a href="#doc-sources" class="py-1.5 pl-4 -ml-px border-l border-transparent hover:border-[#888] text-[#888] hover:text-white transition-all">Sources & Credits</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="flex-1 min-w-0 flex pb-32 justify-center md:justify-start">
+                <div class="w-full max-w-[800px] flex flex-col gap-5 text-[#A0A0A0] text-[15px] leading-relaxed">
+                    
+                    <div class="pb-8 mb-4 border-b border-[#222] flex flex-col gap-4 text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tighter">Datvex Prompt LAB</h1>
+                        <p class="text-[17px] text-[#EDEDED] leading-relaxed">A professional, structured repository of high-quality prompts designed for specialized tasks across multiple AI systems.</p>
+                    </div>
+
+                    <h2 id="doc-overview" class="text-2xl font-semibold text-white tracking-tight mt-6 scroll-mt-28">Overview</h2>
+                    <p>Welcome to the <strong>Datvex Prompt LAB</strong> — a professional, structured repository containing high-quality English-language prompts designed for specialized tasks across multiple AI systems.</p>
+                    <p>The collection includes carefully curated prompts gathered from various sources across the global AI community — including GitHub repositories, Discord channels, and other professional resources — as well as original prompts developed specifically for this LAB.</p>
+                    <p>The project ships as a <strong>static single-page application (SPA)</strong> built with vanilla HTML, CSS, and JavaScript. It fetches prompt data from JSON files hosted on GitHub and renders an interactive, filterable, searchable catalog with direct AI model integration.</p>
+
+                    <h2 id="doc-features" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Features</h2>
+                    <div class="overflow-x-auto rounded-xl border border-[#333] my-2">
+                        <table class="w-full text-left border-collapse text-sm">
+                            <thead class="bg-[#111]">
+                                <tr>
+                                    <th class="p-4 font-semibold text-white border-b border-[#333] w-1/3">Feature</th>
+                                    <th class="p-4 font-semibold text-white border-b border-[#333]">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[#222]">
+                                <tr class="hover:bg-[#111]/50 transition-colors">
+                                    <td class="p-4 font-medium text-[#EDEDED]">Structured Library</td>
+                                    <td class="p-4">Prompts organized by type and detailed categories</td>
+                                </tr>
+                                <tr class="hover:bg-[#111]/50 transition-colors">
+                                    <td class="p-4 font-medium text-[#EDEDED]">Multi-Model Launch</td>
+                                    <td class="p-4">Send prompts to ChatGPT, Claude, Grok, Gemini, DeepSeek, and more</td>
+                                </tr>
+                                <tr class="hover:bg-[#111]/50 transition-colors">
+                                    <td class="p-4 font-medium text-[#EDEDED]">11-Language UI</td>
+                                    <td class="p-4">Full interface localization (EN, RU, ZH, ES, etc.)</td>
+                                </tr>
+                                <tr class="hover:bg-[#111]/50 transition-colors">
+                                    <td class="p-4 font-medium text-[#EDEDED]">Real-time Search</td>
+                                    <td class="p-4">Instant prompt search with debounced input</td>
+                                </tr>
+                                <tr class="hover:bg-[#111]/50 transition-colors">
+                                    <td class="p-4 font-medium text-[#EDEDED]">Tag System</td>
+                                    <td class="p-4">Color-coded tags with count badges and sidebar filtering</td>
+                                </tr>
+                                <tr class="hover:bg-[#111]/50 transition-colors">
+                                    <td class="p-4 font-medium text-[#EDEDED]">Session Caching</td>
+                                    <td class="p-4">Data cached in <code class="bg-[#1A1A1A] px-1.5 py-0.5 rounded text-[13px] text-[#EDEDED] border border-[#333] font-mono">sessionStorage</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="doc-structure" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Project Structure</h2>
+                    <div class="bg-[#0A0A0A] border border-[#333] rounded-xl p-5 overflow-x-auto my-2 font-mono text-[13px] leading-relaxed shadow-inner">
+<pre class="text-[#888]">Datvex-prompt-LAB/
+│
+├── <span class="text-white font-medium">index.html</span>              <span class="text-[#555]"># Main HTML document (SPA entry point)</span>
+├── <span class="text-white font-medium">style.css</span>               <span class="text-[#555]"># Custom styles, animations, components</span>
+├── <span class="text-white font-medium">script.js</span>               <span class="text-[#555]"># Application logic, state, AI integration</span>
+│
+├── <span class="text-[#60A5FA] font-medium">data/</span>
+│   ├── <span class="text-white font-medium">prompts.json</span>        <span class="text-[#555]"># All prompt entries (fetched at runtime)</span>
+│   ├── <span class="text-white font-medium">categories.json</span>     <span class="text-[#555]"># Category groups and items</span>
+│   └── <span class="text-white font-medium">tags.json</span>           <span class="text-[#555]"># Tag definitions</span></pre>
+                    </div>
+
+                    <h2 id="doc-getting-started" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Getting Started</h2>
+                    <h3 class="text-lg font-medium text-[#EDEDED] mt-2 mb-1">Prerequisites</h3>
+                    <ul class="list-disc pl-5 space-y-1.5 marker:text-[#555]">
+                        <li>A modern web browser (Chrome 90+, Firefox 88+, Safari 14+)</li>
+                        <li>A local HTTP server (for development)</li>
+                        <li>No build tools, bundlers, or package managers required</li>
+                    </ul>
+
+                    <h3 class="text-lg font-medium text-[#EDEDED] mt-6 mb-1">Running Locally</h3>
+                    <div class="bg-[#0A0A0A] border border-[#333] rounded-xl p-5 overflow-x-auto my-2 font-mono text-[13px] shadow-inner">
+<pre class="text-[#EDEDED]"><span class="text-[#555]"># Clone the repository</span>
+git clone https://github.com/Datvex/Datvex-prompt-LAB.git
+
+<span class="text-[#555]"># Using Python 3</span>
+python -m http.server 8000
+
+<span class="text-[#555]"># Using Node.js</span>
+npx serve .</pre>
+                    </div>
+
+                    <h2 id="doc-architecture" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Architecture</h2>
+                    <p>The application follows a <strong>vanilla SPA architecture</strong> with no framework dependencies. All UI interactions, routing, and state management are handled with plain JavaScript.</p>
+                    <p>Data is fetched from GitHub raw content URLs at runtime and cached locally to ensure lightning-fast subsequent loads and minimal network overhead.</p>
+
+                    <h2 id="doc-schemas" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Data Schemas</h2>
+                    <div class="bg-[#0A0A0A] border border-[#333] rounded-xl p-5 overflow-x-auto my-2 font-mono text-[13px] shadow-inner">
+<pre class="text-[#888]">{
+    <span class="text-[#F472B6]">"title"</span>: <span class="text-[#4ADE80]">"Senior React Developer"</span>,
+    <span class="text-[#F472B6]">"description"</span>: <span class="text-[#4ADE80]">"Act as a senior React developer..."</span>,
+    <span class="text-[#F472B6]">"prompt"</span>: <span class="text-[#4ADE80]">"You are a senior React developer with 10+ years..."</span>,
+    <span class="text-[#F472B6]">"category"</span>: <span class="text-[#4ADE80]">"Programming & Tech"</span>,
+    <span class="text-[#F472B6]">"category_id"</span>: <span class="text-[#4ADE80]">"programming"</span>,
+    <span class="text-[#F472B6]">"tags"</span>: [<span class="text-[#4ADE80]">"react"</span>, <span class="text-[#4ADE80]">"frontend"</span>, <span class="text-[#4ADE80]">"coding"</span>]
+}</pre>
+                    </div>
+
+                    <h2 id="doc-models" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Supported AI Models</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-2">
+                        <div class="border border-[#222] rounded-xl p-5 bg-[#111]/50">
+                            <h4 class="text-white font-medium mb-4 flex items-center gap-2.5"><i data-lucide="message-square" class="w-4 h-4 text-[#888]"></i> Chat</h4>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">ChatGPT</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">Web</span></div>
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">Claude</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">Web</span></div>
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">DeepSeek</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">Modal</span></div>
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">Perplexity</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">Web</span></div>
+                            </div>
+                        </div>
+                        <div class="border border-[#222] rounded-xl p-5 bg-[#111]/50">
+                            <h4 class="text-white font-medium mb-4 flex items-center gap-2.5"><i data-lucide="code" class="w-4 h-4 text-[#888]"></i> Code</h4>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">Windsurf</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">App</span></div>
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">Cursor</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">App</span></div>
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">Copilot</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">App</span></div>
+                                <div class="flex items-center justify-between"><span class="text-[#EDEDED] text-[14px]">v0</span> <span class="text-[10px] uppercase font-medium tracking-wider text-[#666]">Web</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 id="doc-css" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">CSS Architecture</h2>
+                    <p>The UI follows a minimalist dark theme utilizing Tailwind CSS utility classes alongside custom CSS for specific animations, layout containment, and custom scrollbars.</p>
+
+                    <h2 id="doc-performance" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Performance</h2>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-[#555]">
+                        <li><strong class="text-[#EDEDED] font-medium">Lazy loading:</strong> Prompts are loaded in batches via IntersectionObserver.</li>
+                        <li><strong class="text-[#EDEDED] font-medium">Event delegation:</strong> Single click listeners on the document root for dynamic elements.</li>
+                        <li><strong class="text-[#EDEDED] font-medium">CSS containment:</strong> <code class="bg-[#1A1A1A] px-1.5 py-0.5 rounded text-[13px] text-[#EDEDED] border border-[#333] font-mono">contain: layout style</code> is used on heavily rendered elements.</li>
+                    </ul>
+
+                    <h2 id="doc-sources" class="text-2xl font-semibold text-white tracking-tight mt-10 scroll-mt-28">Sources & Credits</h2>
+                    <p>This collection includes prompts gathered from community resources such as <code class="bg-[#1A1A1A] px-1.5 py-0.5 rounded text-[13px] text-[#EDEDED] border border-[#333] font-mono">awesome-nano-banana-pro-prompts</code> and <code class="bg-[#1A1A1A] px-1.5 py-0.5 rounded text-[13px] text-[#EDEDED] border border-[#333] font-mono">prompts.chat</code>, alongside originally developed material.</p>
+
+                </div>
+            </div>
+        </div>
+
         <!-- Меню выбора нейросети -->
         <div id="ai-selector-menu" class="absolute z-[250] w-[240px] bg-[#1A1A1A] border border-[#333] rounded-xl shadow-[0_16px_40px_rgba(0,0,0,0.8)] overflow-hidden opacity-0 invisible scale-95 origin-bottom-right transition-all duration-200" style="display: none;">
             <div class="flex p-1.5 bg-[#111] border-b border-[#333]">
@@ -497,6 +686,56 @@
                 </div>
             </div>
         </div>
+
+            <footer class="w-full max-w-[1200px] mx-auto mt-32 border-t border-[#222] pt-16 pb-12 flex flex-col px-4 md:px-0 text-left">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-12 w-full">
+                    
+                    <div class="flex flex-col gap-4">
+                        <h4 class="text-[12px] font-semibold text-white uppercase tracking-wider mb-1">Explore</h4>
+                        <a href="#" id="footer-link-categories" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Categories</a>
+                        <a href="#" id="footer-link-models" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Models</a>
+                        <a href="#" id="footer-link-tags" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Tags</a>
+                        <a href="#" id="footer-link-sources" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Sources</a>
+                    </div>
+                    
+                    <div class="flex flex-col gap-4">
+                        <h4 class="text-[12px] font-semibold text-white uppercase tracking-wider mb-1">Models</h4>
+                        <a href="#" data-footer-filter="text" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Text</a>
+                        <a href="#" data-footer-filter="image" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Image</a>
+                        <a href="#" data-footer-filter="video" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Video</a>
+                        <a href="#" data-footer-filter="audio" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Audio</a>
+                        <a href="#" data-footer-filter="audio" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Voice</a>
+                    </div>
+                    
+                    <div class="flex flex-col gap-4">
+                        <h4 class="text-[12px] font-semibold text-white uppercase tracking-wider mb-1">Resources</h4>
+                        <a href="https://github.com/Datvex/Datvex-prompt-LAB" target="_blank" rel="noopener" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Repository</a>
+                        <a href="#" id="footer-link-docs" class="text-[14px] text-[#888] hover:text-white transition-colors w-fit">Documentation</a>
+                    </div>
+                    
+                    <div class="flex flex-col gap-4">
+                        <h4 class="text-[12px] font-semibold text-white uppercase tracking-wider mb-1">Use Cases</h4>
+                        <span class="text-[14px] text-[#555] cursor-default w-fit">Developers</span>
+                        <span class="text-[14px] text-[#555] cursor-default w-fit">Designers</span>
+                        <span class="text-[14px] text-[#555] cursor-default w-fit">Content Creators</span>
+                        <span class="text-[14px] text-[#555] cursor-default w-fit">Businesses</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <h4 class="text-[12px] font-semibold text-white uppercase tracking-wider mb-1">Company</h4>
+                        <span class="text-[14px] text-[#555] cursor-default w-fit">About</span>
+                        <span class="text-[14px] text-[#555] cursor-default w-fit">Privacy Policy</span>
+                        <span class="text-[14px] text-[#555] cursor-default w-fit">Terms of Service</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <h4 class="text-[12px] font-semibold text-white uppercase tracking-wider mb-1">Community</h4>
+                        <a href="https://github.com/Datvex/Datvex-prompt-LAB" target="_blank" rel="noopener" class="flex items-center gap-2 text-[14px] text-[#888] hover:text-white transition-colors w-fit">
+                            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </footer>
     </main>
 </body>
 </html>

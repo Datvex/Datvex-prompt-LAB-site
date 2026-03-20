@@ -59,7 +59,13 @@ const translations = {
         hero_title: "Discover and deploy <br class=\"hidden md:block\" /> perfect AI Prompts.",
         hero_desc: "Datvex provides the professional structured repository of high-quality prompts to build, scale, and secure a faster AI experience.",
         hero_btn_explore: "Start Exploring",
-        hero_btn_repo: "View Repository"
+        hero_btn_repo: "View Repository",
+        feature_1_title: "Structured Library",
+        feature_1_desc: "Carefully categorized prompts for text, image, and video generation.",
+        feature_2_title: "Multi-Model Support",
+        feature_2_desc: "Tested and optimized for ChatGPT, Claude, Midjourney, and more.",
+        feature_3_title: "Open Source",
+        feature_3_desc: "Contribute, fork, and use the repository freely for your own projects."
     },
     ru: {
         lang_menu: "Язык интерфейса",
@@ -116,9 +122,15 @@ const translations = {
         modal_open: "Открыть ",
         modal_desc: "Промпт скопирован в буфер обмена. Вставьте его в {name} после открытия.",
         hero_title: "Находите и используйте <br class=\"hidden md:block\" /> идеальные AI Промпты.",
-        hero_desc: "Datvex — это профессиональный структурированный репозиторий высококачественных промптов для создания, масштабирования и ускорения работы с ИИ.",
+        hero_desc: "Datvex это профессиональный структурированный репозиторий высококачественных промптов для создания, масштабирования и ускорения работы с ИИ.",
         hero_btn_explore: "Начать работу",
-        hero_btn_repo: "Репозиторий"
+        hero_btn_repo: "Репозиторий",
+        feature_1_title: "Структурированная библиотека",
+        feature_1_desc: "Тщательно отсортированные промпты для генерации текста, изображений и видео.",
+        feature_2_title: "Поддержка ИИ-моделей",
+        feature_2_desc: "Проверено и оптимизировано для работы с ChatGPT, Claude, Midjourney и другими.",
+        feature_3_title: "Открытый исходный код",
+        feature_3_desc: "Вносите вклад, делайте форки и свободно используйте репозиторий в своих проектах."
     },
     zh: {
         lang_menu: "界面语言",
@@ -177,7 +189,13 @@ const translations = {
         hero_title: "发现并部署 <br class=\"hidden md:block\" /> 完美的 AI 提示词。",
         hero_desc: "Datvex 提供专业、结构化的高质量提示词库，帮助构建、扩展和保障更快速的 AI 体验。",
         hero_btn_explore: "开始探索",
-        hero_btn_repo: "查看代码库"
+        hero_btn_repo: "查看代码库",
+        feature_1_title: "结构化图库",
+        feature_1_desc: "为文本、图像和视频生成精心分类的提示词。",
+        feature_2_title: "多模型支持",
+        feature_2_desc: "经过测试并针对 ChatGPT、Claude、Midjourney 等进行了优化。",
+        feature_3_title: "开源",
+        feature_3_desc: "自由贡献、复刻并在您自己的项目中使用该代码库。"
     },
     es: {
         lang_menu: "Idioma de la interfaz",
@@ -236,7 +254,13 @@ const translations = {
         hero_title: "Descubre y despliega <br class=\"hidden md:block\" /> prompts de IA perfectos.",
         hero_desc: "Datvex proporciona un repositorio estructurado y profesional de prompts de alta calidad para construir, escalar y asegurar una experiencia de IA más rápida.",
         hero_btn_explore: "Comenzar a explorar",
-        hero_btn_repo: "Ver repositorio"
+        hero_btn_repo: "Ver repositorio",
+        feature_1_title: "Biblioteca estructurada",
+        feature_1_desc: "Prompts cuidadosamente categorizados para generación de texto, imagen y video.",
+        feature_2_title: "Soporte multi-modelo",
+        feature_2_desc: "Probado y optimizado para ChatGPT, Claude, Midjourney y más.",
+        feature_3_title: "Código abierto",
+        feature_3_desc: "Contribuye, bifurca y usa el repositorio libremente para tus propios proyectos."
     },
     de: {
         lang_menu: "Oberflächensprache",
@@ -295,7 +319,13 @@ const translations = {
         hero_title: "Entdecken und nutzen Sie <br class=\"hidden md:block\" /> perfekte KI-Prompts.",
         hero_desc: "Datvex bietet ein professionelles, strukturiertes Repository mit hochwertigen Prompts, um eine schnellere KI-Erfahrung aufzubauen, zu skalieren und zu sichern.",
         hero_btn_explore: "Jetzt entdecken",
-        hero_btn_repo: "Repository ansehen"
+        hero_btn_repo: "Repository ansehen",
+        feature_1_title: "Strukturierte Bibliothek",
+        feature_1_desc: "Sorgfältig kategorisierte Prompts für Text-, Bild- und Videoerstellung.",
+        feature_2_title: "Multi-Modell-Unterstützung",
+        feature_2_desc: "Getestet und optimiert für ChatGPT, Claude, Midjourney und mehr.",
+        feature_3_title: "Open Source",
+        feature_3_desc: "Tragen Sie bei, forken Sie und nutzen Sie das Repository frei für Ihre eigenen Projekte."
     },
     hi: {
         lang_menu: "इंटरफ़ेस भाषा",
@@ -354,7 +384,13 @@ const translations = {
         hero_title: "खोजें और डिप्लॉय करें <br class=\"hidden md:block\" /> बेहतरीन AI प्रॉम्ट्स।",
         hero_desc: "Datvex उच्च-गुणवत्ता वाले प्रॉम्ट्स का एक पेशेवर संरचित रिपॉजिटरी प्रदान करता है ताकि तेज़ AI अनुभव का निर्माण, स्केल और सुरक्षा की जा सके।",
         hero_btn_explore: "खोजना शुरू करें",
-        hero_btn_repo: "रिपॉजिटरी देखें"
+        hero_btn_repo: "रिपॉजिटरी देखें",
+        feature_1_title: "संरचित लाइब्रेरी",
+        feature_1_desc: "पाठ, छवि और वीडियो जनरेशन के लिए सावधानीपूर्वक वर्गीकृत प्रॉम्पट्स।",
+        feature_2_title: "मल्टी-मॉडल सपोर्ट",
+        feature_2_desc: "ChatGPT, Claude, Midjourney आदि के लिए परीक्षण और अनुकूलित।",
+        feature_3_title: "ओपन सोर्स",
+        feature_3_desc: "अपने स्वयं के प्रोजेक्ट्स के लिए स्वतंत्र रूप से रिपॉजिटरी का योगदान, फोर्क और उपयोग करें।"
     },
     fr: {
         lang_menu: "Langue de l'interface",
@@ -413,7 +449,13 @@ const translations = {
         hero_title: "Découvrez et déployez <br class=\"hidden md:block\" /> des prompts IA parfaits.",
         hero_desc: "Datvex fournit un référentiel structuré et professionnel de prompts de haute qualité pour créer, faire évoluer et sécuriser une expérience IA plus rapide.",
         hero_btn_explore: "Commencer à explorer",
-        hero_btn_repo: "Voir le dépôt"
+        hero_btn_repo: "Voir le dépôt",
+        feature_1_title: "Bibliothèque structurée",
+        feature_1_desc: "Prompts soigneusement classés pour la génération de texte, d'image et de vidéo.",
+        feature_2_title: "Support multi-modèle",
+        feature_2_desc: "Testé et optimisé pour ChatGPT, Claude, Midjourney, etc.",
+        feature_3_title: "Open Source",
+        feature_3_desc: "Contribuez, forkez et utilisez librement le dépôt pour vos propres projets."
     },
     it: {
         lang_menu: "Lingua dell'interfaccia",
@@ -472,7 +514,13 @@ const translations = {
         hero_title: "Scopri e distribuisci <br class=\"hidden md:block\" /> prompt IA perfetti.",
         hero_desc: "Datvex fornisce un repository strutturato professionale di prompt di alta qualità per creare, scalare e proteggere un'esperienza IA più rapida.",
         hero_btn_explore: "Inizia a esplorare",
-        hero_btn_repo: "Vedi repository"
+        hero_btn_repo: "Vedi repository",
+        feature_1_title: "Libreria strutturata",
+        feature_1_desc: "Prompt accuratamente categorizzati per la generazione di testo, immagini e video.",
+        feature_2_title: "Supporto multi-modello",
+        feature_2_desc: "Testato e ottimizzato per ChatGPT, Claude, Midjourney e altri.",
+        feature_3_title: "Open Source",
+        feature_3_desc: "Contribuisci, fai fork e usa liberamente il repository per i tuoi progetti."
     },
     pt: {
         lang_menu: "Idioma da interface",
@@ -531,7 +579,13 @@ const translations = {
         hero_title: "Descubra e implemente <br class=\"hidden md:block\" /> prompts de IA perfeitos.",
         hero_desc: "O Datvex fornece um repositório estruturado e profissional de prompts de alta qualidade para construir, escalar e proteger uma experiência de IA mais rápida.",
         hero_btn_explore: "Começar a explorar",
-        hero_btn_repo: "Ver repositório"
+        hero_btn_repo: "Ver repositório",
+        feature_1_title: "Biblioteca estruturada",
+        feature_1_desc: "Prompts cuidadosamente categorizados para geração de texto, imagem e vídeo.",
+        feature_2_title: "Suporte multi-modelo",
+        feature_2_desc: "Testado e otimizado para ChatGPT, Claude, Midjourney e mais.",
+        feature_3_title: "Código aberto",
+        feature_3_desc: "Contribua, faça fork e use o repositório livremente para seus próprios projetos."
     },
     ja: {
         lang_menu: "インターフェース言語",
@@ -590,7 +644,13 @@ const translations = {
         hero_title: "完璧な AI プロンプトを <br class=\"hidden md:block\" /> 発見し、デプロイする。",
         hero_desc: "Datvex は、より高速な AI エクスペリエンスを構築、スケーリング、保護するための、高品質なプロンプトの専門的かつ構造化されたリポジトリを提供します。",
         hero_btn_explore: "探索を始める",
-        hero_btn_repo: "リポジトリを見る"
+        hero_btn_repo: "リポジトリを見る",
+        feature_1_title: "構造化されたライブラリ",
+        feature_1_desc: "テキスト、画像、视频生成用に慎重に分類されたプロンプト。",
+        feature_2_title: "マルチモデルサポート",
+        feature_2_desc: "ChatGPT、Claude、Midjourneyなど向けにテストおよび最適化されています。",
+        feature_3_title: "オープンソース",
+        feature_3_desc: "独自プロジェクトのために自由に貢献、フォーク、使用できます。"
     },
     ko: {
         lang_menu: "인터페이스 언어",
@@ -649,7 +709,13 @@ const translations = {
         hero_title: "완벽한 AI 프롬프트를 <br class=\"hidden md:block\" /> 발견하고 배포하세요.",
         hero_desc: "Datvex는 더 빠르고 안전한 AI 경험을 구축, 확장 및 보호할 수 있도록 고품질 프롬프트의 전문적인 구조화된 저장소를 제공합니다.",
         hero_btn_explore: "탐색 시작",
-        hero_btn_repo: "저장소 보기"
+        hero_btn_repo: "저장소 보기",
+        feature_1_title: "구조화된 라이브러리",
+        feature_1_desc: "텍스트, 이미지 및 비디오 생성을 위해 신중하게 분류된 프롬프트입니다.",
+        feature_2_title: "다중 모델 지원",
+        feature_2_desc: "ChatGPT, Claude, Midjourney 등에 맞게 테스트 및 최적화되었습니다.",
+        feature_3_title: "오픈 소스",
+        feature_3_desc: "자신만의 프로젝트를 위해 자유롭게 기여하고, 포크하고, 저장소를 사용하세요."
     }
 };
 
@@ -664,6 +730,7 @@ const PROMPTS_PER_PAGE = 15;
 let isLoadingPrompts = false;
 let isAppReady = false;
 let pendingViewSwitch = null;
+let viewSwitchTimeout = null;
 
 const $ = (s, c) => (c || document).querySelector(s);
 const $$ = (s, c) => (c || document).querySelectorAll(s);
@@ -783,34 +850,102 @@ function setLanguage(lang, animate) {
 
 function switchView(viewId, pushHistory = true) {
     if (pushHistory) {
-        const url = viewId === 'home-view' ? window.location.pathname : '#' + viewId;
-        history.pushState({ view: viewId }, '', url);
+        try {
+            const url = viewId === 'home-view' ? window.location.pathname : '#' + viewId;
+            history.pushState({ view: viewId }, '', url);
+        } catch (e) {}
     }
     
-    var views = ['home-view', 'main-view', 'tags-view', 'categories-view', 'sources-view'];
+    var views =['home-view', 'main-view', 'tags-view', 'categories-view', 'sources-view', 'docs-view'];
     var header = document.getElementById('main-page-header');
     
-    for (var i = 0; i < views.length; i++) {
-        var el = document.getElementById(views[i]);
-        if (!el) continue;
-        if (views[i] === viewId) {
-            el.classList.remove('hidden');
-            el.classList.add('flex');
+    var targetEl = document.getElementById(viewId);
+    if (!targetEl) return;
+
+    var logoMain = document.getElementById('logo-text-main');
+    var logoDocs = document.getElementById('logo-text-docs');
+    
+    if (logoMain && logoDocs) {
+        if (viewId === 'docs-view') {
+            logoMain.classList.add('hidden');
+            logoDocs.classList.remove('hidden');
+            logoDocs.classList.add('flex');
         } else {
-            el.classList.add('hidden');
-            el.classList.remove('flex');
+            logoMain.classList.remove('hidden');
+            logoDocs.classList.add('hidden');
+            logoDocs.classList.remove('flex');
         }
     }
-    
-    if (header) {
-        header.style.display = viewId === 'main-view' ? '' : 'none';
+
+    if (viewSwitchTimeout) {
+        clearTimeout(viewSwitchTimeout);
     }
-    
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    var currentEl = null;
+    for (var i = 0; i < views.length; i++) {
+        var el = document.getElementById(views[i]);
+        if (el && !el.classList.contains('hidden') && el !== targetEl) {
+            currentEl = el;
+            break;
+        }
+    }
+
+    function finalizeSwitch() {
+        for (var i = 0; i < views.length; i++) {
+            var el = document.getElementById(views[i]);
+            if (!el) continue;
+            if (views[i] === viewId) {
+                el.classList.remove('hidden');
+                el.classList.add('flex');
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(15px)';
+            } else {
+                el.classList.add('hidden');
+                el.classList.remove('flex');
+                el.style.opacity = '';
+                el.style.transform = '';
+                el.style.transition = '';
+            }
+        }
+        
+        if (header) {
+            header.style.display = viewId === 'main-view' ? '' : 'none';
+        }
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                targetEl.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                targetEl.style.opacity = '1';
+                targetEl.style.transform = 'translateY(0)';
+            });
+        });
+    }
+
+    if (currentEl) {
+        currentEl.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        currentEl.style.opacity = '0';
+        currentEl.style.transform = 'translateY(-15px)';
+        viewSwitchTimeout = setTimeout(finalizeSwitch, 300);
+    } else {
+        finalizeSwitch();
+    }
 }
 
 window.addEventListener('popstate', function(e) {
-    const view = e.state && e.state.view ? e.state.view : (location.hash ? location.hash.substring(1) : 'home-view');
+    let view = e.state && e.state.view ? e.state.view : (location.hash ? location.hash.substring(1) : 'home-view');
+    
+    if (view.startsWith('doc-')) {
+        switchView('docs-view', false);
+        return;
+    }
+    
+    const validViews = ['home-view', 'main-view', 'tags-view', 'categories-view', 'sources-view', 'docs-view'];
+    if (!validViews.includes(view)) {
+        view = 'home-view';
+    }
+    
     switchView(view, false);
 });
 
@@ -834,8 +969,21 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (lang !== currentLang) setLanguage(lang, true);
     });
 
-    const initialView = location.hash ? location.hash.substring(1) : 'home-view';
-    switchView(initialView, false);
+    let initialView = location.hash ? location.hash.substring(1) : 'home-view';
+    
+    if (initialView.startsWith('doc-')) {
+        switchView('docs-view', false);
+        setTimeout(() => {
+            const el = document.getElementById(initialView);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+    } else {
+        const validViews = ['home-view', 'main-view', 'tags-view', 'categories-view', 'sources-view', 'docs-view'];
+        if (!validViews.includes(initialView)) {
+            initialView = 'home-view';
+        }
+        switchView(initialView, false);
+    }
 });
 
 function initDropdowns() {
@@ -1300,14 +1448,14 @@ function initViewSwitcher() {
                 switchView('main-view');
             } else {
                 const btnText = translations[currentLang]?.hero_btn_explore || 'Start Exploring';
-                this.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i><span>${btnText}</span>`;
+                const spinnerSvg = `<svg class="w-5 h-5 animate-spin text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>`;
+                this.innerHTML = spinnerSvg + `<span>${btnText}</span>`;
                 this.style.display = 'inline-flex';
                 this.style.alignItems = 'center';
                 this.style.justifyContent = 'center';
                 this.style.gap = '8px';
                 this.classList.add('opacity-80', 'cursor-not-allowed');
                 this.disabled = true;
-                if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
                 pendingViewSwitch = 'main-view';
             }
         });
@@ -1339,6 +1487,59 @@ function initViewSwitcher() {
             switchView('sources-view');
         });
     }
+
+    // --- ОБРАБОТЧИКИ ДЛЯ ФУТЕРА ---
+    var footerCat = $('#footer-link-categories');
+    if (footerCat) {
+        footerCat.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchView('categories-view');
+        });
+    }
+
+    var footerModels = $('#footer-link-models');
+    if (footerModels) {
+        footerModels.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchView('main-view');
+        });
+    }
+
+    var footerTags = $('#footer-link-tags');
+    if (footerTags) {
+        footerTags.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchView('tags-view');
+        });
+    }
+
+    var footerSources = $('#footer-link-sources');
+    if (footerSources) {
+        footerSources.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchView('sources-view');
+        });
+    }
+
+    var footerDocs = $('#footer-link-docs');
+    if (footerDocs) {
+        footerDocs.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchView('docs-view');
+        });
+    }
+
+    var footerModelLinks = document.querySelectorAll('a[data-footer-filter]');
+    for (var j = 0; j < footerModelLinks.length; j++) {
+        (function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                setTypeFilter(link.dataset.footerFilter);
+                switchView('main-view');
+            });
+        })(footerModelLinks[j]);
+    }
+    // --- КОНЕЦ ОБРАБОТЧИКОВ ФУТЕРА ---
 
     var modelLinks = $('#content-models a[data-filter]');
     for (var i = 0; i < modelLinks.length; i++) {
@@ -1663,7 +1864,10 @@ function shuffleArray(array) {
 
 async function loadPrompts() {
     const grid = document.querySelector('#prompts-grid');
-    if (!grid) return;
+    if (!grid) {
+        setAppReady();
+        return;
+    }
 
     try {
         const cacheKey = 'datvex_prompts';
@@ -1678,73 +1882,110 @@ async function loadPrompts() {
                 try { sessionStorage.setItem(cacheKey, JSON.stringify(allPrompts)); } catch(e) {}
             }
         }
-    } catch (e) {}
+    } catch (e) {
+        console.warn('Failed to load prompts', e);
+    }
 
+    if (!Array.isArray(allPrompts)) allPrompts = [];
     allPrompts = shuffleArray(allPrompts);
     filteredPrompts = allPrompts;
     currentPromptIndex = 0;
     grid.innerHTML = '';
     
-    await generateTagsPage();
+    try {
+        await generateTagsPage();
+    } catch(e) {}
+    
     setupInfiniteScroll();
-    loadMorePrompts();
+    loadMorePrompts(true);
 }
 
-function loadMorePrompts() {
+function setAppReady() {
+    isAppReady = true;
+    if (pendingViewSwitch) {
+        const targetView = pendingViewSwitch;
+        pendingViewSwitch = null;
+        
+        const btnExplore = document.getElementById('btn-explore');
+        if (btnExplore) {
+            btnExplore.innerHTML = translations[currentLang]?.hero_btn_explore || 'Start Exploring';
+            btnExplore.classList.remove('opacity-80', 'cursor-not-allowed');
+            btnExplore.style.display = '';
+            btnExplore.style.alignItems = '';
+            btnExplore.style.justifyContent = '';
+            btnExplore.style.gap = '';
+            btnExplore.disabled = false;
+        }
+        
+        switchView(targetView);
+    }
+}
+
+function loadMorePrompts(forceInitial) {
+    const isInitial = forceInitial === true;
     const sourceArray = currentFilter.type ? filteredPrompts : allPrompts;
 
-    if (isLoadingPrompts || currentPromptIndex >= sourceArray.length) return;
+    if (isLoadingPrompts || currentPromptIndex >= sourceArray.length) {
+        if (isInitial) setAppReady();
+        return;
+    }
     isLoadingPrompts = true;
 
     const grid = document.querySelector('#prompts-grid');
     const spinner = document.querySelector('#loading-spinner');
-    if (!grid) return;
+    if (!grid) {
+        if (isInitial) setAppReady();
+        isLoadingPrompts = false;
+        return;
+    }
 
-    if (spinner) spinner.classList.remove('hidden');
+    if (spinner && !isInitial) spinner.classList.remove('hidden');
 
     setTimeout(() => {
-        const nextPrompts = sourceArray.slice(currentPromptIndex, currentPromptIndex + PROMPTS_PER_PAGE);
-        let html = '';
-        
-        for (let i = 0; i < nextPrompts.length; i++) {
-            const p = nextPrompts[i];
-            const title = escapeHTML(p.title);
-            const desc = escapeHTML(p.description);
-            const promptText = escapeHTML(p.prompt);
-            const type = escapeHTML(p.category || 'Text');
+        try {
+            const nextPrompts = sourceArray.slice(currentPromptIndex, currentPromptIndex + PROMPTS_PER_PAGE);
+            let html = '';
+            
+            for (let i = 0; i < nextPrompts.length; i++) {
+                const p = nextPrompts[i];
+                const title = escapeHTML(p.title);
+                const desc = escapeHTML(p.description);
+                const promptText = escapeHTML(p.prompt);
+                const type = escapeHTML(p.category || 'Text');
 
-            html += `
-            <div data-index="${currentFilter.type ? allPrompts.indexOf(p) : (currentPromptIndex + i)}" class="prompt-card group bg-[#1A1A1A] border border-[#333] rounded-2xl p-5 hover:border-[#555] hover:bg-[#222] transition-all duration-300 flex flex-col gap-3 cursor-pointer">
-                <div class="flex justify-between items-start">
-                    <h3 class="font-semibold text-lg leading-tight text-[#EDEDED] group-hover:text-white transition-colors">${title}</h3>
-                    <span class="text-[10px] uppercase tracking-wider border border-[#333] px-2 py-0.5 rounded-md text-[#888] bg-[#111] max-w-[120px] truncate text-right" title="${type}">${type}</span>
-                </div>
-                <p class="text-sm text-[#A0A0A0] line-clamp-2" title="${desc}">${desc}</p>
-                
-                <div class="mt-2 flex flex-col gap-2">
-                    <div class="relative">
-                        <div class="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
-                            <button data-action="copy" class="p-1.5 bg-[#1A1A1A] border border-[#333] rounded-lg hover:bg-[#2A2A2A] hover:text-white transition-colors text-[#888]">
-                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                html += `
+                <div data-index="${currentFilter.type ? allPrompts.indexOf(p) : (currentPromptIndex + i)}" class="prompt-card group bg-[#1A1A1A] border border-[#333] rounded-2xl p-5 hover:border-[#555] hover:bg-[#222] transition-all duration-300 flex flex-col gap-3 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold text-lg leading-tight text-[#EDEDED] group-hover:text-white transition-colors">${title}</h3>
+                        <span class="text-[10px] uppercase tracking-wider border border-[#333] px-2 py-0.5 rounded-md text-[#888] bg-[#111] max-w-[120px] truncate text-right" title="${type}">${type}</span>
+                    </div>
+                    <p class="text-sm text-[#A0A0A0] line-clamp-2" title="${desc}">${desc}</p>
+                    
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="relative">
+                            <div class="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+                                <button data-action="copy" class="p-1.5 bg-[#1A1A1A] border border-[#333] rounded-lg hover:bg-[#2A2A2A] hover:text-white transition-colors text-[#888]">
+                                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                            <pre class="prompt-content bg-[#0A0A0A] border border-[#222] group-hover:border-[#333] rounded-xl p-4 text-xs font-mono text-[#A0A0A0] overflow-x-auto h-32 whitespace-pre-wrap transition-colors duration-300">${promptText}</pre>
+                        </div>
+                        <div class="flex justify-end">
+                            <button class="ai-trigger-btn flex items-center justify-center w-9 h-9 bg-[#1A1A1A] border border-[#333] rounded-xl hover:bg-[#2A2A2A] hover:border-[#555] hover:text-white transition-all duration-200 text-[#888] cursor-pointer shadow-sm">
+                                <i data-lucide="play" class="w-4 h-4 ml-0.5"></i>
                             </button>
                         </div>
-                        <pre class="prompt-content bg-[#0A0A0A] border border-[#222] group-hover:border-[#333] rounded-xl p-4 text-xs font-mono text-[#A0A0A0] overflow-x-auto h-32 whitespace-pre-wrap transition-colors duration-300">${promptText}</pre>
                     </div>
-                    <div class="flex justify-end">
-                        <button class="ai-trigger-btn flex items-center justify-center w-9 h-9 bg-[#1A1A1A] border border-[#333] rounded-xl hover:bg-[#2A2A2A] hover:border-[#555] hover:text-white transition-all duration-200 text-[#888] cursor-pointer shadow-sm">
-                            <i data-lucide="play" class="w-4 h-4 ml-0.5"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>`;
-        }
+                </div>`;
+            }
 
-        grid.insertAdjacentHTML('beforeend', html);
-        currentPromptIndex += PROMPTS_PER_PAGE;
+            grid.insertAdjacentHTML('beforeend', html);
+            currentPromptIndex += PROMPTS_PER_PAGE;
 
-        if (typeof lucide !== 'undefined' && lucide.createIcons) {
-            lucide.createIcons();
-        }
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
+        } catch (e) {}
 
         if (spinner) {
             spinner.classList.add('hidden');
@@ -1752,14 +1993,18 @@ function loadMorePrompts() {
 
         isLoadingPrompts = false;
 
+        if (isInitial) {
+            setAppReady();
+        }
+
         const sentinel = document.querySelector('#scroll-sentinel');
-        if (sentinel && currentPromptIndex < sourceArray.length) {
+        if (sentinel && sentinel.offsetParent !== null && currentPromptIndex < sourceArray.length) {
             const rect = sentinel.getBoundingClientRect();
             if (rect.top <= window.innerHeight + 200) {
                 loadMorePrompts();
             }
         }
-    }, 400);
+    }, isInitial ? 0 : 400);
 }
 
 function setupInfiniteScroll() {
@@ -1768,7 +2013,7 @@ function setupInfiniteScroll() {
 
     const observer = new IntersectionObserver((entries) => {
         const sourceArray = currentFilter.type ? filteredPrompts : allPrompts;
-        if (entries[0].isIntersecting && !isLoadingPrompts && currentPromptIndex < sourceArray.length) {
+        if (entries[0].isIntersecting && sentinel.offsetParent !== null && !isLoadingPrompts && currentPromptIndex < sourceArray.length) {
             loadMorePrompts();
         }
     }, { rootMargin: '200px' });
@@ -1821,6 +2066,18 @@ document.addEventListener('click', function(e) {
     if (e.target.closest('#clear-filter-btn')) {
         e.preventDefault();
         applyFilter(null, null, null);
+        return;
+    }
+
+    const docLink = e.target.closest('a[href^="#doc-"]');
+    if (docLink) {
+        e.preventDefault();
+        const targetId = docLink.getAttribute('href').substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+            history.replaceState({ view: 'docs-view' }, '', '#' + targetId);
+        }
         return;
     }
 
