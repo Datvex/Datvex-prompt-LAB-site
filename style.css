@@ -187,6 +187,15 @@ html { scrollbar-width: thin; scrollbar-color: #333 transparent; }
   transform: scale(1);
 }
 
+#signup-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#signup-modal.active #signup-modal-content {
+  transform: scale(1);
+}
+
 /* Стили для AI-табов с плавной анимацией */
 #ai-tabs-viewport {
   position: relative;

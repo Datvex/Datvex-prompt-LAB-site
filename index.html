@@ -201,6 +201,22 @@
                     <i class="ph-bold ph-github-logo icon-md"></i>
                     Repository
                 </a>
+
+                <div id="auth-buttons" class="hidden md:flex items-center gap-2">
+                    <button id="nav-login-btn" data-i18n="nav_login" class="flex items-center justify-center text-sm text-white bg-black border border-[#333] hover:border-[#555] transition-all duration-300 px-4 py-2 rounded-md font-medium">
+                        Log In
+                    </button>
+
+                    <button id="nav-signup-btn" data-i18n="nav_signup" class="flex items-center justify-center text-sm text-black bg-white hover:bg-gray-200 transition-all duration-300 px-4 py-2 rounded-md font-medium">
+                        Sign Up
+                    </button>
+                </div>
+
+                <div id="user-profile" class="hidden items-center gap-2">
+                    <button class="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border border-[#333] hover:opacity-80 transition-all duration-200 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                        <span id="user-avatar-text" class="text-white font-semibold text-sm"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -1235,6 +1251,45 @@ npx serve .</pre>
             </footer>
     </main>
 
+    <div id="signup-modal" class="fixed inset-0 z-[400] flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="signup-modal-backdrop"></div>
+        <div class="bg-[#0A0A0A] border border-[#333] w-full max-w-[440px] rounded-2xl shadow-2xl relative z-10 flex flex-col transform scale-95 transition-transform duration-300 p-8 md:p-10 mx-4" id="signup-modal-content">
+            
+            <button id="signup-modal-close" class="absolute top-5 right-5 text-[#888] hover:text-white transition-colors bg-[#111] hover:bg-[#222] rounded-full p-1.5 border border-transparent hover:border-[#333]">
+                <i class="ph-bold ph-x icon-sm"></i>
+            </button>
+
+            <div id="signup-step-1" class="flex flex-col w-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 text-center tracking-tight" data-i18n="signup_title_1">Your first deploy<br>is just a sign-up away.</h2>
+                <label class="text-[13px] text-[#888] font-medium mb-2" data-i18n="signup_name_label">Your Name</label>
+                <input type="text" id="signup-name-input" class="w-full bg-[#111] border border-[#333] rounded-xl px-4 py-3 text-white text-[15px] focus:outline-none focus:border-[#666] transition-all mb-4" autocomplete="off">
+                <button id="signup-continue-btn" class="w-full bg-white text-black font-semibold text-[15px] py-3 rounded-xl hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled data-i18n="signup_continue">Continue</button>
+            </div>
+
+            <div id="signup-step-2" class="hidden flex-col w-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 text-center tracking-tight" data-i18n="signup_title_2">Let's create<br>your account</h2>
+                <div class="flex flex-col gap-3">
+                    <button class="oauth-btn flex items-center justify-center gap-3 w-full bg-[#1A1A1A] border border-[#333] hover:bg-[#222] text-[#EDEDED] font-medium text-[15px] py-3 rounded-xl transition-colors">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                        Continue with Google
+                    </button>
+                    <button class="oauth-btn flex items-center justify-center gap-3 w-full bg-[#24292e] hover:bg-[#2f363d] text-white font-medium text-[15px] py-3 rounded-xl transition-colors">
+                        <i class="ph-fill ph-github-logo text-xl"></i>
+                        Continue with GitHub
+                    </button>
+                    <button class="oauth-btn flex items-center justify-center gap-3 w-full bg-[#6b4fbb] hover:bg-[#7b5ecb] text-white font-medium text-[15px] py-3 rounded-xl transition-colors">
+                        <i class="ph-fill ph-gitlab-logo-simple text-xl"></i>
+                        Continue with GitLab
+                    </button>
+                    <button class="oauth-btn flex items-center justify-center gap-3 w-full bg-[#1A1A1A] border border-[#333] hover:bg-[#222] text-[#EDEDED] font-medium text-[15px] py-3 rounded-xl transition-colors">
+                        <i class="ph-fill ph-apple-logo text-xl"></i>
+                        Continue with Apple
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     <div id="mobile-menu-backdrop" class="md:hidden"></div>
     <div id="mobile-menu" class="md:hidden">
         <div class="flex items-center justify-between mb-6">

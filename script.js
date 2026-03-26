@@ -65,7 +65,13 @@ const translations = {
         favorites_empty_title: "No favorite prompts yet.",
         favorites_empty_desc: "Open any prompt and click the heart icon to add.",
         ai_tab_chat: "Chat",
-        ai_tab_code: "Code"
+        ai_tab_code: "Code",
+        nav_login: "Log In",
+        nav_signup: "Sign Up",
+        signup_title_1: "Your first deploy<br>is just a sign-up away.",
+        signup_name_label: "Your Name",
+        signup_continue: "Continue",
+        signup_title_2: "Let's create<br>your account"
     },
     ru: {
         lang_menu: "Язык интерфейса",
@@ -133,7 +139,13 @@ const translations = {
         favorites_empty_title: "У вас пока нет избранных промптов.",
         favorites_empty_desc: "Откройте любой промпт и нажмите иконку сердца чтобы добавить.",
         ai_tab_chat: "Чат",
-        ai_tab_code: "Код"
+        ai_tab_code: "Код",
+        nav_login: "Вход",
+        nav_signup: "Регистрация",
+        signup_title_1: "Ваш первый деплой<br>всего в шаге от вас.",
+        signup_name_label: "Ваше имя",
+        signup_continue: "Продолжить",
+        signup_title_2: "Давайте создадим<br>ваш аккаунт"
     },
     zh: {
         lang_menu: "界面语言",
@@ -765,6 +777,81 @@ function debounce(fn, ms) {
     };
 }
 
+function initAuth() {
+    const signupBtn = document.getElementById('nav-signup-btn');
+    const loginBtn = document.getElementById('nav-login-btn');
+    const modal = document.getElementById('signup-modal');
+    const closeBtn = document.getElementById('signup-modal-close');
+    const backdrop = document.getElementById('signup-modal-backdrop');
+    const nameInput = document.getElementById('signup-name-input');
+    const continueBtn = document.getElementById('signup-continue-btn');
+    const step1 = document.getElementById('signup-step-1');
+    const step2 = document.getElementById('signup-step-2');
+    const authButtons = document.getElementById('auth-buttons');
+    const userProfile = document.getElementById('user-profile');
+    const avatarText = document.getElementById('user-avatar-text');
+
+    let userName = '';
+
+    function openModal() {
+        step1.classList.remove('hidden');
+        step1.classList.add('flex');
+        step2.classList.add('hidden');
+        step2.classList.remove('flex');
+        nameInput.value = '';
+        continueBtn.disabled = true;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => nameInput.focus(), 100);
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (signupBtn) signupBtn.addEventListener('click', openModal);
+    if (loginBtn) loginBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    if (nameInput) {
+        nameInput.addEventListener('input', (e) => {
+            continueBtn.disabled = e.target.value.trim().length === 0;
+        });
+        nameInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !continueBtn.disabled) {
+                continueBtn.click();
+            }
+        });
+    }
+
+    if (continueBtn) {
+        continueBtn.addEventListener('click', () => {
+            userName = nameInput.value.trim();
+            if (userName) {
+                step1.classList.add('hidden');
+                step1.classList.remove('flex');
+                step2.classList.remove('hidden');
+                step2.classList.add('flex');
+            }
+        });
+    }
+
+    document.querySelectorAll('.oauth-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            closeModal();
+            if (authButtons && userProfile && avatarText) {
+                authButtons.classList.add('hidden');
+                authButtons.classList.remove('md:flex');
+                userProfile.classList.remove('hidden');
+                userProfile.classList.add('md:flex');
+                avatarText.textContent = userName.charAt(0).toUpperCase();
+            }
+        });
+    });
+}
+
 function setLanguage(lang, animate) {
     if (!translations[lang]) return;
     currentLang = lang;
@@ -1004,6 +1091,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     generateCategoriesPage();
     initViewSwitcher();
     initAISelector();
+    initAuth();
     setLanguage(currentLang, false);
 
     $('#lang-buttons').addEventListener('click', function(e) {
