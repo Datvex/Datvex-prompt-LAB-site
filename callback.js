@@ -6,11 +6,11 @@ const pool = new Pool({
 });
 
 export default async function handler(req, res) {
-    const code = req.query.code;
-    const state = req.query.state;
+    const { code, state, error } = req.query;
 
-    if (!code) {
-        return res.redirect(302, '/');
+    if (error || !code) {
+        res.setHeader('Location', '/');
+        return res.status(302).end();
     }
 
     try {
@@ -39,7 +39,8 @@ export default async function handler(req, res) {
         const at = td.access_token;
 
         if (!at) {
-            return res.redirect(302, '/');
+            res.setHeader('Location', '/');
+            return res.status(302).end();
         }
 
         const ur = await fetch('https://api.github.com/user', {
@@ -61,9 +62,11 @@ export default async function handler(req, res) {
         const ui = encodeURIComponent(JSON.stringify({ id: dbUser.id, name: dbUser.name }));
         
         res.setHeader('Set-Cookie', 'auth_user=' + ui + '; Path=/; Max-Age=2592000; SameSite=Lax');
-        res.redirect(302, '/');
+        res.setHeader('Location', '/');
+        return res.status(302).end();
 
     } catch (err) {
-        res.redirect(302, '/');
+        res.setHeader('Location', '/');
+        return res.status(302).end();
     }
 }
