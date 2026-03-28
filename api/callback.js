@@ -1,4 +1,6 @@
-const { Pool } = require('pg');
+import pg from 'pg';
+
+const { Pool } = pg;
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
@@ -8,7 +10,6 @@ const pool = new Pool({
 export default async function handler(req, res) {
     const { code, state, error } = req.query;
 
-    // Если пользователь нажал Cancel или произошла ошибка — редирект на главную
     if (error === 'access_denied' || error || !code) {
         res.setHeader('Location', '/');
         return res.status(302).end();
