@@ -8,7 +8,8 @@ const pool = new Pool({
 export default async function handler(req, res) {
     const { code, state, error } = req.query;
 
-    if (error || !code) {
+    // Если пользователь нажал Cancel или произошла ошибка — редирект на главную
+    if (error === 'access_denied' || error || !code) {
         res.setHeader('Location', '/');
         return res.status(302).end();
     }
@@ -66,6 +67,7 @@ export default async function handler(req, res) {
         return res.status(302).end();
 
     } catch (err) {
+        console.error('OAuth callback error:', err);
         res.setHeader('Location', '/');
         return res.status(302).end();
     }
