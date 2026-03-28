@@ -187,13 +187,15 @@ html { scrollbar-width: thin; scrollbar-color: #333 transparent; }
   transform: scale(1);
 }
 
-#signup-modal.active {
-  opacity: 1;
-  visibility: visible;
+#auth-view {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-#signup-modal.active #signup-modal-content {
-  transform: scale(1);
+#auth-view.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Стили для AI-табов с плавной анимацией */

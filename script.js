@@ -778,26 +778,19 @@ function debounce(fn, ms) {
 }
 
 function initAuth() {
-    const signupBtn = document.getElementById('nav-signup-btn');
-    const loginBtn = document.getElementById('nav-login-btn');
-    const modal = document.getElementById('signup-modal');
-    const closeBtn = document.getElementById('signup-modal-close');
-    const backdrop = document.getElementById('signup-modal-backdrop');
-    const nameInput = document.getElementById('signup-name-input');
-    const continueBtn = document.getElementById('signup-continue-btn');
-    const step1 = document.getElementById('signup-step-1');
-    const step2 = document.getElementById('signup-step-2');
+    const authView = document.getElementById('auth-view');
+    const closeBtn = document.getElementById('auth-view-close');
     const authButtons = document.getElementById('auth-buttons');
     const userProfile = document.getElementById('user-profile');
     const avatarText = document.getElementById('user-avatar-text');
-
-    let userName = '';
+    const signupBtn = document.getElementById('nav-signup-btn');
+    const loginBtn = document.getElementById('nav-login-btn');
 
     function getCookie(n) {
         var m = document.cookie.match(new RegExp("(?:^|; )" + n.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
         return m ? decodeURIComponent(m[1]) : undefined;
     }
-    
+
     var c = getCookie('auth_user');
     if (c) {
         try {
@@ -812,59 +805,60 @@ function initAuth() {
         } catch(e) {}
     }
 
-    function openModal() {
-        step1.classList.remove('hidden');
-        step1.classList.add('flex');
-        step2.classList.add('hidden');
-        step2.classList.remove('flex');
-        nameInput.value = '';
-        continueBtn.disabled = true;
-        modal.classList.add('active');
+    function openAuth() {
+        authView.classList.remove('hidden');
+        authView.classList.add('flex');
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                authView.classList.add('active');
+            });
+        });
         document.body.style.overflow = 'hidden';
-        setTimeout(() => nameInput.focus(), 100);
     }
 
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
+    function closeAuth() {
+        authView.classList.remove('active');
+        setTimeout(() => {
+            authView.classList.add('hidden');
+            authView.classList.remove('flex');
+            document.body.style.overflow = '';
+        }, 300);
     }
 
-    if (signupBtn) signupBtn.addEventListener('click', openModal);
-    if (loginBtn) loginBtn.addEventListener('click', openModal);
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    if (backdrop) backdrop.addEventListener('click', closeModal);
+    if (signupBtn) signupBtn.addEventListener('click', openAuth);
+    if (loginBtn) loginBtn.addEventListener('click', openAuth);
+    if (closeBtn) closeBtn.addEventListener('click', closeAuth);
 
-    if (nameInput) {
-        nameInput.addEventListener('input', (e) => {
-            continueBtn.disabled = e.target.value.trim().length === 0;
-        });
-        nameInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !continueBtn.disabled) {
-                continueBtn.click();
-            }
-        });
-    }
-
-    if (continueBtn) {
-        continueBtn.addEventListener('click', () => {
-            userName = nameInput.value.trim();
-            if (userName) {
-                step1.classList.add('hidden');
-                step1.classList.remove('flex');
-                step2.classList.remove('hidden');
-                step2.classList.add('flex');
-            }
-        });
-    }
-
-    document.querySelectorAll('.oauth-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (btn.textContent.includes('GitHub')) {
-                window.location.href = '/api/auth?provider=github&name=' + encodeURIComponent(userName);
-            }
-        });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && authView.classList.contains('active')) {
+            closeAuth();
+        }
     });
+
+    const githubBtn = document.getElementById('oauth-github-btn');
+    if (githubBtn) {
+        githubBtn.addEventListener('click', () => {
+            window.location.href = '/api/auth?provider=github&name=User';
+        });
+    }
+
+    const termsLink = document.getElementById('signup-terms-link');
+    if (termsLink) {
+        termsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeAuth();
+            switchView('company-terms-view');
+        });
+    }
+
+    const privacyLink = document.getElementById('signup-privacy-link');
+    if (privacyLink) {
+        privacyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeAuth();
+            switchView('company-privacy-view');
+        });
+    }
 }
 
 function setLanguage(lang, animate) {
