@@ -71,7 +71,19 @@ const translations = {
         signup_title_1: "Your perfect prompt<br>is just a sign-up away.",
         signup_name_label: "Your Name",
         signup_continue: "Continue",
-        signup_title_2: "Let's create<br>your account"
+        signup_title_2: "Let's create<br>your account",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        modal_copy_title: 'Prompt copied',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     ru: {
         lang_menu: "Язык интерфейса",
@@ -145,7 +157,18 @@ const translations = {
         signup_title_1: "Ваш идеальный промпт<br>всего в шаге от вас.",
         signup_name_label: "Ваше имя",
         signup_continue: "Продолжить",
-        signup_title_2: "Давайте создадим<br>ваш аккаунт"
+        signup_title_2: "Давайте создадим<br>ваш аккаунт",
+        account_nickname_label: 'Никнейм',
+        account_nickname_placeholder: 'Введите никнейм...',
+        account_nickname_hint: 'Только английские буквы и цифры. 3\u201324 символа.',
+        account_nickname_error_format: 'Только английские буквы и цифры, 3\u201324 символа.',
+        account_nickname_error_banned: 'Этот никнейм недопустим.',
+        account_save: 'Сохранить',
+        account_saving: 'Сохранение...',
+        account_logout: 'Выйти',
+        account_network_error: 'Ошибка сети.',
+        favorites_empty_title: 'У вас пока нет избранных промптов.',
+        favorites_empty_desc: 'Откройте любой промпт и нажмите на закладку чтобы добавить.',
     },
     zh: {
         lang_menu: "界面语言",
@@ -212,7 +235,18 @@ const translations = {
         favorites_empty_title: "暂无收藏提示词。",
         favorites_empty_desc: "打开任何提示词并点击心形图标即可添加。",
         ai_tab_chat: "聊天",
-        ai_tab_code: "代码"
+        ai_tab_code: "代码",
+        account_nickname_label: '昵称',
+        account_nickname_placeholder: '输入昵称...',
+        account_nickname_hint: '只能使用英文字母和数字，3\u201324个字符。',
+        account_nickname_error_format: '只能使用英文字母和数字，3\u201324个字符。',
+        account_nickname_error_banned: '此昵称不被允许。',
+        account_save: '保存',
+        account_saving: '保存中...',
+        account_logout: '退出',
+        account_network_error: '网络错误。',
+        favorites_empty_title: '暂无收藏提示词。',
+        favorites_empty_desc: '打开任何提示词并点击书签图标即可添加。',
     },
     es: {
         lang_menu: "Idioma de la interfaz",
@@ -279,7 +313,18 @@ const translations = {
         favorites_empty_title: "Aún no hay prompts favoritos.",
         favorites_empty_desc: "Abre cualquier prompt y haz clic en el ícono del corazón para agregarlo.",
         ai_tab_chat: "Chat",
-        ai_tab_code: "Código"
+        ai_tab_code: "Código",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     de: {
         lang_menu: "Oberflächensprache",
@@ -346,7 +391,18 @@ const translations = {
         favorites_empty_title: "Noch keine favorisierten Prompts.",
         favorites_empty_desc: "Öffnen Sie einen beliebigen Prompt und klicken Sie auf das Herz-Symbol, um ihn hinzuzufügen.",
         ai_tab_chat: "Chat",
-        ai_tab_code: "Code"
+        ai_tab_code: "Code",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     hi: {
         lang_menu: "इंटरफ़ेस भाषा",
@@ -413,7 +469,18 @@ const translations = {
         favorites_empty_title: "अभी तक कोई पसंदीदा प्रॉम्ट नहीं।",
         favorites_empty_desc: "कोई भी प्रॉम्ट खोलें और जोड़ने के लिए हार्ट आइकन पर क्लिक करें।",
         ai_tab_chat: "चैट",
-        ai_tab_code: "कोड"
+        ai_tab_code: "कोड",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     fr: {
         lang_menu: "Langue de l'interface",
@@ -480,7 +547,18 @@ const translations = {
         favorites_empty_title: "Pas encore de prompts favoris.",
         favorites_empty_desc: "Ouvrez n'importe quel prompt et cliquez sur l'icône en forme de cœur pour l'ajouter.",
         ai_tab_chat: "Discussion",
-        ai_tab_code: "Code"
+        ai_tab_code: "Code",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     it: {
         lang_menu: "Lingua dell'interfaccia",
@@ -547,7 +625,18 @@ const translations = {
         favorites_empty_title: "Nessun prompt preferito ancora.",
         favorites_empty_desc: "Apri qualsiasi prompt e fai clic sull'icona a forma di cuore per aggiungerlo.",
         ai_tab_chat: "Chat",
-        ai_tab_code: "Codice"
+        ai_tab_code: "Codice",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     pt: {
         lang_menu: "Idioma da interface",
@@ -614,7 +703,18 @@ const translations = {
         favorites_empty_title: "Ainda não há prompts favoritos.",
         favorites_empty_desc: "Abra qualquer prompt e clique no ícone de coração para adicionar.",
         ai_tab_chat: "Chat",
-        ai_tab_code: "Código"
+        ai_tab_code: "Código",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     ja: {
         lang_menu: "インターフェース言語",
@@ -681,7 +781,18 @@ const translations = {
         favorites_empty_title: "お気に入りのプロンプトはまだありません。",
         favorites_empty_desc: "プロンプトを開き、ハートのアイコンをクリックして追加します。",
         ai_tab_chat: "チャット",
-        ai_tab_code: "コード"
+        ai_tab_code: "コード",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     },
     ko: {
         lang_menu: "인터페이스 언어",
@@ -748,7 +859,18 @@ const translations = {
         favorites_empty_title: "아직 즐겨찾는 프롬프트가 없습니다.",
         favorites_empty_desc: "프롬프트를 열고 하트 아이콘을 클릭하여 추가하세요.",
         ai_tab_chat: "채팅",
-        ai_tab_code: "코드"
+        ai_tab_code: "코드",
+        account_nickname_label: 'Nickname',
+        account_nickname_placeholder: 'Enter nickname...',
+        account_nickname_hint: 'Only English letters and numbers. 3\u201324 characters.',
+        account_nickname_error_format: 'Only English letters and numbers, 3\u201324 characters.',
+        account_nickname_error_banned: 'This nickname is not allowed.',
+        account_save: 'Save',
+        account_saving: 'Saving...',
+        account_logout: 'Log out',
+        account_network_error: 'Network error.',
+        favorites_empty_title: 'No favorite prompts yet.',
+        favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
     }
 };
 
@@ -3084,7 +3206,26 @@ const BANNED_PATTERNS = [
     'milf',
     'wank',
     'twat',
-    'skank'
+    'skank',
+    'pidor', 'pidar', 'peder', 'pedr',
+    'cyka', 'suka',
+    'blyad', 'blyd', 'bleat',
+    'huy', 'hui',
+    'pizda', 'pizd',
+    'ebat', 'ebal', 'eblan',
+    'zalupa', 'zalup',
+    'mudak', 'mudila',
+    'manda', 'mandet',
+    'xyй', 'xuj', 'xuy',
+    'pizdec', 'pizdos',
+    'chmo', 'shluha', 'shlyuha',
+    'gavno', 'govno',
+    'urod', 'daun',
+    'debil',
+    'huylo', 'huilo',
+    'ублюдок', 'ubludok',
+    'dolgoyob', 'dolboyob',
+    'pizdobol', 'pizdabol'
 ].map(word => new RegExp(buildPattern(word), 'i'));
 
 function isNicknameAllowed(nick) {
@@ -3136,19 +3277,19 @@ function initAccountModal() {
             const nick = nicknameInput.value.trim();
 
             if (!/^[a-zA-Z0-9]{3,24}$/.test(nick)) {
-                nicknameError.textContent = 'Only English letters and numbers, 3-24 characters.';
+                nicknameError.textContent = translations[currentLang]?.account_nickname_error_format || 'Only English letters and numbers, 3-24 characters.';
                 nicknameError.classList.remove('hidden');
                 return;
             }
 
             if (!isNicknameAllowed(nick)) {
-                nicknameError.textContent = 'This nickname is not allowed.';
+                nicknameError.textContent = translations[currentLang]?.account_nickname_error_banned || 'This nickname is not allowed.';
                 nicknameError.classList.remove('hidden');
                 return;
             }
 
             nicknameError.classList.add('hidden');
-            saveBtn.textContent = 'Saving...';
+            saveBtn.textContent = translations[currentLang]?.account_saving || 'Saving...';
             saveBtn.disabled = true;
 
             try {
@@ -3170,15 +3311,15 @@ function initAccountModal() {
                     if (avatarText) avatarText.textContent = nick.charAt(0).toUpperCase();
                     closeModal();
                 } else {
-                    nicknameError.textContent = data.error || 'Error saving.';
+                    nicknameError.textContent = data.error || translations[currentLang]?.account_network_error || 'Error saving.';
                     nicknameError.classList.remove('hidden');
                 }
             } catch(e) {
-                nicknameError.textContent = 'Network error.';
+                nicknameError.textContent = translations[currentLang]?.account_network_error || 'Network error.';
                 nicknameError.classList.remove('hidden');
             }
 
-            saveBtn.textContent = 'Save';
+            saveBtn.textContent = translations[currentLang]?.account_save || 'Save';
             saveBtn.disabled = false;
         });
     }

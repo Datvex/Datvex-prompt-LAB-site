@@ -1144,7 +1144,7 @@ npx serve .</pre>
         <div id="ai-modal" class="fixed inset-0 z-[300] flex items-center justify-center opacity-0 invisible transition-all duration-300">
             <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="ai-modal-backdrop"></div>
             <div class="bg-[#111] border border-[#333] w-full max-w-[420px] rounded-2xl shadow-2xl relative z-10 p-6 transform scale-95 transition-transform duration-300" id="ai-modal-content">
-                <button id="ai-modal-close-x" class="absolute top-4 right-4 text-[#888] hover:text-white transition-colors">
+                <button id="ai-modal-close-x" class="absolute top-4 right-4 text-[#888] hover:text-white transition-colors bg-[#222] hover:bg-[#333] rounded-full w-8 h-8 flex items-center justify-center">
                     <i class="ph-bold ph-x icon-lg"></i>
                 </button>
                 <h3 class="text-xl font-semibold text-white mb-2" id="ai-modal-title" data-i18n="modal_copy_title">Промпт скопирован</h3>
@@ -1168,7 +1168,7 @@ npx serve .</pre>
                         <div class="flex items-center gap-2 flex-wrap" id="prompt-modal-tags"></div>
                         <h2 class="text-xl md:text-2xl font-semibold text-white tracking-tight leading-snug" id="prompt-modal-title"></h2>
                     </div>
-                    <button id="prompt-modal-close" class="absolute top-5 right-5 md:top-6 md:right-6 text-[#888] hover:text-white transition-colors bg-[#222] hover:bg-[#333] rounded-full p-1.5 shrink-0">
+                    <button id="prompt-modal-close" class="absolute top-5 right-5 md:top-6 md:right-6 text-[#888] hover:text-white transition-colors bg-[#222] hover:bg-[#333] rounded-full p-0 w-8 h-8 flex items-center justify-center shrink-0">
                         <i class="ph-bold ph-x icon-lg"></i>
                     </button>
                 </div>
@@ -1286,7 +1286,7 @@ npx serve .</pre>
     <div id="account-modal" class="fixed inset-0 z-[400] flex items-center justify-center opacity-0 invisible transition-all duration-300">
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="account-modal-backdrop"></div>
         <div class="relative z-10 bg-[#111] border border-[#333] rounded-2xl shadow-2xl w-full max-w-[420px] mx-4 transform scale-95 transition-transform duration-300" id="account-modal-content">
-            <button id="account-modal-close" class="absolute top-4 right-4 text-[#888] hover:text-white transition-colors bg-[#222] hover:bg-[#333] rounded-full p-1.5">
+            <button id="account-modal-close" class="absolute top-4 right-4 text-[#888] hover:text-white transition-colors bg-[#222] hover:bg-[#333] rounded-full p-0 w-8 h-8 flex items-center justify-center">
                 <i class="ph-bold ph-x icon-lg"></i>
             </button>
             <div class="flex flex-col items-center gap-6 p-8">
@@ -1294,16 +1294,16 @@ npx serve .</pre>
                     <img id="account-modal-avatar" src="" class="w-20 h-20 rounded-full border-2 border-[#333] object-cover" />
                 </div>
                 <div class="w-full flex flex-col gap-2">
-                    <label class="text-[11px] font-semibold text-[#888] uppercase tracking-widest">Nickname</label>
-                    <input id="account-nickname-input" type="text" maxlength="24" placeholder="Enter nickname..."
+                    <label data-i18n="account_nickname_label" class="text-[11px] font-semibold text-[#888] uppercase tracking-widest">Nickname</label>
+                    <input id="account-nickname-input" type="text" maxlength="24" data-i18n="account_nickname_placeholder" placeholder="Enter nickname..."
                         class="w-full bg-[#1A1A1A] border border-[#333] rounded-xl py-2.5 px-4 text-sm text-white placeholder-[#555] hover:border-[#555] focus:outline-none focus:border-[#555] transition-all duration-200">
                     <p id="account-nickname-error" class="text-[12px] text-red-400 hidden"></p>
-                    <p class="text-[11px] text-[#555]">Only English letters and numbers. 3-24 characters.</p>
+                    <p data-i18n="account_nickname_hint" class="text-[11px] text-[#555]">Only English letters and numbers. 3-24 characters.</p>
                 </div>
-                <button id="account-save-btn" class="w-full bg-white text-black font-semibold text-[15px] py-3 rounded-xl hover:bg-gray-200 transition-colors">
+                <button id="account-save-btn" data-i18n="account_save" class="w-full bg-white text-black font-semibold text-[15px] py-3 rounded-xl hover:bg-gray-200 transition-colors">
                     Save
                 </button>
-                <button id="account-logout-btn" class="w-full text-[13px] text-[#555] hover:text-red-400 transition-colors">
+                <button id="account-logout-btn" data-i18n="account_logout" class="w-full text-[13px] text-[#555] hover:text-red-400 transition-colors">
                     Log out
                 </button>
             </div>
