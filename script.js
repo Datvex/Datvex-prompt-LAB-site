@@ -801,13 +801,25 @@ function initAuth() {
                 userProfile.classList.remove('hidden');
                 userProfile.classList.add('md:flex');
                 if (u.avatar) {
-                    const img = document.createElement('img');
-                    img.src = u.avatar;
-                    img.className = 'w-full h-full object-cover rounded-full';
-                    avatarText.parentNode.appendChild(img);
-                    avatarText.style.display = 'none';
-                } else {
-                    avatarText.textContent = u.name.charAt(0).toUpperCase();
+                    const skeleton = document.getElementById('user-avatar-skeleton');
+                    const avatarImg = document.getElementById('user-avatar-img');
+
+                    if (u.avatar) {
+                        avatarImg.src = u.avatar;
+                        avatarImg.onload = () => {
+                            if (skeleton) skeleton.style.display = 'none';
+                            avatarImg.classList.remove('hidden');
+                        };
+                        avatarImg.onerror = () => {
+                            if (skeleton) skeleton.style.display = 'none';
+                            avatarText.classList.remove('hidden');
+                            avatarText.textContent = u.name.charAt(0).toUpperCase();
+                        };
+                    } else {
+                        if (skeleton) skeleton.style.display = 'none';
+                        avatarText.classList.remove('hidden');
+                        avatarText.textContent = u.name.charAt(0).toUpperCase();
+                    }
                 }
             }
         } catch(e) {}
@@ -1109,6 +1121,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     initViewSwitcher();
     initAISelector();
     initAuth();
+    initAccountModal();
     setLanguage(currentLang, false);
 
     $('#lang-buttons').addEventListener('click', function(e) {
@@ -2996,3 +3009,188 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+const LEET_MAP = {
+    a: '[a@4аА]',
+    b: '[b8вВ6]',
+    c: '[cсСk]',
+    d: '[dddД]',
+    e: '[e3еЕ]',
+    f: '[fфФ]',
+    g: '[g9gg]',
+    h: '[hнН]',
+    i: '[i1l!|iіІ]',
+    j: '[j]',
+    k: '[kcкК]',
+    l: '[l1|lлЛ]',
+    m: '[mmмМ]',
+    n: '[nnнН]',
+    o: '[o0оО]',
+    p: '[ppпП]',
+    q: '[q]',
+    r: '[rrрР]',
+    s: '[s5$sзЗ]',
+    t: '[t7+tтТ]',
+    u: '[uuuуУ]',
+    v: '[vvvвВ]',
+    w: '[wwwwш]',
+    x: '[xхХ]',
+    y: '[yyуУ]',
+    z: '[z2zzз]'
+};
+
+function buildPattern(word) {
+    return word.split('').map(ch => LEET_MAP[ch.toLowerCase()] || ch).join('[^a-z0-9]*');
+}
+
+const BANNED_PATTERNS = [
+    'fuck', 'fuk', 'fck', 'phuck', 'fock',
+    'shit', 'sht',
+    'bitch', 'bytch', 'biatch', 'btch',
+    'ass', 'arse',
+    'cunt', 'kunt',
+    'dick', 'dik',
+    'cock', 'cok',
+    'pussy', 'pussi',
+    'nigger', 'nigga', 'nig',
+    'whore', 'hore',
+    'slut',
+    'porn', 'pr0n',
+    'sex',
+    'rape',
+    'nazi',
+    'faggot', 'fag',
+    'bastard', 'basterd',
+    'retard',
+    'pedo',
+    'nude',
+    'penis',
+    'vagina',
+    'anal',
+    'cum',
+    'piss',
+    'anus',
+    'homo',
+    'kill',
+    'idiot',
+    'moron',
+    'dildo',
+    'sperm',
+    'horny',
+    'boobs',
+    'tits',
+    'clit',
+    'jizz',
+    'milf',
+    'wank',
+    'twat',
+    'skank'
+].map(word => new RegExp(buildPattern(word), 'i'));
+
+function isNicknameAllowed(nick) {
+    const cleaned = nick.replace(/\s+/g, '');
+    for (const pattern of BANNED_PATTERNS) {
+        if (pattern.test(cleaned)) return false;
+    }
+    return true;
+}
+
+function initAccountModal() {
+    const modal = document.getElementById('account-modal');
+    const closeBtn = document.getElementById('account-modal-close');
+    const backdrop = document.getElementById('account-modal-backdrop');
+    const avatarBtn = document.getElementById('user-avatar-btn');
+    const avatarImg = document.getElementById('account-modal-avatar');
+    const nicknameInput = document.getElementById('account-nickname-input');
+    const nicknameError = document.getElementById('account-nickname-error');
+    const saveBtn = document.getElementById('account-save-btn');
+    const logoutBtn = document.getElementById('account-logout-btn');
+
+    if (!modal) return;
+
+    function openModal() {
+        const match = document.cookie.match(/auth_user=([^;]+)/);
+        if (!match) return;
+        try {
+            const u = JSON.parse(decodeURIComponent(match[1]));
+            if (avatarImg) avatarImg.src = u.avatar || '';
+            if (nicknameInput) nicknameInput.value = u.name || '';
+        } catch(e) {}
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (nicknameError) nicknameError.classList.add('hidden');
+    }
+
+    if (avatarBtn) avatarBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    if (saveBtn) {
+        saveBtn.addEventListener('click', async () => {
+            const nick = nicknameInput.value.trim();
+
+            if (!/^[a-zA-Z0-9]{3,24}$/.test(nick)) {
+                nicknameError.textContent = 'Only English letters and numbers, 3-24 characters.';
+                nicknameError.classList.remove('hidden');
+                return;
+            }
+
+            if (!isNicknameAllowed(nick)) {
+                nicknameError.textContent = 'This nickname is not allowed.';
+                nicknameError.classList.remove('hidden');
+                return;
+            }
+
+            nicknameError.classList.add('hidden');
+            saveBtn.textContent = 'Saving...';
+            saveBtn.disabled = true;
+
+            try {
+                const res = await fetch('/api/update-profile', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: nick })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    const match = document.cookie.match(/auth_user=([^;]+)/);
+                    if (match) {
+                        const u = JSON.parse(decodeURIComponent(match[1]));
+                        u.name = nick;
+                        document.cookie = 'auth_user=' + encodeURIComponent(JSON.stringify(u)) + '; Path=/; Max-Age=2592000; SameSite=Lax';
+                    }
+                    const avatarText = document.getElementById('user-avatar-text');
+                    if (avatarText) avatarText.textContent = nick.charAt(0).toUpperCase();
+                    closeModal();
+                } else {
+                    nicknameError.textContent = data.error || 'Error saving.';
+                    nicknameError.classList.remove('hidden');
+                }
+            } catch(e) {
+                nicknameError.textContent = 'Network error.';
+                nicknameError.classList.remove('hidden');
+            }
+
+            saveBtn.textContent = 'Save';
+            saveBtn.disabled = false;
+        });
+    }
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            document.cookie = 'auth_user=; Path=/; Max-Age=0';
+            window.location.reload();
+        });
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+}

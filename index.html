@@ -213,8 +213,10 @@
                 </div>
 
                 <div id="user-profile" class="hidden items-center gap-2">
-                    <button class="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border border-[#333] hover:opacity-80 transition-all duration-200 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                        <span id="user-avatar-text" class="text-white font-semibold text-sm"></span>
+                    <button id="user-avatar-btn" class="relative flex items-center justify-center w-9 h-9 rounded-full border border-[#333] hover:opacity-80 transition-all duration-200 overflow-hidden bg-[#1A1A1A]">
+                        <div id="user-avatar-skeleton" class="skeleton-line absolute inset-0 rounded-full"></div>
+                        <span id="user-avatar-text" class="text-white font-semibold text-sm relative z-10 hidden"></span>
+                        <img id="user-avatar-img" class="w-full h-full object-cover rounded-full hidden" />
                     </button>
                 </div>
             </div>
@@ -1280,6 +1282,33 @@ npx serve .</pre>
             </div>
         </div>
     </main>
+
+    <div id="account-modal" class="fixed inset-0 z-[400] flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="account-modal-backdrop"></div>
+        <div class="relative z-10 bg-[#111] border border-[#333] rounded-2xl shadow-2xl w-full max-w-[420px] mx-4 transform scale-95 transition-transform duration-300" id="account-modal-content">
+            <button id="account-modal-close" class="absolute top-4 right-4 text-[#888] hover:text-white transition-colors bg-[#222] hover:bg-[#333] rounded-full p-1.5">
+                <i class="ph-bold ph-x icon-lg"></i>
+            </button>
+            <div class="flex flex-col items-center gap-6 p-8">
+                <div class="relative">
+                    <img id="account-modal-avatar" src="" class="w-20 h-20 rounded-full border-2 border-[#333] object-cover" />
+                </div>
+                <div class="w-full flex flex-col gap-2">
+                    <label class="text-[11px] font-semibold text-[#888] uppercase tracking-widest">Nickname</label>
+                    <input id="account-nickname-input" type="text" maxlength="24" placeholder="Enter nickname..."
+                        class="w-full bg-[#1A1A1A] border border-[#333] rounded-xl py-2.5 px-4 text-sm text-white placeholder-[#555] hover:border-[#555] focus:outline-none focus:border-[#555] transition-all duration-200">
+                    <p id="account-nickname-error" class="text-[12px] text-red-400 hidden"></p>
+                    <p class="text-[11px] text-[#555]">Only English letters and numbers. 3-24 characters.</p>
+                </div>
+                <button id="account-save-btn" class="w-full bg-white text-black font-semibold text-[15px] py-3 rounded-xl hover:bg-gray-200 transition-colors">
+                    Save
+                </button>
+                <button id="account-logout-btn" class="w-full text-[13px] text-[#555] hover:text-red-400 transition-colors">
+                    Log out
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div id="mobile-menu-backdrop" class="md:hidden"></div>
     <div id="mobile-menu" class="md:hidden">
