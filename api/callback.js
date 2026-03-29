@@ -55,13 +55,15 @@ export default async function handler(req, res) {
         const pid = ud.id.toString();
 
         const client = await pool.connect();
-        const q = 'INSERT INTO users (name, provider, provider_id) VALUES ($1, $2, $3) ON CONFLICT (provider_id) DO UPDATE SET name = $1 RETURNING id, name;';
-        const v = [uName, 'github', pid];
+        const avatarNum = Math.floor(Math.random() * 4) + 1;
+        const avatar = `/avatar${avatarNum}.png`;
+        const q = 'INSERT INTO users (name, provider, provider_id, avatar) VALUES ($1, $2, $3, $4) ON CONFLICT (provider_id) DO UPDATE SET name = $1 RETURNING id, name, avatar;';
+        const v = [uName, 'github', pid, avatar];
         const r = await client.query(q, v);
         client.release();
 
         const dbUser = r.rows[0];
-        const ui = encodeURIComponent(JSON.stringify({ id: dbUser.id, name: dbUser.name }));
+        const ui = encodeURIComponent(JSON.stringify({ id: dbUser.id, name: dbUser.name, avatar: dbUser.avatar }));
         
         res.setHeader('Set-Cookie', 'auth_user=' + ui + '; Path=/; Max-Age=2592000; SameSite=Lax');
         res.setHeader('Location', '/');

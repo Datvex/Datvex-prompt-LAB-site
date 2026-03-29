@@ -69,7 +69,7 @@
                     </button>
 
                     <button id="nav-link-favorites" class="flex items-center gap-1 px-3 py-1.5 hover:text-white transition-colors duration-200 rounded-full hover:bg-[#1A1A1A]">
-                        <i class="ph-bold ph-heart icon-sm"></i>
+                        <i class="ph-bold ph-bookmark icon-sm"></i>
                         Избранное
                     </button>
 
@@ -450,10 +450,10 @@
                 <p class="text-[15px] text-[#888]">Сохранённые промпты</p>
             </section>
             <div id="favorites-empty" class="hidden items-center justify-center py-20 gap-4 text-center">
-                <i class="ph-bold ph-heart icon-2xl text-[#333]"></i>
+                <i class="ph-bold ph-bookmark icon-2xl text-[#333]"></i>
                 <div class="flex flex-col gap-1">
                     <p class="text-[#EDEDED] text-[16px] font-medium" data-i18n="favorites_empty_title">У вас пока нет избранных промптов.</p>
-                    <p class="text-[#888] text-[14px]" data-i18n="favorites_empty_desc">Откройте любой промпт и нажмите <i class="ph-bold ph-heart icon-sm mx-1"></i> чтобы добавить.</p>
+                    <p class="text-[#888] text-[14px]" data-i18n="favorites_empty_desc">Откройте любой промпт и нажмите <i class="ph-bold ph-bookmark icon-sm mx-1"></i> чтобы добавить.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 items-start" id="favorites-grid"></div>
@@ -1188,7 +1188,11 @@ npx serve .</pre>
                 <div class="p-4 md:p-5 border-t border-[#222] flex items-center justify-between bg-[#111] rounded-b-2xl shrink-0">
                     <div class="flex items-center gap-3">
                         <button id="prompt-modal-fav-btn" class="flex items-center justify-center w-9 h-9 bg-[#1A1A1A] border border-[#333] rounded-xl hover:bg-[#2A2A2A] hover:border-[#555] transition-all duration-200 text-[#888]">
-                            <i class="ph-bold ph-heart icon-lg"></i>
+                            <i class="ph-bold ph-bookmark icon-lg"></i>
+                        </button>
+                        <button id="prompt-modal-like-btn" class="flex items-center gap-1.5 h-9 px-3 bg-[#1A1A1A] border border-[#333] rounded-xl hover:bg-[#2A2A2A] hover:border-[#555] transition-all duration-200 text-[#888]">
+                            <i class="ph-bold ph-heart icon-sm"></i>
+                            <span id="prompt-modal-likes-count" class="text-[13px] font-medium">0</span>
                         </button>
                         <span id="prompt-modal-tokens" class="text-[13px] text-[#666] font-mono"></span>
                     </div>
@@ -1261,24 +1265,9 @@ npx serve .</pre>
                 <h2 class="text-2xl font-bold text-white text-center tracking-tight mb-8">Welcome to Datvex</h2>
 
                 <div class="flex flex-col gap-3 w-full">
-                    <button id="oauth-google-btn" class="flex items-center justify-center gap-3 w-full bg-transparent border border-[#333] hover:bg-[#1A1A1A] hover:border-[#555] text-white font-medium text-[15px] py-3 rounded-xl transition-all duration-200">
-                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
-                            <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" fill="#34A853"/>
-                            <path d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.175 0 7.55 0 9s.348 2.825.957 4.039l3.007-2.332z" fill="#FBBC05"/>
-                            <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.293C4.672 5.166 6.656 3.58 9 3.58z" fill="#EA4335"/>
-                        </svg>
-                        Continue with Google
-                    </button>
-
                     <button id="oauth-github-btn" class="flex items-center justify-center gap-3 w-full bg-transparent border border-[#333] hover:bg-[#1A1A1A] hover:border-[#555] text-white font-medium text-[15px] py-3 rounded-xl transition-all duration-200">
                         <i class="ph-bold ph-github-logo text-xl"></i>
                         Continue with GitHub
-                    </button>
-
-                    <button id="oauth-apple-btn" class="flex items-center justify-center gap-3 w-full bg-transparent border border-[#333] hover:bg-[#1A1A1A] hover:border-[#555] text-white font-medium text-[15px] py-3 rounded-xl transition-all duration-200">
-                        <i class="ph-bold ph-apple-logo text-xl"></i>
-                        Continue with Apple
                     </button>
                 </div>
 

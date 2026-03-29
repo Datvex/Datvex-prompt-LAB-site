@@ -800,7 +800,15 @@ function initAuth() {
                 authButtons.classList.remove('md:flex');
                 userProfile.classList.remove('hidden');
                 userProfile.classList.add('md:flex');
-                avatarText.textContent = u.name.charAt(0).toUpperCase();
+                if (u.avatar) {
+                    const img = document.createElement('img');
+                    img.src = u.avatar;
+                    img.className = 'w-full h-full object-cover rounded-full';
+                    avatarText.parentNode.appendChild(img);
+                    avatarText.style.display = 'none';
+                } else {
+                    avatarText.textContent = u.name.charAt(0).toUpperCase();
+                }
             }
         } catch(e) {}
     }
@@ -1171,11 +1179,11 @@ function updateFavBtn(btn, isFav, animate = false) {
     const icon = btn.querySelector('i');
     if (!icon) return;
     if (isFav) {
-        icon.className = 'ph-fill ph-heart icon-lg';
-        icon.style.color = '#ef4444';
+        icon.className = 'ph-fill ph-bookmark icon-lg';
+        icon.style.color = '#eab308';
         btn.classList.add('fav-active');
     } else {
-        icon.className = 'ph-bold ph-heart icon-lg';
+        icon.className = 'ph-bold ph-bookmark icon-lg';
         icon.style.color = '';
         btn.classList.remove('fav-active');
     }
@@ -2847,6 +2855,49 @@ function openPromptModal(index) {
         try {
             history.pushState({ view: 'prompt', id: numericId }, '', `#/prompt/${numericId}`);
         } catch(e) {}
+    }
+
+    const likeBtn = document.getElementById('prompt-modal-like-btn');
+    const likesCount = document.getElementById('prompt-modal-likes-count');
+    const likeIcon = likeBtn?.querySelector('i');
+
+    if (likeBtn && prompt.numeric_id) {
+        likesCount.textContent = '0';
+        likeIcon.className = 'ph-bold ph-heart icon-sm';
+        likeIcon.style.color = '';
+
+        fetch(`/api/likes?prompt_id=${prompt.numeric_id}`)
+            .then(r => r.json())
+            .then(data => {
+                likesCount.textContent = data.count;
+                if (data.liked) {
+                    likeIcon.className = 'ph-fill ph-heart icon-sm';
+                    likeIcon.style.color = '#ef4444';
+                }
+            })
+            .catch(() => {});
+
+        likeBtn.onclick = () => {
+            const authUser = document.cookie.match(/auth_user=([^;]+)/);
+            if (!authUser) {
+                document.getElementById('nav-login-btn')?.click();
+                return;
+            }
+
+            fetch(`/api/likes?prompt_id=${prompt.numeric_id}`, { method: 'POST' })
+                .then(r => r.json())
+                .then(data => {
+                    likesCount.textContent = data.count;
+                    if (data.liked) {
+                        likeIcon.className = 'ph-fill ph-heart icon-sm';
+                        likeIcon.style.color = '#ef4444';
+                    } else {
+                        likeIcon.className = 'ph-bold ph-heart icon-sm';
+                        likeIcon.style.color = '';
+                    }
+                })
+                .catch(() => {});
+        };
     }
 
     modal.classList.add('active');
