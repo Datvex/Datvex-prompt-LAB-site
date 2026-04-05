@@ -2471,7 +2471,7 @@ function createPromptCardHTML(p, realIndex) {
         </div>
         <p class="text-sm text-[#A0A0A0] line-clamp-2" title="${desc}">${desc}</p>
         <div class="mt-2 flex flex-col gap-2">
-            <pre class="prompt-content bg-[#0A0A0A] border border-[#222] group-hover:border-[#333] rounded-xl p-4 text-xs font-mono text-[#A0A0A0] overflow-x-auto h-32 whitespace-pre-wrap transition-colors duration-300">${promptText}</pre>
+            <pre class="prompt-content bg-[#0A0A0A] border border-[#222] group-hover:border-[#333] rounded-xl p-4 text-xs font-mono text-[#A0A0A0] overflow-hidden whitespace-pre-wrap transition-colors duration-300 line-clamp-4 cursor-text">${promptText}</pre>
             <div class="flex justify-between items-center">
                 <div class="flex items-center gap-1.5 text-[#666]">
                     <i class="ph-bold ph-heart icon-sm"></i>
