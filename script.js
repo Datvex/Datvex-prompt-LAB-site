@@ -83,6 +83,12 @@ const translations = {
         account_nickname_taken: 'This nickname is already taken.',
         favorites_empty_title: 'No favorite prompts yet.',
         favorites_empty_desc: 'Open any prompt and click the bookmark icon to add.',
+        page_slug_prompts: 'Prompts List',
+        page_slug_favorites: 'Favorites',
+        page_slug_sources: 'Source List',
+        page_slug_categories: 'Category List',
+        page_slug_tags: 'Tags List',
+        page_slug_docs: 'Documentation',
     },
     ru: {
         lang_menu: "Язык интерфейса",
@@ -168,6 +174,12 @@ const translations = {
         account_nickname_taken: 'Этот никнейм уже занят.',
         favorites_empty_title: 'У вас пока нет избранных промптов.',
         favorites_empty_desc: 'Откройте любой промпт и нажмите на закладку чтобы добавить.',
+        page_slug_prompts: 'Промпты',
+        page_slug_favorites: 'Избранное',
+        page_slug_sources: 'Источники',
+        page_slug_categories: 'Категории',
+        page_slug_tags: 'Теги',
+        page_slug_docs: 'Документация',
     },
     zh: {
         lang_menu: "界面语言",
@@ -919,6 +931,39 @@ function ensureTags() {
 const $ = (s, c) => (c || document).querySelector(s);
 const $$ = (s, c) => (c || document).querySelectorAll(s);
 
+// Маппинг viewId ↔ URL slug (чистые URL без решётки)
+const VIEW_SLUGS = {
+    'home-view': '/',
+    'main-view': '/prompts',
+    'tags-view': '/tags',
+    'categories-view': '/categories',
+    'sources-view': '/sources',
+    'docs-view': '/docs',
+    'favorites-view': '/favorites',
+    'usecase-developers-view': '/usecase/developers',
+    'usecase-designers-view': '/usecase/designers',
+    'usecase-creators-view': '/usecase/creators',
+    'usecase-businesses-view': '/usecase/businesses',
+    'company-about-view': '/company/about',
+    'company-privacy-view': '/company/privacy',
+    'company-terms-view': '/company/terms',
+};
+
+const SLUG_TO_VIEW = {};
+for (const [viewId, slug] of Object.entries(VIEW_SLUGS)) {
+    SLUG_TO_VIEW[slug] = viewId;
+}
+
+function slugFromView(viewId) {
+    return VIEW_SLUGS[viewId] || '#' + viewId;
+}
+
+function viewFromSlug(slug) {
+    // Убираем ведущий слеш для поиска
+    const normalized = slug.startsWith('/') ? slug : '/' + slug;
+    return SLUG_TO_VIEW[normalized] || SLUG_TO_VIEW[slug] || 'home-view';
+}
+
 function debounce(fn, ms) {
     let t;
     return function() {
@@ -1136,13 +1181,22 @@ function setLanguage(lang, animate) {
     } else {
         doUpdate();
     }
+
+    // Обновляем заголовок текущей страницы при смене языка
+    const currentView = document.querySelector('[id$="-view"]:not(.hidden)');
+    if (currentView) {
+        const viewId = currentView.id;
+        const slugKey = 'page_slug_' + viewId.replace('-view', '').replace('usecase-', '').replace('company-', '');
+        const pageTitle = (translations[currentLang] && translations[currentLang][slugKey]) || 'Datvex Prompt LAB';
+        document.title = pageTitle + ' — Datvex Prompt LAB';
+    }
 }
 
 function switchView(viewId, pushHistory = true) {
     if (pushHistory) {
         try {
-            const url = viewId === 'home-view' ? window.location.pathname : '#' + viewId;
-            history.pushState({ view: viewId }, '', url);
+            const slug = slugFromView(viewId);
+            history.pushState({ view: viewId }, '', slug);
         } catch (e) {}
     }
     
@@ -1214,6 +1268,11 @@ function switchView(viewId, pushHistory = true) {
             updateResultsCounter();
             updateResetBtn();
         }
+
+        // Обновляем заголовок страницы
+        const slugKey = 'page_slug_' + viewId.replace('-view', '').replace('usecase-', '').replace('company-', '');
+        const pageTitle = (translations[currentLang] && translations[currentLang][slugKey]) || 'Datvex Prompt LAB';
+        document.title = pageTitle + ' — Datvex Prompt LAB';
     }
 
     if (currentEl) {
@@ -1227,10 +1286,10 @@ function switchView(viewId, pushHistory = true) {
 }
 
 window.addEventListener('popstate', function(e) {
-    let hash = location.hash;
-    
-    if (hash.startsWith('#/prompt/')) {
-        const targetId = hash.replace('#/prompt/', '');
+    let pathname = location.pathname;
+
+    if (pathname.startsWith('/prompt/')) {
+        const targetId = pathname.replace('/prompt/', '');
         const index = allPrompts.findIndex(p => String(p.numeric_id) === targetId);
         if (index !== -1) {
             openPromptModal(index);
@@ -1244,7 +1303,7 @@ window.addEventListener('popstate', function(e) {
         }
     }
 
-    let view = e.state && e.state.view ? e.state.view : (hash ? hash.substring(1) : 'home-view');
+    let view = e.state && e.state.view ? e.state.view : viewFromSlug(pathname);
     
     if (view.startsWith('doc-')) {
         switchView('docs-view', false);
@@ -1290,7 +1349,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }, 300));
     }
 
-    let initialView = location.hash ? location.hash.substring(1) : 'home-view';
+    let initialView = viewFromSlug(location.pathname);
     
     if (initialView.startsWith('doc-')) {
         switchView('docs-view', false);
