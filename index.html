@@ -141,7 +141,7 @@
                         <i class="ph-bold ph-caret-down icon-sm opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
                     </button>
 
-                    <div class="absolute top-full right-0 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
+                    <div class="absolute top-full right-0 pt-3 opacity-0 invisible translate-y-2 transition-all duration-200 pointer-events-none z-50">
                         <div class="w-[200px] bg-[#1A1A1A] border border-[#333] rounded-xl shadow-[0_16px_40px_rgba(0,0,0,0.8)] p-1.5">
                             <div class="px-3 py-2 mb-1">
                                 <h4 data-i18n="lang_menu" class="text-[11px] font-semibold text-[#888] uppercase tracking-widest">Язык интерфейса</h4>
@@ -261,7 +261,7 @@
 
                     <div class="space-y-2">
                         <label data-i18n="search_label" class="text-[11px] font-semibold text-vercel-gray uppercase tracking-widest">Поиск</label>
-                        <div class="relative group">
+                <div class="relative">
                             <i class="ph-bold ph-magnifying-glass icon-md absolute left-3 top-1/2 -translate-y-1/2 text-vercel-gray group-hover:text-white transition-colors duration-300"></i>
                             <input id="main-search" data-i18n="search_placeholder" type="text" placeholder="Поиск промптов..."
                                 class="w-full bg-[#1A1A1A] border border-[#333] rounded-xl py-2 pl-9 pr-3 text-sm text-white placeholder-vercel-gray hover:border-[#555] focus:outline-none focus:border-[#555] focus:bg-[#222] transition-all duration-300">
@@ -332,8 +332,10 @@
                                 class="w-full bg-[#1A1A1A] border border-[#333] rounded-xl py-1.5 pl-8 pr-3 text-xs text-white placeholder-vercel-gray hover:border-[#555] focus:outline-none focus:border-[#555] focus:bg-[#222] transition-all duration-300">
                         </div>
 
-                        <div class="custom-scrollbar overflow-y-auto max-h-[250px] pr-2 -mr-2">
-                            <div class="flex flex-wrap gap-2" id="tags-container"></div>
+                        <div class="max-h-[250px] flex flex-col rounded-xl border border-white/[0.12] overflow-hidden">
+                            <div class="custom-scrollbar overflow-y-auto px-4 py-4">
+                                <div class="flex flex-wrap gap-2" id="tags-container"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

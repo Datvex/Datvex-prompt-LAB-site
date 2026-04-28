@@ -506,3 +506,10 @@ html { scrollbar-width: thin; scrollbar-color: #333 transparent; }
 #account-modal.active #account-modal-content {
     transform: scale(1);
 }
+
+.lang-menu-open > div.absolute {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
